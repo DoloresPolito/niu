@@ -24,6 +24,15 @@ const TabsContainer = styled.div`
 
   h6 {
     padding: 0 20px;
+
+    @media only screen and (max-width: 530px) {
+      padding: 0 10px;
+    }
+
+    @media only screen and (max-width: 410px) {
+      font-size: 10px;
+      padding: 0 5px;
+    }
   }
 `;
 

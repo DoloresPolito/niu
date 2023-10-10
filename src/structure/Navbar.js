@@ -84,6 +84,7 @@ const NavbarContainer = styled.div`
   align-items: center;
   position: relative;
 
+
   .logo {
     position: absolute;
     left: 0;
@@ -107,8 +108,7 @@ const NavbarSectionMobile = styled.section`
   flex-direction: column;
   justify-content: center !important;
   align-items: center;
-
-
+  
   .logomobile {
     display: flex;
     justify-content: center;
