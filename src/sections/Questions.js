@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
-import { Container } from "../styles/texts";
+import { Container, Heading1 } from "../styles/texts";
 import AccordionItem from "../components/AccordionItem";
 import questions1 from "../questions1.json";
 import questions2 from "../questions2.json";
@@ -18,23 +18,14 @@ function Questions() {
       <QuestionsSection>
         <Navbar />
         <Cover>
-          <h1>Preguntas frecuentes</h1>
+          <Heading1>faqs</Heading1>
         </Cover>
         <Container>
           <QuestionsContainer>
             <Box>
               <h2>Sobre niu</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+              n1u es una super app que llegó para solucionar todas tus finanzas. Podés contar con una tarjeta Visa internacional prepaga, para comprar en cualquier comercio y sitio web del mundo que acepte Visa. Además, podés enviar y recibir, plata a/de otros usuarios de n1u, cuentas bancarias (CBU) y cuentas virtuales (CVU) gratis e instantáneamente. Además, podes extraer dinero de los cajeros de las redes habilitadas (Red Link, Banelco o si estás fuera de Argentina VISA Plus), También comprar y vender activos digitales, comprar juegos, recargar y pagar servicios, celular, transporte y SUBE. Además la app te ayuda a proteger tus gastos, ya que recibís una notificación en el momento que realices un consumo y seguir todos tus movimientos cuando y desde donde quieras.
               </p>
 
               {questions1.map((question) => (
@@ -75,6 +66,7 @@ const QuestionsSection = styled.div`
   width: 100%;
   margin: auto;
   background-color: white;
+  
 `;
 
 const Cover = styled.div`
@@ -85,41 +77,23 @@ const Cover = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #683475, violet, #8d479e, #e30052);
+  /* background: linear-gradient(-45deg, #683475, violet, #8d479e, #e30052); */
 
-  h1 {
-    font-family: "VisbyBold";
-    font-size: 154px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 120px;
-    letter-spacing: 1.5px;
-    color: white;
-    max-width: 700px;
-    padding-top: 70px;
+  background-image: url('images/faqs/fondo-faqs 1.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 
-    @media only screen and (max-width: 845px) {
-      font-size: 120px;
-      max-width: 540px;
-      padding-top: 100px;
-    }
-
-    @media only screen and (max-width: 580px) {
-      font-size: 80px;
-      max-width: 360px;
-      line-height: 90px;
-      padding-top: 100px;
-    }
-
-    @media only screen and (max-width: 430px) {
-      display: none;
-    }
+  @media only screen and (max-width: 600px) {
+    background-image: url("images/faqs/fondo-mobile-faqs 1.png");
   }
+
 `;
 
 const QuestionsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   background-color: white;
   min-height: 100vh;
@@ -129,13 +103,17 @@ const Box = styled.div`
   background-color: white;
   height: auto;
   margin: 80px 0px;
+  width: 90%;
 
   h2 {
     color: #e30052;
     padding-bottom: 20px;
+ 
   }
 
   p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     padding-bottom: 30px;
     line-height: 22px;
   }

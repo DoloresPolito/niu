@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import Tabs from "../components/Tabs";
 
 const Navbar = () => {
@@ -69,8 +69,8 @@ const NavbarSection = styled.section`
   color: white;
 
   img {
-    height: 40px;
-    width: 40px;
+    max-width: 70px;
+    height: auto;
   }
 `;
 
@@ -84,15 +84,9 @@ const NavbarContainer = styled.div`
   align-items: center;
   position: relative;
 
-
   .logo {
     position: absolute;
     left: 0;
-  }
-
-  img {
-    height: 40px;
-    width: 40px;
   }
 `;
 
@@ -108,7 +102,7 @@ const NavbarSectionMobile = styled.section`
   flex-direction: column;
   justify-content: center !important;
   align-items: center;
-  
+
   .logomobile {
     display: flex;
     justify-content: center;
@@ -117,8 +111,8 @@ const NavbarSectionMobile = styled.section`
   }
 
   img {
-    height: 40px;
-    width: 40px;
+    max-width: 70px;
+    height: auto;
   }
 `;
 
@@ -126,7 +120,6 @@ const NavbarContainerMobile = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-
 `;
 
 export default Navbar;

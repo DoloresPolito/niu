@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import up from "../assets/arrow-up.svg";
-import down from "../assets/arrow-down.svg";
+import up from "../assets/up.png";
+import down from "../assets/down.png";
 
 export const AccordionItem = ({
   handleToggle,
@@ -44,8 +44,7 @@ const Card = styled.div`
 
 const Header = styled.div`
   img {
-    height: 32px;
-    margin: 17px 0px;
+    height: 6px;
   }
 
   display: flex;
@@ -54,6 +53,8 @@ const Header = styled.div`
   justify-content: space-between;
   transition: 0.3s;
   height: 80px;
+  font-family: "Roboto", sans-serif;
+    font-weight: 500;
 `;
 
 const Content = styled.div`
@@ -61,6 +62,8 @@ const Content = styled.div`
   height: 0;
   overflow: hidden;
   transition: height 0.35s ease;
+  font-family: "Roboto", sans-serif;
+    font-weight: 300;
 
   &.show {
     height: auto;

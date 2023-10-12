@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContainer>
-        <Column>niu</Column>
+        <Column>  <img alt="logo" src={logo} /></Column>
 
         <MiddleColumn />
 
@@ -64,8 +65,15 @@ const FooterContainer = styled.footer`
   height: 100%;
   justify-content: space-between;
 
+  img{
+    max-width: 70px;
+    height: auto;
+
+  }
+
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    align-items: center;
   }
 
   p {
@@ -89,6 +97,8 @@ const Column = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
+
+
 
   .social-media {
     @media only screen and (max-width: 900px) {

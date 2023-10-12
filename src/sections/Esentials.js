@@ -11,11 +11,13 @@ function Esentials() {
       <Navbar />
       <Container>
         <Cover>
-          <Heading1>Esenciales</Heading1>
+          <Heading1>Features</Heading1>
           <Heading2>
             niu es tu billetera, <b>pero a otro level</b>
           </Heading2>
-          <Button>descarga la app</Button>
+          <Button>
+            <p>descargá ahora</p>
+          </Button>
         </Cover>
 
         <Box>
@@ -49,12 +51,19 @@ const EsentialsSection = styled.div`
   height: auto;
   width: 100%;
   margin: auto;
-  background: linear-gradient(to bottom, black, violet, black);
+  /* background: linear-gradient(to bottom, black, violet, black); */
+  background-image: url("images/features/fondo- 1.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 
+  @media only screen and (max-width: 600px) {
+    background-image: url("images/features/fondo 1.png");
+  }
 `;
 
 const Cover = styled.div`
-  height: 100vh;
+  height: 600px;
   width: 100%;
   background-color: transparent;
   display: flex;
@@ -70,8 +79,7 @@ const Box = styled.div`
   grid-auto-rows: 1fr;
   column-gap: 100px;
   row-gap: 40px;
-  padding: 50px 0px;
-
+  padding: 0px 0px 150px 0px;
 
   @media only screen and (min-width: 751px) and (max-width: 1170px) {
     grid-template-columns: 1fr 1fr !important;
@@ -88,6 +96,8 @@ const Box = styled.div`
     grid-template-rows: auto auto auto auto;
     row-gap: 20px;
     column-gap: 0px;
+    padding: 0px 0px 50px 0px;
+    margin-top: -50px;
   }
 `;
 
@@ -104,7 +114,7 @@ const Item = styled.div`
   height: auto;
 
   &.first {
-    background-color: #8c6c92;
+    background-color: #c7a3ff;
     p {
       color: black;
     }
@@ -115,7 +125,7 @@ const Item = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-  font-family: "VisbyBold";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
@@ -128,10 +138,10 @@ export const CardTitle = styled.h2`
 `;
 
 export const CardText = styled.p`
-  font-family: "Visby";
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 20px;
   letter-spacing: 1px;
 
@@ -139,6 +149,5 @@ export const CardText = styled.p`
     font-size: 12px;
   }
 `;
-
 
 export default Esentials;

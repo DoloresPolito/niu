@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Heading1 = styled.h1`
-  font-family: "VisbyBold";
+  font-family: "Roboto", sans-serif;
   font-size: 124px;
   font-style: normal;
   font-weight: 800;
   line-height: 0px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   color: white;
 
   @media only screen and (max-width: 845px) {
@@ -18,20 +18,20 @@ export const Heading1 = styled.h1`
   }
 
   @media only screen and (max-width: 440px) {
-    font-size: 60px;
+    font-size: 65px;
   }
 `;
 
 export const Heading2 = styled.h2`
-  font-family: "Visby";
+  font-family: "Roboto", sans-serif;
   font-size: 30px;
   line-height: 0px;
   letter-spacing: 0.02em;
   color: #ffffff;
   font-weight: 300;
-  margin-top: 0px;
+  margin-top: 5px;
   b {
-    font-family: "VisbyBold";
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
   }
 
@@ -40,11 +40,10 @@ export const Heading2 = styled.h2`
   }
 
   @media only screen and (max-width: 570px) {
+    max-width: 150px;
+    line-height: 22px;
     font-size: 18px;
-  }
-
-  @media only screen and (max-width: 440px) {
-    font-size: 16px;
+    margin-top: 0px;
   }
 `;
 
@@ -54,7 +53,7 @@ export const Heading3 = styled(Heading1)`
 `;
 
 export const LargeText = styled.p`
-  font-family: "VisbyBold";
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -72,15 +71,22 @@ export const SmallText = styled(LargeText)`
 `;
 
 export const Button = styled.button`
-  height: 50px;
-  background-color: #e30052;
+  height: 40px;
+  background-color: #ff009c;
   width: auto;
-  padding: 10px 60px;
   border: none;
   border-radius: 30px;
   margin-top: 10px;
-  color: white;
-  font-size: 15px;
+  cursor: pointer;
+
+  p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: white;
+    font-size: 15px;
+    padding: 0px 40px;
+    margin-top: 10px;
+  }
 `;
 
 export const CardTitle = styled.h2`
@@ -96,7 +102,7 @@ export const CardTitle = styled.h2`
 `;
 
 export const CardText = styled.h2`
-  font-family: "Visby";
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -107,7 +113,7 @@ export const CardText = styled.h2`
   }
 `;
 export const CardLink = styled.p`
-  font-family: "Visby";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -119,7 +125,6 @@ export const CardLink = styled.p`
   justify-content: center;
   text-decoration: none;
   padding-top: 30px;
-
 
   /* 
   @media only screen and (max-width: 850px) {
