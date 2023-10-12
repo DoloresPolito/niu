@@ -25,7 +25,19 @@ function Questions() {
             <Box>
               <h2>Sobre niu</h2>
               <p>
-              n1u es una super app que llegó para solucionar todas tus finanzas. Podés contar con una tarjeta Visa internacional prepaga, para comprar en cualquier comercio y sitio web del mundo que acepte Visa. Además, podés enviar y recibir, plata a/de otros usuarios de n1u, cuentas bancarias (CBU) y cuentas virtuales (CVU) gratis e instantáneamente. Además, podes extraer dinero de los cajeros de las redes habilitadas (Red Link, Banelco o si estás fuera de Argentina VISA Plus), También comprar y vender activos digitales, comprar juegos, recargar y pagar servicios, celular, transporte y SUBE. Además la app te ayuda a proteger tus gastos, ya que recibís una notificación en el momento que realices un consumo y seguir todos tus movimientos cuando y desde donde quieras.
+                n1u es una super app que llegó para solucionar todas tus
+                finanzas. Podés contar con una tarjeta Visa internacional
+                prepaga, para comprar en cualquier comercio y sitio web del
+                mundo que acepte Visa. Además, podés enviar y recibir, plata
+                a/de otros usuarios de n1u, cuentas bancarias (CBU) y cuentas
+                virtuales (CVU) gratis e instantáneamente. Además, podes extraer
+                dinero de los cajeros de las redes habilitadas (Red Link,
+                Banelco o si estás fuera de Argentina VISA Plus), También
+                comprar y vender activos digitales, comprar juegos, recargar y
+                pagar servicios, celular, transporte y SUBE. Además la app te
+                ayuda a proteger tus gastos, ya que recibís una notificación en
+                el momento que realices un consumo y seguir todos tus
+                movimientos cuando y desde donde quieras.
               </p>
 
               {questions1.map((question) => (
@@ -66,7 +78,6 @@ const QuestionsSection = styled.div`
   width: 100%;
   margin: auto;
   background-color: white;
-  
 `;
 
 const Cover = styled.div`
@@ -77,17 +88,14 @@ const Cover = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(-45deg, #683475, violet, #8d479e, #e30052); */
 
-  background-image: url('images/faqs/fondo-faqs 1.png');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-
-  @media only screen and (max-width: 600px) {
-    background-image: url("images/faqs/fondo-mobile-faqs 1.png");
-  }
-
+  background: linear-gradient(
+    217deg,
+    #f24be7,
+    #f213a4 -40.71%,
+    #483c73 90%,
+    #ac99f2
+  );
 `;
 
 const QuestionsContainer = styled.div`
@@ -108,7 +116,6 @@ const Box = styled.div`
   h2 {
     color: #e30052;
     padding-bottom: 20px;
- 
   }
 
   p {

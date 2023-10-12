@@ -51,15 +51,13 @@ const EsentialsSection = styled.div`
   height: auto;
   width: 100%;
   margin: auto;
-  /* background: linear-gradient(to bottom, black, violet, black); */
-  background-image: url("images/features/fondo- 1.png");
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-
-  @media only screen and (max-width: 600px) {
-    background-image: url("images/features/fondo 1.png");
-  }
+  background: linear-gradient(
+    217deg,
+    #8256bf,
+    #3b3659 40.71%,
+    #0d0d0d,
+    #7763bf
+  );
 `;
 
 const Cover = styled.div`
