@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
+import SocialMedia from "../components/SocialMedia";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
 
         <Column>
           <div className="social-media">
-            <p>graficos</p>
+           <SocialMedia/>
           </div>
           <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
         </Column>
