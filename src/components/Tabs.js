@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Tabs = () => {
+const Tabs = ({view}) => {
   return (
     <>
-      <TabsContainer>
+      <TabsContainer view={view}>
         <Link to="/" className="link">
           <h6>productos</h6>
         </Link>
@@ -33,12 +33,13 @@ const TabsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  color: ${(props) => props.view === "benefit" ? "black" : "white"};
 
 
 
   .link{
     text-decoration: none;
-    color:white;
+    color: ${(props) => props.view === "benefit" ? "black" : "white"};
   }
 
   h6 {

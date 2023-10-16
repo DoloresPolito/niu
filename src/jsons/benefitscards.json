@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (2).png"
+  },
+  {
+    "id": 2,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (3).png"
+  },
+  {
+    "id": 3,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (4).png"
+  },
+  {
+    "id": 4,
+    "title": "Membresía premium",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1.png"
+  },
+  {
+    "id": 5,
+    "title": "Membresía plus",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (6).png"
+  },
+  {
+    "id": 6,
+    "title": "PUBG mobile - 325 UC",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (7).png"
+  },
+  {
+    "id": 7,
+    "title": "275 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (8).png"
+  },
+  {
+    "id": 8,
+    "title": "1000 pavos",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "2",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (9).png"
+  },
+  {
+    "id": 9,
+    "title": "1 mes de suscripción",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "2",
+    "logo": "/benefitlogos/logo-burger 1 (10).png"
+  },
+  {
+    "id": 10,
+    "title": "210 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (11).png"
+  },
+  {
+    "id": 11,
+    "title": "100 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (2).png"
+  },
+  {
+    "id": 12,
+    "title": "Xbox Game Pass Ultimate",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+    "image":"/benefitlogos/imagen-cabi 1.png",
+    "logo": "/benefitlogos/logo-burger 1 (2).png"
+  }
+]

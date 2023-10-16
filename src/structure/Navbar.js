@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
+import logoblack from "../assets/logo black.png";
 import Tabs from "../components/Tabs";
 
-const Navbar = () => {
+const Navbar = ({ view }) => {
+  console.log("view en navbar", view);
   const [width, setWidth] = useState(null);
   const getWidth = () => divRef?.current?.offsetWidth;
   const medium = 845;
@@ -31,23 +33,42 @@ const Navbar = () => {
     <>
       {totalWidth < medium ? (
         <>
-          <NavbarSectionMobile>
+          <NavbarSectionMobile view={view}>
             <div className="logomobile">
-              <img alt="logo" src={logo} />
+              {view === "benefit" ? (
+                <>
+                  {" "}
+                  <img alt="logoblack" src={logoblack} />
+                </>
+              ) : (
+                <>
+                  <img alt="logo" src={logo} />
+                </>
+              )}
             </div>
             <NavbarContainerMobile>
-              <Tabs />
+              <Tabs view={view}/>
             </NavbarContainerMobile>
           </NavbarSectionMobile>
         </>
       ) : (
         <>
-          <NavbarSection>
+          <NavbarSection >
             <NavbarContainer>
               <div className="logo">
-                <img alt="logo" src={logo} />
+              {view === "benefit" ? (
+                <>
+                  {" "}
+                  <img alt="logoblack" src={logoblack} />
+                </>
+              ) : (
+                <>
+                  <img alt="logo" src={logo} />
+                </>
+              )}
+            
               </div>
-              <Tabs />
+              <Tabs view={view}/>
             </NavbarContainer>
           </NavbarSection>
         </>
@@ -66,7 +87,8 @@ const NavbarSection = styled.section`
   box-sizing: border-box;
   padding: 20px 80px;
   margin: auto;
-  color: white;
+
+
 
   img {
     max-width: 70px;
@@ -98,15 +120,15 @@ const NavbarSectionMobile = styled.section`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  color: white;
   flex-direction: column;
   justify-content: center !important;
   align-items: center;
 
+
   .logomobile {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid white;
+    border-bottom: ${(props) => props.view === "benefit" ? "1px solid black" : "1px solid white"};
     padding: 40px 0px;
   }
 

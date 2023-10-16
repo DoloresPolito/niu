@@ -68,7 +68,7 @@ const Item = styled.div`
   p {
     font-size: 16px;
     margin: 10px 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
     letter-spacing: 0.02em;
     font-weight: 400;
     max-width: 150px;

@@ -2,18 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
 import SocialMedia from "../components/SocialMedia";
+import orange from "../assets/footer/caja-naranja 3.png";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContainer>
-        <Column>  <img alt="logo" src={logo} /></Column>
+        <Column>
+          {" "}
+          <img className="logo" alt="logo" src={logo} />
+        </Column>
 
         <MiddleColumn />
 
         <Column>
           <div className="social-media">
-           <SocialMedia/>
+            <SocialMedia />
           </div>
           <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
         </Column>
@@ -44,7 +48,7 @@ const MiddleColumn = () => {
         <Column>
           <p>Costos y Comisiones</p>
           <p>Información al usuario financiero</p>
-          <button></button>
+          <img className="orange-button" src={orange} alt="button" />
         </Column>
       </MiddleColumnContainer>
     </>
@@ -66,10 +70,14 @@ const FooterContainer = styled.footer`
   height: 100%;
   justify-content: space-between;
 
-  img{
+  .orange-button {
+    width: 90%;
+    padding-top: 10px;
+  }
+
+  .logo {
     max-width: 70px;
     height: auto;
-
   }
 
   @media only screen and (max-width: 900px) {
@@ -98,8 +106,6 @@ const Column = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-
-
 
   .social-media {
     @media only screen and (max-width: 900px) {

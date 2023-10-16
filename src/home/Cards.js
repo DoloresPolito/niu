@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import beneficios from "../assets/home/beneficios.png";
 import n1ustatus from "../assets/home/n1ustatus.png";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   const cards = [
@@ -9,11 +10,13 @@ const Cards = () => {
       title: "n1u status",
       text: "Viví en tiempo real el funcionamiento de la app",
       image: beneficios,
+      link: "/features",
     },
     {
       title: "Beneficios",
       text: "Conocé todos los beneficios que tenemos para vos",
       image: n1ustatus,
+      link: "/benefits",
     },
   ];
   return (
@@ -21,17 +24,19 @@ const Cards = () => {
       <CardsSection>
         <CardsContainer>
           {cards.map((card, index) => (
-            <Item key={index} backgroundimage={card.image}>
-              <Content>
-                <h1>{card.title}</h1>
-                <div>
-                  <h6>{card.text}</h6>
-                  <button>
-                    <p>conocé más</p>
-                  </button>
-                </div>
-              </Content>
-            </Item>
+            <Link to={card.link} style={{ textDecoration: "none" }}>
+              <Item key={index} backgroundimage={card.image}>
+                <Content>
+                  <h1>{card.title}</h1>
+                  <div>
+                    <h6>{card.text}</h6>
+                    <button>
+                      <p>conocé más</p>
+                    </button>
+                  </div>
+                </Content>
+              </Item>
+            </Link>
           ))}
         </CardsContainer>
       </CardsSection>

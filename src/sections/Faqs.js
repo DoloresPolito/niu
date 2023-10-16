@@ -4,10 +4,10 @@ import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
 import { Container, Heading1 } from "../styles/texts";
 import AccordionItem from "../components/AccordionItem";
-import questions1 from "../questions1.json";
-import questions2 from "../questions2.json";
+import questions1 from "../jsons/questions1.json";
+import questions2 from "../jsons/questions2.json";
 
-function Questions() {
+function Faqs() {
   const [active, setActive] = useState("");
 
   const handleToggle = (id) => {
@@ -116,6 +116,7 @@ const Box = styled.div`
   h2 {
     color: #e30052;
     padding-bottom: 20px;
+    font-family: "Pixelify Sans", sans-serif;
   }
 
   p {
@@ -126,4 +127,4 @@ const Box = styled.div`
   }
 `;
 
-export default Questions;
+export default Faqs;

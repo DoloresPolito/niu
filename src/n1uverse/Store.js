@@ -61,6 +61,30 @@ const StoreColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 100px;
+    max-width: 200px;
+    line-height: 80px;
+  }
+
+  h3 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    color: yellow;
+  }
+
+  h2 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    color: yellow;
+  }
+
+  p {
+    color: yellow;
+    line-height: 0px;
+  }
 `;
 
 export default Store;

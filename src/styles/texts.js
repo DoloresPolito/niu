@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Heading1 = styled.h1`
   font-family: "Roboto", sans-serif;
-  font-size: 124px;
+  font-size: 170px;
   font-style: normal;
   font-weight: 800;
   line-height: 0px;
@@ -90,11 +90,10 @@ export const Button = styled.button`
 `;
 
 export const CardTitle = styled.h2`
-  font-family: "VisbyBold";
+   font-family: "Roboto", sans-serif ;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 20px;
-  /* line-height: 30px; */
   color: white;
   @media only screen and (max-width: 850px) {
     font-size: 18px;
@@ -102,12 +101,15 @@ export const CardTitle = styled.h2`
 `;
 
 export const CardText = styled.h2`
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif ;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 0px;
   letter-spacing: 1px;
+  text-decoration: none;
+
+
   @media only screen and (max-width: 850px) {
     font-size: 10px;
   }

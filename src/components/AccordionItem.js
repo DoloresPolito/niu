@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import up from "../assets/up.png";
-import down from "../assets/down.png";
+import up from "../assets/faqs/up.png";
+import down from "../assets/faqs/down.png";
 
 export const AccordionItem = ({
   handleToggle,

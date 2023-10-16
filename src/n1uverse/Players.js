@@ -96,16 +96,19 @@ const PlayerBox = styled.div`
     height: 37px;
     width: auto;
 
+
     cursor: pointer;
     p {
       color: white;
-      font-family: "Roboto", sans-serif;
-      font-size: 16px;
+      font-family: "Pixelify Sans", sans-serif;
+      font-size: 20px;
       font-style: normal;
       font-weight: 300;
       letter-spacing: 0.5px;
       padding: 0 20px;
-      line-height: 5px;
+      justify-content: center;
+      align-self: center;
+
     }
   }
 

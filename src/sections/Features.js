@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
 import { Heading1, Heading2, Button, Container } from "../styles/texts";
-import cards from "../esentialcards.json";
+import cards from "../jsons/esentialcards.json";
 
-function Esentials() {
+function Features() {
   return (
     <EsentialsSection>
       <Navbar />
@@ -86,10 +86,6 @@ const Box = styled.div`
     column-gap: 30px;
   }
   @media only screen and (max-width: 750px) {
-    /* grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    max-width: 90%; */
-
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     row-gap: 20px;
@@ -123,7 +119,7 @@ const Item = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-  font-family: "Roboto", sans-serif;
+   font-family: "Pixelify Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
@@ -148,4 +144,4 @@ export const CardText = styled.p`
   }
 `;
 
-export default Esentials;
+export default Features;

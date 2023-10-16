@@ -2,19 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Customers from "../components/Customers";
 
-
 const Into = () => {
   return (
     <>
-  
       <IntoSection>
-  
         <Top>
           <Content>
             <h1>Into the n1uverse</h1>
             <p>
-              Descubrí el n1uverse, se parte de nuestra comunidad y <br/>accedé a
-              todos los beneficios que tenemos para vos
+              Descubrí el n1uverse, se parte de nuestra comunidad y <br />
+              accedé a todos los beneficios que tenemos para vos
             </p>
           </Content>
         </Top>
@@ -24,19 +21,14 @@ const Into = () => {
   );
 };
 
-
-
-
-
 const IntoSection = styled.div`
   height: auto;
   width: 100%;
   margin: auto;
-  /* background-color: black; */
 `;
 
 const Top = styled.div`
-  background-image: url("/Video n1uverse.png");
+  background-image: url("/backgrounds/Video n1uverse.png");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -51,13 +43,16 @@ const Content = styled.div`
   text-align: start;
   color: white;
 
-  h1{
+  h1 {
     background-color: #ff009c;
     display: inline;
     padding: 0 10px;
+    font-family: "Pixelify Sans", sans-serif;
+    letter-spacing: 1px;
+    font-size: 30px;
   }
 
-  p{
+  p {
     background-color: #ff009c;
     display: block;
     font-family: "Roboto", sans-serif;
@@ -68,8 +63,6 @@ const Content = styled.div`
     letter-spacing: 0.8px;
     padding: 0 10px;
   }
-
-
 `;
 
 export default Into;
