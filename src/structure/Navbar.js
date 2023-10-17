@@ -5,7 +5,6 @@ import logoblack from "../assets/logo black.png";
 import Tabs from "../components/Tabs";
 
 const Navbar = ({ view }) => {
-  console.log("view en navbar", view);
   const [width, setWidth] = useState(null);
   const getWidth = () => divRef?.current?.offsetWidth;
   const medium = 845;
@@ -123,6 +122,7 @@ const NavbarSectionMobile = styled.section`
   flex-direction: column;
   justify-content: center !important;
   align-items: center;
+
 
 
   .logomobile {

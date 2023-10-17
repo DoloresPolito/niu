@@ -38,6 +38,11 @@ const N1uverseCover = () => {
 const N1uverseSection = styled.div`
   width: 100%;
   height: auto;
+  @media only screen and (max-width: 845px) {
+
+    padding-top: 200px;
+
+  }
 `;
 
 const NiuverseContainer = styled.div`

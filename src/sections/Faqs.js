@@ -73,11 +73,12 @@ function Faqs() {
 }
 
 const QuestionsSection = styled.div`
-  min-height: 100vh;
   height: auto;
   width: 100%;
   margin: auto;
   background-color: white;
+
+
 `;
 
 const Cover = styled.div`
@@ -88,7 +89,6 @@ const Cover = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background: linear-gradient(
     217deg,
     #f24be7,

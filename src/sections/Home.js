@@ -12,9 +12,10 @@ import Cube from "../home/Cube";
 import coin from "../assets/home/cover/Coin.png";
 import bigcoin from "../assets/home/cover/Big coin.png";
 import phone from "../assets/home/cover/Celu Mockup.png";
+import backgroundcoins from "../assets/home/cover/Grupo 13.png";
 
 import SocialMedia from "../components/SocialMedia";
-import RotatingComponent from "../components/RotatingComponent";
+// import RotatingComponent from "../components/RotatingComponent";
 import MovingComponent from "../components/MovingComponent";
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Cover = () => {
   return (
     <>
       <CoverSection>
+        <BackgroundCoins src={backgroundcoins} alt="backgroundcoins" />
         <CoverContainer>
           <Column1>
             <div className="title">
@@ -65,11 +67,11 @@ const Cover = () => {
             <div className="button">
               <p>descargá la app</p>
             </div>
-            <RotatingComponent>
-              <div className="coin">
-                <img src={coin} alt="coin" height={180} />
-              </div>
-            </RotatingComponent>
+            {/* <RotatingComponent> */}
+            <div className="coin">
+              <img src={coin} alt="coin" height={180} />
+            </div>
+            {/* </RotatingComponent> */}
           </Column1>
 
           <Column2>
@@ -91,11 +93,9 @@ const Cover = () => {
               </p>
             </div>
             <div className="big-coin">
-              <RotatingComponent>
-                {" "}
-                <img src={bigcoin} alt="bigcoin" height={220} />
-              </RotatingComponent>
-
+              {/* <RotatingComponent> */}{" "}
+              <img src={bigcoin} alt="bigcoin" height={220} />
+              {/* </RotatingComponent> */}
               <p>
                 Ahorrá, transferí,
                 <br /> pagá, swapeá <br />y hace recargas
@@ -124,6 +124,10 @@ const CoverSection = styled.div`
   display: flex;
   background: linear-gradient(217deg, black, #ff009c 90.71%);
   padding-top: 120px;
+  position: relative;
+  @media only screen and (max-width: 845px) {
+    padding-top: 200px;
+  }
 `;
 
 const CoverContainer = styled.div`
@@ -139,6 +143,7 @@ const Column1 = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: -50px;
+  padding-left: 50px;
 
   .title {
     h1 {
@@ -220,9 +225,10 @@ const Column3 = styled.div`
   .big-coin {
     display: flex;
     flex-direction: row;
-    padding-top: 120px;
+    padding-top: 100px;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-top: -50px;
     img {
       padding-right: 20px;
     }
@@ -247,6 +253,14 @@ const Column3 = styled.div`
     letter-spacing: 0.5px;
     margin-top: -20px;
   }
+`;
+
+const BackgroundCoins = styled.img`
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 90%;
+  height: 40%;
 `;
 
 export default Home;

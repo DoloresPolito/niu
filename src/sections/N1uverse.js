@@ -5,6 +5,7 @@ import Footer from "../structure/Footer";
 import Players from "../n1uverse/Players";
 import Store from "../n1uverse/Store";
 import N1uverseCover from "../n1uverse/N1uverseCover";
+import Comunity from "../n1uverse/Comunity";
 
 const N1uverse = () => {
   return (
@@ -12,6 +13,7 @@ const N1uverse = () => {
       <N1uverseSection>
         <Navbar />
        < N1uverseCover/>
+       <Comunity/>
         <Players />
         <Store/>
         <Footer />

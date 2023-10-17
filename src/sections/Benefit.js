@@ -4,6 +4,8 @@ import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
 import { useParams } from "react-router-dom";
 import benefits from "../jsons/benefitscards.json";
+import { Button } from "../styles/texts.js";
+import image from "../assets/benefits/celu 1.png";
 
 function Benefit() {
   const params = useParams();
@@ -77,6 +79,21 @@ function Benefit() {
           <></>
         )}
 
+        <BottomContainer>
+          <div>
+            <div className="text">
+              <h3>
+                tu billetera a <br /> <b>otro level.</b>
+              </h3>
+              <Button>
+                <p>descargá ahora</p>
+              </Button>
+            </div>
+            <div className="image">
+              <img src={image} alt="phone" />
+            </div>
+          </div>
+        </BottomContainer>
         <Footer />
       </BenefitSection>
     </>
@@ -90,6 +107,9 @@ const BenefitSection = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 845px) {
+    padding-top: 50px;
+  }
 `;
 
 const BenefitContainer = styled.div`
@@ -162,4 +182,54 @@ const CardImage = styled.img`
   height: 100%;
 `;
 
+const BottomContainer = styled.div`
+  background: linear-gradient(-45deg, #5c0a33, black, #5c0a33, black);
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text {
+    height: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      color: white;
+      font-size: 50px;
+      line-height: 45px;
+
+      b {
+        font-family: "Pixelify Sans", sans-serif;
+        letter-spacing: 2px;
+      }
+    }
+
+    button{
+      width: 200px;
+      margin-top: -30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .image {
+    height: auto;
+    width: 500px;
+
+    img {
+      height: 500px;
+      width: 500px;
+      margin-top: -150px;
+    }
+  }
+`;
 export default Benefit;

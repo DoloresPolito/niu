@@ -58,6 +58,10 @@ const EsentialsSection = styled.div`
     #0d0d0d,
     #7763bf
   );
+
+  @media only screen and (max-width: 845px) {
+    padding-top: 50px;
+  }
 `;
 
 const Cover = styled.div`

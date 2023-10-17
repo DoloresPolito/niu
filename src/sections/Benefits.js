@@ -42,8 +42,6 @@ function Benefits() {
     setShowFilteredCards(true);
   };
 
-
-
   const filteredCards = showFilteredCards
     ? cards.filter(
         (card) =>
@@ -62,7 +60,9 @@ function Benefits() {
             <Heading2>
               niu es tu billetera, <b>pero a otro level</b>
             </Heading2>
-            <Button><p>descargá ahora</p></Button>
+            <Button>
+              <p>descargá ahora</p>
+            </Button>
           </ContentWraper>
         </Cover>
         <Container>
@@ -124,7 +124,7 @@ const CategorySearchSection = ({
 
   const handleOptionClick = (category) => {
     handleCategorySelect(category);
-    setShowOptions(false); 
+    setShowOptions(false);
     localStorage.setItem("selectedCategory", category);
   };
 
@@ -149,7 +149,7 @@ const CategorySearchSection = ({
           {categorias.map((category, index) => (
             <CategoryOption
               key={index}
-              onClick={() => handleOptionClick(category)} 
+              onClick={() => handleOptionClick(category)}
             >
               {category}
             </CategoryOption>
@@ -165,6 +165,9 @@ const BenefitsSection = styled.div`
   width: 100%;
   margin: auto;
   background: linear-gradient(-45deg, #5c0a33, black, #5c0a33, black);
+  @media only screen and (max-width: 845px) {
+    padding-top: 50px;
+  }
 
   h5 {
     font-family: "Pixelify Sans", sans-serif;
@@ -276,7 +279,6 @@ const CategorySearchContainer = styled.div`
   border-radius: 10px;
   display: flex;
   width: 100%;
-  
 
   @media only screen and (max-width: 1200px) {
     justify-content: center;
@@ -359,7 +361,6 @@ const CategoryOption = styled.div`
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
-
 `;
 
 export default Benefits;

@@ -39,8 +39,8 @@ const SponsorsSection = styled.div`
 const SponsorsContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
   height: auto;
   width: 90%;
   margin: 0 auto;
@@ -59,6 +59,30 @@ const SponsorsContainer = styled.div`
   img {
     height: 40px;
     width: 100px;
+  }
+
+  @media only screen and (max-width: 1140px) {
+    div {
+      width: 100%;
+      height: 100px;
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+
+    div {
+      border: 0px solid #cebdf2;
+      margin: 10px 0px;
+    }
+
+    img {
+      height: 50px;
+      width: 150px;
+    }
   }
 `;
 
