@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.png";
-import logoblack from "../assets/logo black.png";
+import logowhite from "../assets/logon1u/logo white.svg";
+import logoblack from "../assets/logon1u/logo black.svg";
 import Tabs from "../components/Tabs";
 
 const Navbar = ({ view }) => {
   const [width, setWidth] = useState(null);
   const getWidth = () => divRef?.current?.offsetWidth;
-  const medium = 845;
+  const medium = 900;
   const divRef = useRef(null);
 
   const [totalWidth, setTotalWidth] = useState(window.innerWidth);
@@ -41,7 +41,7 @@ const Navbar = ({ view }) => {
                 </>
               ) : (
                 <>
-                  <img alt="logo" src={logo} />
+                  <img alt="logo" src={logowhite} />
                 </>
               )}
             </div>
@@ -62,7 +62,7 @@ const Navbar = ({ view }) => {
                 </>
               ) : (
                 <>
-                  <img alt="logo" src={logo} />
+                  <img alt="logo" src={logowhite} />
                 </>
               )}
             
@@ -129,7 +129,7 @@ const NavbarSectionMobile = styled.section`
     display: flex;
     justify-content: center;
     border-bottom: ${(props) => props.view === "benefit" ? "1px solid black" : "1px solid white"};
-    padding: 40px 0px;
+    padding: 30px 0px;
   }
 
   img {
@@ -141,7 +141,6 @@ const NavbarSectionMobile = styled.section`
 const NavbarContainerMobile = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px 0px;
 `;
 
 export default Navbar;

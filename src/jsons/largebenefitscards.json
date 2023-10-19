@@ -1,19 +1,19 @@
 [
     {
       "id": "1",
-      "title": "large niu card",
+      "title": "50%off en tu próximo viaje",
        "content": "válido para XX/XX/XX al XX/XX/XX",
-       "image":"/benefitlogos/imagen-cabi 1.png",
-       "logo": "/benefitlogos/logo-caby 1.png"
+       "image":"/benefitimages/image-cabify.svg",
+       "logo": "/benefitlogos/logo-cabify.svg"
       
     },
   
     {
       "id": "2",
-      "title": "large niu card",
+      "title": "canjea tu próxima entrada al cine",
       "content": "válido para XX/XX/XX al XX/XX/XX",
-      "image":"/benefitlogos/imagen-cabi 2.png",
-      "logo": "/benefitlogos/logo-caby 2.png"}
+      "image":"/benefitimages/image-cinemark.svg",
+      "logo": "/benefitlogos/logo-cinemark.svg"}
             
   ]
   

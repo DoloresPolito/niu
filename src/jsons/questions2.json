@@ -1,18 +1,18 @@
 [
     {
       "id": "1",
-      "title": "question 1",
+      "title": "¿Puedo descargarme la app de n1u en una computadora o un celular con sistema operativo Windows?",
       "content":
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
     },
     {
       "id": "2",
-      "title": "question 2",
+      "title": "¿Qué necesito para poder descargar la app n1u?",
       "content":" Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     },
     {
       "id": "3",
-      "title": "question 3",
+      "title": "¿Qué costo tiene descargar la app de n1u? ¿Qué necesito para poder descargar la app n1u?",
       "content":
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import beneficios from "../assets/home/beneficios.png";
-import n1ustatus from "../assets/home/n1ustatus.png";
+import beneficios from "../assets/home/homecards/benefit-card.svg";
+import n1ustatus from "../assets/home/homecards/n1ustatus-card.svg";
 import { Link } from "react-router-dom";
 
 const Cards = () => {
@@ -63,6 +63,7 @@ const CardsContainer = styled.div`
   height: auto;
   justify-content: space-around;
   padding: 50px 0;
+
 `;
 
 const Item = styled.div`
@@ -85,7 +86,7 @@ const Item = styled.div`
     margin: 10px 0;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.02em;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 5px;
     max-width: 380px;
   }
@@ -107,6 +108,42 @@ const Item = styled.div`
     margin-top: 5px;
     max-width: 280px;
   }
+
+  @media only screen and (max-width: 650px) {
+    height: 250px;
+    width: 400px;
+
+    h1 {
+      font-size: 20px;
+      margin-top: 0px;
+
+    }
+    h6 {
+      font-size: 14px;
+      margin-bottom: -5px;
+  
+
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    height: 200px;
+    width: 300px;
+    h1 {
+      font-size: 18px;
+
+    }
+    h6 {
+      font-size: 13px;
+      margin-bottom: 0px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -117,6 +154,7 @@ const Content = styled.div`
   div {
     display: flex;
     justify-content: flex-start;
+    align-items: flex-end;
   }
 
   button {
@@ -127,6 +165,22 @@ const Content = styled.div`
     border: 1px solid black;
     margin-left: 85px;
     margin-top: 17px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    button {
+      margin-right: 50px;
+      width: 110px;
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    button {
+      margin-right: 30px;
+      width: 130px;
+      margin-left: 20px;
+    }
   }
 `;
 export default Cards;

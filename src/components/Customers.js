@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Loop from "./Loop";
-import microsoft from "../assets/home/customers/Microsoft.png";
-import tapi from "../assets/home/customers/Tapi.png";
-import playstation from "../assets/home/customers/Playstation.png";
-import gamersclub from "../assets/home/customers/Gamersclub.png";
-import crackthecode from "../assets/home/customers/Crack the code.png";
+import microsoft from "../assets/home/homecustomers/microsoft.svg";
+import tapi from "../assets/home/homecustomers/tapi.svg";
+import playstation from "../assets/home/homecustomers/playstation.svg";
+import gamersclub from "../assets/home/homecustomers/gamersclub.svg";
+import crackthecode from "../assets/home/homecustomers/crack-the-code.svg";
 
 
 const Customers = () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import image from "../assets/n1uverse/cover/Foto n1uverse.png";
-import title from "../assets/n1uverse/cover/Led n1uverse copia.png";
+import image from "../assets/n1uverse/cover/aliens.svg";
+import title from "../assets/n1uverse/cover/n1uversetitle.svg";
 
 const N1uverseCover = () => {
   return (
@@ -38,10 +38,12 @@ const N1uverseCover = () => {
 const N1uverseSection = styled.div`
   width: 100%;
   height: auto;
-  @media only screen and (max-width: 845px) {
-
-    padding-top: 200px;
-
+  padding-top: 50px;
+  @media only screen and (max-width: 1200px) {
+    padding-top: 100px;
+  }
+  @media only screen and (max-width: 900px) {
+    padding-top: 150px;
   }
 `;
 
@@ -51,23 +53,39 @@ const NiuverseContainer = styled.div`
   width: 80%;
   height: auto;
   margin: 0 auto;
+
+  @media only screen and (max-width: 900px) {
+    width: 90%;
+  }
 `;
 
 const NiuniverseContent = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
+
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 
   .text {
     color: white;
     max-width: 500px;
+    @media only screen and (max-width: 1200px) {
+      max-width: 100%;
+    }
   }
 
   .image {
+ 
     img {
-      height: 300px;
+      width: 100%;
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+      }
+
     }
   }
 `;

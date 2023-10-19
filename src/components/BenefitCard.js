@@ -10,7 +10,7 @@ function BenefitCard({ card, index}) {
           <img src={card.logo} alt="card logo"/>
         </div>
 
-        <div>
+        <div className="card-content">
           <CardTitle>{card.title} </CardTitle>
           <CardText>{card.content} </CardText>
           <CardLink>ver más</CardLink>
@@ -29,7 +29,7 @@ const Card = styled.div`
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   padding: 20px;
-  height: auto;
+  height: 150px;
   width: 280px;
   margin-bottom: 60px;
 
@@ -52,6 +52,15 @@ const Card = styled.div`
   img {
     height: 80px;
     width: 80px;
+  }
+
+  .card-content {
+    margin-top: 10px; /* Ajusta el margen superior entre el logo y el contenido */
+    height: 100px;
+  }
+
+  ${CardTitle}, ${CardText}, ${CardLink} {
+    margin-bottom: 0px; /* Ajusta el margen inferior entre los elementos de texto */
   }
 `;
 

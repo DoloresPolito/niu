@@ -14,7 +14,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import cards from "../jsons/benefitscards.json";
 import largecards from "../jsons/largebenefitscards.json";
-import down from "../assets/benefits/drop white.png";
+import drop from "../assets/benefits/drop white.svg";
 
 function Benefits() {
   useEffect(() => {
@@ -140,7 +140,7 @@ const CategorySearchSection = ({
           />
         </div>
         <div className="image">
-          <CategoryImage src={down} alt="down" />
+          <CategoryImage src={drop} alt="drop" />
         </div>
       </InputContainer>
 
@@ -170,21 +170,24 @@ const BenefitsSection = styled.div`
   }
 
   h5 {
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
     font-family: "Pixelify Sans", sans-serif;
     display: flex;
     justify-content: center;
-    font-size: 24px;
-    color: white;
-    letter-spacing: 2px;
-    padding: 30px 0;
-    text-align: center;
+    /* font-family: LoRes 9 OT; */
+    font-size: 28.125px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37.5px; /* 133.333% */
   }
 `;
 
 const Cover = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url("/backgrounds/imagen header beneficios 1.png");
+  background-image: url("/backgrounds/background-coverbenefits.svg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -322,9 +325,15 @@ const CategoryInput = styled.input`
   background-color: transparent;
   font-family: "Pixelify Sans", sans-serif;
   height: 40px;
-  font-size: 16px;
-  color: white !important;
   border: none;
+  color: #fff;
+  /* font-family: LoRes 9 OT; */
+  font-size: 16.25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 37.5px; 
+  letter-spacing: -0.487px;
+
   @media only screen and (max-width: 560px) {
     width: 100%;
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ios from "../assets/home/IOS buttom.png";
-import googleplay from "../assets/home/Google play buttom.png";
-import mockup from "../assets/home/Mockup.png";
+import ios from "../assets/home/homedownload/ios.svg";
+import googleplay from "../assets/home/homedownload/google-play.svg";
+import phone from "../assets/home/homedownload/phone.svg";
 
 const Download = () => {
   return (
@@ -19,7 +19,7 @@ const Download = () => {
             </div>
           </Content>
           <ImageContainer>
-            <img src={mockup} alt="mockup" />
+            <img src={phone} alt="phone" />
           </ImageContainer>
         </DownloadContainer>
       </DownloadSection>
@@ -58,15 +58,16 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  width: 425px;
 
   h2 {
     font-family: "Roboto", sans-serif;
-    font-size: 50px;
-    letter-spacing: 0.02em;
+    font-size: 52px;
     color: #ffffff;
     font-weight: 300;
     margin-top: 5px;
-    max-width: 380px;
+    width: 100%;
+
     b {
       font-family: "Roboto", sans-serif;
       font-weight: 600;
@@ -78,11 +79,35 @@ const Content = styled.div`
     padding-right: 20px;
     padding-bottom: 60px;
   }
+
+  @media only screen and (max-width: 650px) {
+    width: 330px;
+    margin-left: 30px;
+    img {
+      height: 45px;
+      padding-right: 10px;
+      padding-bottom: 60px;
+    }
+    h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: 38px;
+      color: #ffffff;
+      font-weight: 300;
+      margin-top: 5px;
+      width: 100%;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
   img {
     height: 500px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    img {
+      height: 350px;
+    }
   }
 `;
 export default Download;

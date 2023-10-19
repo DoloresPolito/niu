@@ -2,47 +2,51 @@ import styled from "styled-components";
 
 export const Heading1 = styled.h1`
   font-family: "Roboto", sans-serif;
-  font-size: 170px;
+  color: #fff;
+  text-align: center;
+  font-size: 218.75px;
   font-style: normal;
-  font-weight: 800;
-  line-height: 0px;
-  letter-spacing: 2px;
-  color: white;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 40px;
 
   @media only screen and (max-width: 845px) {
-    font-size: 100px;
+    font-size: 190px;
+    line-height: 220px;
   }
 
-  @media only screen and (max-width: 570px) {
-    font-size: 80px;
+ @media only screen and (max-width: 570px) {
+    font-size: 120px;
+    line-height: 0px;
   }
-
+  
   @media only screen and (max-width: 440px) {
-    font-size: 65px;
+    font-size: 75px;
   }
 `;
 
 export const Heading2 = styled.h2`
+  margin-top: -170px;
+  color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 30px;
-  line-height: 0px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
+  font-size: 47.5px;
+  font-style: normal;
   font-weight: 300;
-  margin-top: 5px;
+  line-height: normal;
+
   b {
-    font-family: "Roboto", sans-serif;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   @media only screen and (max-width: 845px) {
-    font-size: 22px;
+    font-size: 35px;
+    line-height: 75px;
   }
 
   @media only screen and (max-width: 570px) {
-    max-width: 150px;
-    line-height: 22px;
-    font-size: 18px;
+    max-width: 170px;
+    line-height: 20px;
+    font-size: 20px;
     margin-top: 0px;
   }
 `;
@@ -71,62 +75,65 @@ export const SmallText = styled(LargeText)`
 `;
 
 export const Button = styled.button`
-  height: 40px;
   background-color: #ff009c;
   width: auto;
   border: none;
   border-radius: 30px;
-  margin-top: 10px;
   cursor: pointer;
+  width: 260px;
+  height: 50.625px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   p {
+    color: #fff;
     font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-style: normal;
     font-weight: 300;
-    color: white;
-    font-size: 15px;
-    padding: 0px 40px;
-    margin-top: 10px;
+    line-height: 50px;
   }
 `;
 
 export const CardTitle = styled.h2`
-   font-family: "Roboto", sans-serif ;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  color: white;
+  font-weight: 400;
+  letter-spacing: -0.75px;
   @media only screen and (max-width: 850px) {
     font-size: 18px;
   }
 `;
 
 export const CardText = styled.h2`
-  font-family: "Roboto", sans-serif ;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 0px;
-  letter-spacing: 1px;
   text-decoration: none;
-
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 11.25px;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: -0.337px;
+  margin-top: -5px;
 
   @media only screen and (max-width: 850px) {
     font-size: 10px;
   }
 `;
 export const CardLink = styled.p`
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 0px;
-  letter-spacing: 0.01em;
-  color: #ffffff;
-  margin-top: 6px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   text-decoration: none;
   padding-top: 30px;
+
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15.625px;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: -10px;
 
   /* 
   @media only screen and (max-width: 850px) {

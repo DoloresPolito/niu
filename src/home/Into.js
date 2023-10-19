@@ -28,7 +28,7 @@ const IntoSection = styled.div`
 `;
 
 const Top = styled.div`
-  background-image: url("/backgrounds/Video n1uverse.png");
+  background-image: url("/backgrounds/background-introhome.svg");
   background-size: cover;
   background-position: center;
   width: 100%;

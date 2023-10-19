@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import clarin from "../assets/home/sponsors/Clarin.png";
-import cronista from "../assets/home/sponsors/cronista.png";
-import forbes from "../assets/home/sponsors/Forbes.png";
-import iproup from "../assets/home/sponsors/iproup.png";
+import clarin from "../assets/home/homesponsors/clarin.svg";
+import cronista from "../assets/home/homesponsors/el-cronista.svg";
+import forbes from "../assets/home/homesponsors/forbes.svg";
+import iproup from "../assets/home/homesponsors/ipro-up.svg";
 
 const Sponsors = () => {
   return (
@@ -14,7 +14,7 @@ const Sponsors = () => {
             <img src={clarin} alt="clarin" />
           </div>
           <div>
-            <img src={cronista} alt="cronista" />
+            <img className="cronista" src={cronista} alt="cronista" style={{width:"250px"}}/>
           </div>
 
           <div>
@@ -39,33 +39,39 @@ const SponsorsSection = styled.div`
 const SponsorsContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  /* flex-wrap: wrap; */
+  justify-content: center;
   height: auto;
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   div {
     border: 1px solid black;
     border-radius: 15px;
-    height: 130px;
-    width: 250px;
-    margin: 30px 0px;
+    height: 154px;
+    width: 335px;
+    margin: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   img {
-    height: 40px;
-    width: 100px;
+    height: 60px;
+    width: 180px;
   }
 
   @media only screen and (max-width: 1140px) {
     div {
-      width: 100%;
-      height: 100px;
-      margin-left: 10px;
+      height: 134px;
+      width: 300px;
+      margin: 1%;
+    }
+
+    img {
+      height: 60px;
+      width: 150px;
     }
   }
 
@@ -82,6 +88,11 @@ const SponsorsContainer = styled.div`
     img {
       height: 50px;
       width: 150px;
+    }
+
+    .cronista{
+      width: 250px;
+      height: 300px;
     }
   }
 `;

@@ -1,35 +1,85 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import alcancia from "../assets/home/pixel/Alcancia pixel.png";
-import card from "../assets/home/pixel/card 3 pixel.png";
-import coin from "../assets/home/pixel/coin pixel.png";
-import coins from "../assets/home/pixel/Coins pixel.png";
+import piggybank from "../assets/home/homepixel/piggybank-pixel.svg";
+import card from "../assets/home/homepixel/card-pixel.svg";
+import coin from "../assets/home/homepixel/coin-pixel.svg";
+import coins from "../assets/home/homepixel/coins-pixel.svg";
+
+import Carousel from "react-elastic-carousel";
+
 
 const Pixel = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, []);
+
+  const medium = 650;
+
+  const carouselRef = useRef(null);
+
   return (
     <>
       <PixelSection>
-        <PixelContainer>
-          <Item>
-            <img src={card} alt="card" />
-            <p>
-              Usá tu n1u card física o virtual Visa Internacional sin costo.
-            </p>
-          </Item>
-          <Item>
-            <img src={alcancia} alt="alcancia" />
-            <p>Abrí tu cuenta gratis y sin intermediarios.</p>
-          </Item>
+        {width > medium ? (
+          <>
+            <PixelContainer>
+              <Item>
+                <img src={card} alt="card" />
+                <p>
+                  Usá tu n1u card física o virtual Visa Internacional sin costo.
+                </p>
+              </Item>
+              <Item>
+                <img src={piggybank} alt="piggybank" />
+                <p>Abrí tu cuenta gratis y sin intermediarios.</p>
+              </Item>
 
-          <Item>
-            <img src={coin} alt="coin" />
-            <p>Manejá tu platita cómo y dónde quieras.</p>
-          </Item>
-          <Item>
-            <img src={coins} alt="coins" />
-            <p>Pagá con n1u y obtené recompensas.</p>
-          </Item>
-        </PixelContainer>
+              <Item>
+                <img src={coin} alt="coin" />
+                <p>Manejá tu platita cómo y dónde quieras.</p>
+              </Item>
+              <Item>
+                <img src={coins} alt="coins" />
+                <p>Pagá con n1u y obtené recompensas.</p>
+              </Item>
+            </PixelContainer>
+          </>
+        ) : (
+          <>
+            <CarouselContainer>
+              <Carousel
+                itemsToShow={1.3}
+                enableTilt={true}
+                pagination={false}
+                ref={carouselRef}
+              >
+                <Item>
+                  <img src={card} alt="card" />
+                  <p>
+                    Usá tu n1u card física o virtual Visa Internacional sin
+                    costo.
+                  </p>
+                </Item>
+                <Item>
+                  <img src={piggybank} alt="piggybank" />
+                  <p>Abrí tu cuenta gratis y sin intermediarios.</p>
+                </Item>
+
+                <Item>
+                  <img src={coin} alt="coin" />
+                  <p>Manejá tu platita cómo y dónde quieras.</p>
+                </Item>
+                <Item>
+                  <img src={coins} alt="coins" />
+                  <p>Pagá con n1u y obtené recompensas.</p>
+                </Item>
+              </Carousel>
+
+             
+            </CarouselContainer>
+          </>
+        )}
       </PixelSection>
     </>
   );
@@ -59,7 +109,6 @@ const Item = styled.div`
   justify-content: space-between;
   padding: 35px 10px;
 
-
   img {
     height: 100px;
     width: 100px;
@@ -74,8 +123,40 @@ const Item = styled.div`
     max-width: 150px;
     color: white;
     padding-left: 15px;
-    padding-top:  5px;
+    padding-top: 5px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    flex-direction: column-reverse;
+    border: 1px solid #ff009c;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    height: 300px;
+    width: 230px;
+
+    p {
+      font-size: 19px;
+      padding-top: 0px;
+    }
+
+    img {
+    height: 190px;
+    width: 140px;
+    padding-top: 10px;
+  }
   }
 `;
+
+const CarouselContainer = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  .rec-arrow {
+    display: none;
+  }
+`;
+
+
 
 export default Pixel;

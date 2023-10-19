@@ -54,7 +54,26 @@ const Header = styled.div`
   transition: 0.3s;
   height: 80px;
   font-family: "Roboto", sans-serif;
-    font-weight: 500;
+  color: #000;
+  font-style: normal;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+
+  @media only screen and (max-width: 800px) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 29px; 
+    }
+
+    @media only screen and (max-width: 540px) {
+
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 23px; 
+    }
 `;
 
 const Content = styled.div`
@@ -63,7 +82,7 @@ const Content = styled.div`
   overflow: hidden;
   transition: height 0.35s ease;
   font-family: "Roboto", sans-serif;
-    font-weight: 300;
+  font-weight: 300;
 
   &.show {
     height: auto;

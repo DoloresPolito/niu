@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
@@ -8,28 +8,68 @@ import Into from "../home/Into";
 import Sponsors from "../home/Sponsors";
 import Pixel from "../home/Pixel";
 import Cube from "../home/Cube";
+import CoverMobile from "../home/CoverMobile";
 
-import coin from "../assets/home/cover/Coin.png";
-import bigcoin from "../assets/home/cover/Big coin.png";
-import phone from "../assets/home/cover/Celu Mockup.png";
-import backgroundcoins from "../assets/home/cover/Grupo 13.png";
+import coin from "../assets/home/homecover/coin.svg";
+import bigcoin from "../assets/home/homecover/big-coin.svg";
+import phone from "../assets/home/homecover/phone.svg";
+
+import backgroundcoins from "../assets/home/homecover/background-coins.svg";
 
 import SocialMedia from "../components/SocialMedia";
 // import RotatingComponent from "../components/RotatingComponent";
-import MovingComponent from "../components/MovingComponent";
+// import MovingComponent from "../components/MovingComponent";
 
 const Home = () => {
+  const [width, setWidth] = useState(null);
+  const getWidth = () => divRef?.current?.offsetWidth;
+  const medium = 900;
+  const divRef = useRef(null);
+
+  const [totalWidth, setTotalWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => setTotalWidth(window.innerWidth));
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWidth());
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <HomeSection>
         <Navbar />
-        <Cover />
+
+        {totalWidth < medium ? (
+          <>
+            <CoverMobile />
+          </>
+        ) : (
+          <>
+            <Cover />
+          </>
+        )}
+
         <Pixel />
+
         <Cube />
+
         <Sponsors />
+
         <Into />
+
         <Cards />
+
         <Download />
+
         <Footer />
       </HomeSection>
     </>
@@ -45,7 +85,7 @@ const Cover = () => {
           <Column1>
             <div className="title">
               <h1>
-                tu billetera a <br /> otro level.
+                tu billetera a <br /> <b>otro level.</b>
               </h1>
             </div>
 
@@ -67,19 +107,16 @@ const Cover = () => {
             <div className="button">
               <p>descargá la app</p>
             </div>
-            {/* <RotatingComponent> */}
+
             <div className="coin">
               <img src={coin} alt="coin" height={180} />
             </div>
-            {/* </RotatingComponent> */}
           </Column1>
 
           <Column2>
-            <MovingComponent>
-              <div>
-                <img src={phone} alt="phone" height={550} />
-              </div>
-            </MovingComponent>
+            <div>
+              <img src={phone} alt="phone" height={550} />
+            </div>
           </Column2>
 
           <Column3>
@@ -93,9 +130,8 @@ const Cover = () => {
               </p>
             </div>
             <div className="big-coin">
-              {/* <RotatingComponent> */}{" "}
               <img src={bigcoin} alt="bigcoin" height={220} />
-              {/* </RotatingComponent> */}
+
               <p>
                 Ahorrá, transferí,
                 <br /> pagá, swapeá <br />y hace recargas
@@ -122,7 +158,7 @@ const CoverSection = styled.div`
   height: 100vh;
   background-color: black;
   display: flex;
-  background: linear-gradient(217deg, black, #ff009c 90.71%);
+  /* background: linear-gradient(217deg, black, #ff009c 90.71%); */
   padding-top: 120px;
   position: relative;
   @media only screen and (max-width: 845px) {
@@ -136,6 +172,7 @@ const CoverContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   height: auto;
+  justify-content: space-around;
 `;
 
 const Column1 = styled.div`
@@ -143,8 +180,10 @@ const Column1 = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: -50px;
-  padding-left: 50px;
 
+  @media only screen and (max-width: 1300px) {
+    width: 500px;
+  }
   .title {
     h1 {
       color: white;
@@ -155,6 +194,10 @@ const Column1 = styled.div`
       line-height: 70px;
       letter-spacing: 0.5px;
       max-width: 450px;
+
+      b {
+        font-family: "Pixelify Sans", sans-serif;
+      }
     }
   }
 
@@ -166,13 +209,18 @@ const Column1 = styled.div`
     margin-top: -20px;
 
     p {
-      color: white;
+      color: #e8e9ee;
       font-family: "Roboto", sans-serif;
-      font-size: 16px;
+      font-size: 20px;
       font-style: normal;
       font-weight: 300;
       line-height: 20px;
       letter-spacing: 0.5px;
+      text-align: right;
+
+      b {
+        font-weight: 700;
+      }
     }
     .media {
       height: 30px;
@@ -211,12 +259,21 @@ const Column1 = styled.div`
 
 const Column2 = styled.div`
   margin-top: -30px;
+  width: auto;
+
+  /* img{
+    margin-left: -100px;
+  } */
 `;
 
 const Column3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media only screen and (max-width: 1300px) {
+    display: none;
+  }
 
   .title {
     padding-top: 60px;

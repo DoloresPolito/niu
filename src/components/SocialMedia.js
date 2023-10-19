@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import instagram from "../assets/mediaicons/instagram100.png";
-import discord from "../assets/mediaicons/discord100.png";
-import tiktok from "../assets/mediaicons/tik-tok96.png";
-import twitter from "../assets/mediaicons/twitter90.png";
-import linkedin from "../assets/mediaicons/linkedin100.png";
+import instagram from "../assets/mediaicons/instagram.svg";
+import discord from "../assets/mediaicons/discord.svg";
+import tiktok from "../assets/mediaicons/tik-tok.svg";
+import twitter from "../assets/mediaicons/twitter.svg";
+import linkedin from "../assets/mediaicons/linkedin.svg";
 
-function SocialMedia() {
+function SocialMedia({view}) {
   return (
     <>
-      <SocialMediaContainer>
+      <SocialMediaContainer view={view}>
       <img alt="instagram" src={instagram} />
       <img alt="discord" src={discord} />
       <img alt="tiktok" src={tiktok} />
@@ -27,21 +27,23 @@ const SocialMediaContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 180px;
+  width: 160px;
 
 
   img{
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
+
   }
 
   @media only screen and (max-width: 900px) {
     width: 220px;
-    padding: 20px;
+    padding: 18px;
     img{
-    width: 30px;
-    height: 30px;
+
+      width: ${(props) => props.view === "footer" ? "25px" : "30px"};
+      height: ${(props) => props.view === "footer" ? "25px" : "30px"};
 
   }
     }

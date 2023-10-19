@@ -6,7 +6,7 @@ function Store() {
     <>
       <StoreSection>
         <StoreContainer>
-          <StoreColumn width="50%">
+          <StoreColumn width="50%" className="store">
             <h1>n1u store</h1>
             <h3>
               Poné a prueba tus
@@ -20,21 +20,24 @@ function Store() {
               plataformas favoritas.
             </p>
           </StoreColumn>
-          <StoreColumn width="25%" className="misiones">
-            <h2>MISIONES</h2>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-          </StoreColumn>
-          <StoreColumn width="25%" className="premios">
-            <h2>PREMIOS</h2>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
-            <p>Lorem ipsum dolor sit</p>
+
+          <StoreColumn className="row" width="50%">
+            <StoreColumn width="50%" className="misiones">
+              <h2>MISIONES</h2>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+            </StoreColumn>
+            <StoreColumn width="50%" className="premios">
+              <h2>PREMIOS</h2>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+              <p>Lorem ipsum dolor sit</p>
+            </StoreColumn>
           </StoreColumn>
         </StoreContainer>
       </StoreSection>
@@ -45,17 +48,19 @@ function Store() {
 const StoreSection = styled.div`
   width: 100%;
   height: auto;
-  background: linear-gradient( #9198e5, black);
+  background: linear-gradient(#9198e5, black);
 `;
 
 const StoreContainer = styled.div`
   width: 80%;
   display: flex;
   flex-direction: row;
-  height: 400px;
+  height: auto;
   margin: 0 auto;
   padding-top: 40px;
-
+  @media only screen and (max-width: 1100px) {
+    flex-direction: column;
+  }
   .misiones {
     align-items: flex-end;
 
@@ -63,7 +68,11 @@ const StoreContainer = styled.div`
       margin-right: 83px;
     }
 
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 1100px) {
+      align-items: flex-start;
+    }
+
+    @media only screen and (max-width: 800px) {
       display: none;
     }
   }
@@ -74,14 +83,29 @@ const StoreContainer = styled.div`
       margin-right: 90px;
     }
 
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 1100px) {
+      align-items: flex-start;
+    }
+
+    @media only screen and (max-width: 800px) {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 1130px) {
-    width: 90%;
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 300px;
+    @media only screen and (max-width: 800px) {
+      height: 0px;
+    }
   }
+
+  /* @media only screen and (max-width: 1130px) {
+    width: 90%;
+  } */
 `;
 
 const StoreColumn = styled.div`
@@ -92,6 +116,10 @@ const StoreColumn = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
+  @media only screen and (max-width: 510px) {
+    width: 100%;
+  }
+
   h1 {
     font-family: "Pixelify Sans", sans-serif;
     font-size: 130px;
@@ -101,6 +129,15 @@ const StoreColumn = styled.div`
     padding: 0;
     margin-bottom: 5px;
     letter-spacing: 8px;
+
+    @media only screen and (max-width: 510px) {
+      font-size: 100px;
+    }
+
+    @media only screen and (max-width: 390px) {
+      font-size: 80px;
+      line-height: 70px;
+    }
   }
 
   h3 {
@@ -112,6 +149,9 @@ const StoreColumn = styled.div`
     margin-bottom: 5px;
     letter-spacing: 3px;
     padding-top: 10px;
+    @media only screen and (max-width: 510px) {
+      font-size: 15px;
+    }
   }
 
   h2 {
@@ -127,12 +167,15 @@ const StoreColumn = styled.div`
     margin-bottom: 5px;
     letter-spacing: 1px;
     padding-top: 10px;
+
+    @media only screen and (max-width: 510px) {
+      font-size: 13px;
+    }
   }
 
-  @media only screen and (max-width: 900px) {
-
+  /* @media only screen and (max-width: 800px) {
     margin: 0 auto;
-  }
+  } */
 `;
 
 export default Store;

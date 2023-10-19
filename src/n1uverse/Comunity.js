@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import phone from "../assets/home/cover/Celu Mockup.png";
-import rayones from "../assets/n1uverse/n1uverseicons/Rayones.png";
-import rayonesdos from "../assets/n1uverse/n1uverseicons/n1u.png";
-import rayo1 from "../assets/n1uverse/n1uverseicons/Rayo 1.png";
-import rayo2 from "../assets/n1uverse/n1uverseicons/Rayo  2.png";
-import rayo3 from "../assets/n1uverse/n1uverseicons/Rayo 3.png";
-import rayo4 from "../assets/n1uverse/n1uverseicons/Rayo 4.png";
+
+import rayo1 from "../assets/n1uverse/n1uverseicons/ray1.svg";
+import rayo2 from "../assets/n1uverse/n1uverseicons/ray2.svg";
+import rayo3 from "../assets/n1uverse/n1uverseicons/ray3.svg";
+import rayo4 from "../assets/n1uverse/n1uverseicons/ray4.svg";
+import combo from "../assets/n1uverse/n1uverseicons/comunity.svg"
 
 function Comunity() {
   return (
@@ -17,23 +16,14 @@ function Comunity() {
         <Rayo3 src={rayo3} alt="rayo3" />
         <Rayo4 src={rayo4} alt="rayo4" />
         <SectionContainer>
-          <BackgroundImage src={rayones} alt="rayonesfondo" />
-          <BackgroundImage2 src={rayonesdos} alt="rayonesfondo" />
-          <TextDiv>
+          <BackgroundImage src={combo} alt="combo" />
+          {/* <TextDiv>
           <h1>Unite a n1u y </h1>
               <h1>formá parte de una</h1>
               <h2>comunidad a</h2>
               <h2 className="bottom">otro level</h2>
-          </TextDiv>
-          <ContentContainer>
-            <ImageContainer>
-              <InnerImage src={phone} alt="phone" />
-            </ImageContainer>
-            <TextDiv />
-            {/* <TextWrap>
-             
-            </TextWrap> */}
-          </ContentContainer>
+          </TextDiv> */}
+ 
         </SectionContainer>
       </ComunitySection>
     </>
