@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import cube from "../assets/home/homecube/cube.svg";
 import ray from "../assets/home/homecube/small-ray.svg";
+import AnimatedText from "../components/AnimatedText";
 
 // import MovingComponent from "../components/MovingComponent";
 
@@ -11,11 +12,15 @@ const Cube = () => {
       <CubeSection>
         <CubeContainer>
           <Top>
-            <h2>
-              tu n1u card.
-              <br /> única cómo vos.
-            </h2>
-            <div>
+            <div className="title-text">
+              <div className="first">
+                <h2>tu n1u card </h2>
+              </div>
+              <div className="second">
+                <h2> única cómo vos.</h2>
+              </div>
+            </div>
+            <div className="rectangle">
               <img src={ray} alt="ray" />
               <p>
                 Comprá lo que quieras en cualquier <br />
@@ -25,51 +30,56 @@ const Cube = () => {
               </p>
             </div>
           </Top>
+
           <Bottom>
-            <Column className="first">
-              <h3>
-                pedí tu n1u card - recibila en tu
-                <br /> casa - activala - y listo.
-              </h3>
-              <p>
-                El pasaporte para vivir <b>n1u experiences.</b>
-                <br />
-                Formá parte de una comunidad que sabe lo que necesitás y{" "}
-                <b>disfrutá todo lo que te gusta en un solo lugar.</b>
-              </p>
-              <h2>
-                ¡Todas tus compras
-                <br /> suman n1u coins!
-              </h2>
-            </Column>
+            <AnimatedText>
+              <Column className="first">
+                <h3>
+                  pedí tu n1u card - recibila en tu
+                  <br /> casa - activala - y listo.
+                </h3>
+                <p>
+                  El pasaporte para vivir <b>n1u experiences.</b>
+                  <br />
+                  Formá parte de una comunidad que sabe lo que necesitás y{" "}
+                  <b>disfrutá todo lo que te gusta en un solo lugar.</b>
+                </p>
+                <h2>
+                  ¡Todas tus compras
+                  <br /> suman n1u coins!
+                </h2>
+              </Column>
+            </AnimatedText>
 
             <Column>
               <img src={cube} alt="cube" />
             </Column>
 
-            <Column className="third">
-              <h6>
-                Pedila a través de la app.
-                <br /> Recibila en tu casa.
-                <br /> Usala en tiendas online & físicas.
-                <br /> Solo necesitás ser mayor de 13 años y tener DNI
-                argentino.
-              </h6>
-              <h5>
-                . Tarjeta Prepaga Visa Internacionarl <br />
-                . Contactless <br />
-                . Física & Virtual <br />
-                . Personalizada con tu n1uID <br />
-                . Sin costo de mantenimiento <br />. ¡Podés pedir adicionales
-                gratis!
-              </h5>
+            <AnimatedText>
+              <Column className="third">
+                <h6>
+                  Pedila a través de la app.
+                  <br /> Recibila en tu casa.
+                  <br /> Usala en tiendas online & físicas.
+                  <br /> Solo necesitás ser mayor de 13 años y tener DNI
+                  argentino.
+                </h6>
+                <h5>
+                  . Tarjeta Prepaga Visa Internacionarl <br />
+                  . Contactless <br />
+                  . Física & Virtual <br />
+                  . Personalizada con tu n1uID <br />
+                  . Sin costo de mantenimiento <br />. ¡Podés pedir adicionales
+                  gratis!
+                </h5>
 
-              <h4>
-                El pasaporte para vivir n1u experiences. <br /> Formá parte de
-                una comunidad que sabe lo <br /> que necesitás y disfrutá todo
-                lo que te gusta <br /> en un solo lugar.
-              </h4>
-            </Column>
+                <h4>
+                  El pasaporte para vivir n1u experiences. <br /> Formá parte de
+                  una comunidad que sabe lo <br /> que necesitás y disfrutá todo
+                  lo que te gusta <br /> en un solo lugar.
+                </h4>
+              </Column>
+            </AnimatedText>
           </Bottom>
         </CubeContainer>
       </CubeSection>
@@ -109,37 +119,68 @@ const Top = styled.div`
     align-items: center;
   }
 
-  h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 70px;
-    letter-spacing: 0.02em;
-    color: #ff009c;
-    margin-top: 5px;
-    line-height: 65px;
-    font-style: normal;
-    font-weight: 700;
-    width: 580px;
-    z-index: 2;
-    height: 120px;
+  .first {
+    width: 373px;
     background-color: black;
     @media only screen and (max-width: 970px) {
-      font-size: 60px;
-      width: 460px;
-    }
-    @media only screen and (max-width: 900px) {
-      color:yellow;
-      font-size: 50px;
-      width: auto;
+      width: 310px;
     }
 
+    @media only screen and (max-width: 900px) {
+      background-color: transparent;
+    }
   }
 
-  div {
+  .second {
+    max-width: 535px;
+    background-color: black;
+    margin-top: -10px;
+
+    @media only screen and (max-width: 970px) {
+      width: 430px;
+      margin-top: -20px;
+    }
+
+    @media only screen and (max-width: 900px) {
+      background-color: transparent;
+      margin-top: -30px;
+    }
+  }
+
+  .title-text {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: 70px;
+      letter-spacing: 0.02em;
+      color: #ff009c;
+      margin-top: 5px;
+      line-height: 65px;
+      font-style: normal;
+      font-weight: 700;
+      z-index: 2;
+      margin-bottom: 10px;
+
+      @media only screen and (max-width: 970px) {
+        font-size: 60px;
+        width: 460px;
+      }
+      @media only screen and (max-width: 900px) {
+        color: yellow;
+        font-size: 50px;
+        width: auto;
+      }
+    }
+  }
+
+  .rectangle {
     position: absolute;
     right: 0%;
     top: 24%;
     height: 80px;
-    width: 1000px;
+    width: 920px;
     z-index: -1;
     border: 1px solid grey;
     border-radius: 30px;
@@ -149,6 +190,12 @@ const Top = styled.div`
     align-items: center;
     padding-right: 30px;
 
+    @media only screen and (max-width: 1100px) {
+      width: 620px;
+    }
+    @media only screen and (max-width: 970px) {
+      height: 65px;
+    }
     @media only screen and (max-width: 900px) {
       left: 0%;
       top: 0%;
@@ -166,7 +213,10 @@ const Top = styled.div`
       line-height: 120%;
       max-width: 300px;
       text-align: end;
-      
+
+      @media only screen and (max-width: 970px) {
+        font-size: 11px;
+      }
 
       b {
         font-weight: 700;

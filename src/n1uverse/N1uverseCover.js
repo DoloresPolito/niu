@@ -2,28 +2,29 @@ import React from "react";
 import styled from "styled-components";
 
 import image from "../assets/n1uverse/cover/aliens.svg";
-import title from "../assets/n1uverse/cover/n1uversetitle.svg";
+import title from "../assets/n1uverse/cover/title-n1uverse.svg";
+
+import AnimatedText from "../components/AnimatedText";
+
 
 const N1uverseCover = () => {
   return (
     <>
       <N1uverseSection>
         <NiuverseContainer>
-          <img src={title} alt="title" />
+          <TitleImage src={title} alt="title" className="title" />
           <NiuniverseContent>
             <div className="text">
+              <AnimatedText>
+
+      
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+              Conocé la emocionante historia del n1uverse, donde Rebel, n1uton y Alien se juntaron para revolucionar el sistema financiero. Sumate a esta increíble aventura y descubrí todo lo que podés lograr en n1u, la super app que se renueva constantemente para ofrecerte beneficios exclusivos. Explorá el n1uverse lleno de posibilidades, desbloqueá funciones y conectate con personas como vos, mientras juntos descubren nuevos planetas. 
+              <br/>
+              <br/>
+              Abrite a una nueva forma de manejar las finanzas.
               </p>
+              </AnimatedText>
             </div>
             <div className="image">
               <img src={image} alt="n1uverse" />
@@ -39,11 +40,11 @@ const N1uverseSection = styled.div`
   width: 100%;
   height: auto;
   padding-top: 50px;
+  background-image: url("/backgrounds/n1uverse-background.png");
+  background-size: cover;
+  background-position: center;
   @media only screen and (max-width: 1200px) {
     padding-top: 100px;
-  }
-  @media only screen and (max-width: 900px) {
-    padding-top: 150px;
   }
 `;
 
@@ -54,6 +55,8 @@ const NiuverseContainer = styled.div`
   height: auto;
   margin: 0 auto;
 
+
+
   @media only screen and (max-width: 900px) {
     width: 90%;
   }
@@ -62,32 +65,62 @@ const NiuverseContainer = styled.div`
 const NiuniverseContent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-
+  height: 360px;
 
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 700px) {
+    width: 90%;
+    height: auto;
   }
 
   .text {
     color: white;
     max-width: 500px;
+    border-bottom: 1px solid grey;
+
+    p {
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 135.5%;
+      letter-spacing: -1.085px;
+    }
     @media only screen and (max-width: 1200px) {
       max-width: 100%;
     }
   }
 
   .image {
- 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
     img {
-      width: 100%;
-      @media only screen and (max-width: 900px) {
+      width: 80%;
+      margin-left: 0px;
+      @media only screen and (max-width: 1200px) {
         width: 100%;
       }
-
     }
   }
 `;
+
+const TitleImage = styled.img`
+width:100%;
+
+display: block;
+padding: 0;
+margin: 0;
+`
 
 export default N1uverseCover;

@@ -84,7 +84,7 @@ const NavbarSection = styled.section`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 80px;
+  padding: 20px 100px;
   margin: auto;
 
 

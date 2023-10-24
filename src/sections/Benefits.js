@@ -7,9 +7,9 @@ import {
   Heading1,
   Heading2,
   Button,
-  Container,
   CardTitle,
   CardText,
+  CardLink
 } from "../styles/texts";
 import { Link, useNavigate } from "react-router-dom";
 import cards from "../jsons/benefitscards.json";
@@ -65,7 +65,7 @@ function Benefits() {
             </Button>
           </ContentWraper>
         </Cover>
-        <Container>
+        <BenefitsContainer>
           <h5>no te pierdas estos beneficios</h5>
 
           <CategorySearchSection
@@ -91,9 +91,9 @@ function Benefits() {
               </Link>
             ))}
           </Box>
-        </Container>
-        <Footer />
+        </BenefitsContainer>
       </BenefitsSection>
+      <Footer />
     </>
   );
 }
@@ -109,6 +109,7 @@ const LargeCard = ({ card, index }) => {
         <div>
           <CardTitle>{card.title}</CardTitle>
           <CardText>{card.content}</CardText>
+          <CardLink>ver más</CardLink>
         </div>
       </Item>
     </>
@@ -165,6 +166,9 @@ const BenefitsSection = styled.div`
   width: 100%;
   margin: auto;
   background: linear-gradient(-45deg, #5c0a33, black, #5c0a33, black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media only screen and (max-width: 845px) {
     padding-top: 50px;
   }
@@ -182,6 +186,13 @@ const BenefitsSection = styled.div`
     font-weight: 400;
     line-height: 37.5px; /* 133.333% */
   }
+`;
+
+const BenefitsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 83%;
+  height: auto;
 `;
 
 const Cover = styled.div`
@@ -206,8 +217,9 @@ const ContentWraper = styled.div`
 
 const PrincipalBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 50px 0px;
+
 
   @media only screen and (min-width: 600px) and (max-width: 1200px) {
     flex-direction: column;
@@ -238,13 +250,13 @@ const Item = styled.div`
   flex-direction: column;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
-  height: 270px;
+  height: 255px;
   position: relative;
-  width: 550px;
+  width: 520px;
 
   div {
     padding-left: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .logo {
@@ -254,7 +266,7 @@ const Item = styled.div`
     background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
     left: 20px;
-    top: 70px;
+    top: 50px;
     background-image: url(${(props) => props.backgroundimage});
 
     img {
@@ -271,17 +283,19 @@ const Item = styled.div`
 `;
 
 const CardImage = styled.img`
-  width: 550px;
+  width: 520px;
   height: 150px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  margin-top: -10px;
 `;
 
 const CategorySearchContainer = styled.div`
   position: relative;
   border-radius: 10px;
   display: flex;
-  width: 100%;
+  width: 95%;
+  margin-left: 25px;
 
   @media only screen and (max-width: 1200px) {
     justify-content: center;
@@ -331,7 +345,7 @@ const CategoryInput = styled.input`
   font-size: 16.25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 37.5px; 
+  line-height: 37.5px;
   letter-spacing: -0.487px;
 
   @media only screen and (max-width: 560px) {

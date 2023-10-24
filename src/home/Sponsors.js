@@ -4,26 +4,34 @@ import clarin from "../assets/home/homesponsors/clarin.svg";
 import cronista from "../assets/home/homesponsors/el-cronista.svg";
 import forbes from "../assets/home/homesponsors/forbes.svg";
 import iproup from "../assets/home/homesponsors/ipro-up.svg";
+import AnimatedText from "../components/AnimatedText";
 
 const Sponsors = () => {
   return (
     <>
       <SponsorsSection>
-        <SponsorsContainer>
-          <div>
-            <img src={clarin} alt="clarin" />
-          </div>
-          <div>
-            <img className="cronista" src={cronista} alt="cronista" style={{width:"250px"}}/>
-          </div>
+        <AnimatedText>
+          <SponsorsContainer>
+            <div>
+              <img src={clarin} alt="clarin" />
+            </div>
+            <div>
+              <img
+                className="cronista"
+                src={cronista}
+                alt="cronista"
+                style={{ width: "250px" }}
+              />
+            </div>
 
-          <div>
-            <img src={forbes} alt="forbes" />
-          </div>
-          <div>
-            <img src={iproup} alt="iproup" />
-          </div>
-        </SponsorsContainer>
+            <div>
+              <img src={forbes} alt="forbes" />
+            </div>
+            <div>
+              <img src={iproup} alt="iproup" />
+            </div>
+          </SponsorsContainer>
+        </AnimatedText>
       </SponsorsSection>
     </>
   );
@@ -90,7 +98,7 @@ const SponsorsContainer = styled.div`
       width: 150px;
     }
 
-    .cronista{
+    .cronista {
       width: 250px;
       height: 300px;
     }

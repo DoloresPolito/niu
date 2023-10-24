@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import AnimatedText from "../components/AnimatedText";
+
 function Store() {
   return (
     <>
@@ -8,6 +10,7 @@ function Store() {
         <StoreContainer>
           <StoreColumn width="50%" className="store">
             <h1>n1u store</h1>
+            <AnimatedText>
             <h3>
               Poné a prueba tus
               <br /> habilidades en n1u Up,
@@ -15,29 +18,43 @@ function Store() {
               <br />
               beneficios.
             </h3>
-            <p>
-              Cumplí misiones, sumá n1u coins <br /> y canjealos en tus
-              plataformas favoritas.
-            </p>
+            </AnimatedText>
+            <AnimatedText>
+
+       
+            <h6>
+              Cumplí misiones, sumá n1u coins y <br />
+              canjealo en tus plataformas favoritas.
+            </h6>
+            </AnimatedText>
           </StoreColumn>
 
           <StoreColumn className="row" width="50%">
+            <AnimatedText>
+
+    
             <StoreColumn width="50%" className="misiones">
-              <h2>MISIONES</h2>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
+              <h2>Misiones</h2>
+              <p>Pagá tus servicios</p>
+              <p>Pagá con tu n1u card</p>
+              <p>Recargá tu celular</p>
+              <p>Recargá tu tarjeta de transporte</p>
+              <p>Canjeá tus n1u coins</p>
+              <p>Vendé o comprá crypto</p>
+              <p>Hacé pagos con QR</p>
             </StoreColumn>
+            </AnimatedText>
+            <AnimatedText>
             <StoreColumn width="50%" className="premios">
-              <h2>PREMIOS</h2>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
-              <p>Lorem ipsum dolor sit</p>
+              <h2>Premios</h2>
+              <p>Recargas</p>
+              <p>Gifts Cards</p>
+              <p>Vouchers</p>
+              <p>Descuentos</p>
+              <p>Pesos</p>
+              <p>Cryptos</p>
             </StoreColumn>
+            </AnimatedText>
           </StoreColumn>
         </StoreContainer>
       </StoreSection>
@@ -47,65 +64,56 @@ function Store() {
 
 const StoreSection = styled.div`
   width: 100%;
-  height: auto;
+  height: 700px;
   background: linear-gradient(#9198e5, black);
+  @media only screen and (max-width: 640px) {
+    height: 600px;
+  }
 `;
 
 const StoreContainer = styled.div`
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
-  padding-top: 40px;
-  @media only screen and (max-width: 1100px) {
-    flex-direction: column;
+  padding: 50px 0px;
+  @media only screen and (max-width: 1300px) {
+    justify-content: center;
+    align-self: center;
   }
   .misiones {
-    align-items: flex-end;
+    align-items: flex-start;
+    width: auto;
+    margin-right: 30px;
 
     h2 {
       margin-right: 83px;
     }
-
-    @media only screen and (max-width: 1100px) {
-      align-items: flex-start;
-    }
-
-    @media only screen and (max-width: 800px) {
-      display: none;
-    }
   }
 
   .premios {
-    align-items: flex-end;
+    align-items: flex-start;
+    margin-left: 30px;
+    width: auto;
     h2 {
       margin-right: 90px;
-    }
-
-    @media only screen and (max-width: 1100px) {
-      align-items: flex-start;
-    }
-
-    @media only screen and (max-width: 800px) {
-      display: none;
     }
   }
 
   .row {
     display: flex;
     flex-direction: row;
-
-    width: 100%;
+    align-items: center;
+    margin-top: 130px;
+    justify-content: flex-end;
+    width: 700px;
     height: 300px;
-    @media only screen and (max-width: 800px) {
-      height: 0px;
+
+    @media only screen and (max-width: 1300px) {
+      display: none;
     }
   }
-
-  /* @media only screen and (max-width: 1130px) {
-    width: 90%;
-  } */
 `;
 
 const StoreColumn = styled.div`
@@ -116,66 +124,87 @@ const StoreColumn = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
-  @media only screen and (max-width: 510px) {
+  @media only screen and (max-width: 1300px) {
     width: 100%;
+    justify-self: center;
   }
 
   h1 {
     font-family: "Pixelify Sans", sans-serif;
-    font-size: 130px;
+    font-size: 180px;
     max-width: 200px;
-    line-height: 90px;
+    line-height: 130px;
     margin: 0;
     padding: 0;
     margin-bottom: 5px;
     letter-spacing: 8px;
 
-    @media only screen and (max-width: 510px) {
-      font-size: 100px;
+    @media only screen and (max-width: 640px) {
+      font-size: 130px;
+      line-height: 100px;
     }
 
-    @media only screen and (max-width: 390px) {
-      font-size: 80px;
+    @media only screen and (max-width: 475px) {
+      font-size: 100px;
       line-height: 70px;
+      padding-bottom: 30px;
     }
   }
 
   h3 {
     font-family: "Pixelify Sans", sans-serif;
-    font-size: 20px;
-    color: #fff1a8;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 5px;
-    letter-spacing: 3px;
-    padding-top: 10px;
-    @media only screen and (max-width: 510px) {
-      font-size: 15px;
-    }
-  }
-
-  h2 {
-    font-family: "Pixelify Sans", sans-serif;
-    font-size: 20px;
-    color: #fff1a8;
-  }
-
-  p {
+    font-size: 35px;
     color: #fff1a8;
     margin: 0;
     padding: 0;
     margin-bottom: 5px;
     letter-spacing: 1px;
     padding-top: 10px;
+    width: 450px;
+    line-height: 35px;
+    padding-bottom: 10px;
+    @media only screen and (max-width: 500px) {
+      font-size: 28px;
+      line-height: 28px;
+      padding-bottom: 30px;
+    }
+  }
+
+  h2 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 30px;
+    color: #fff1a8;
+    letter-spacing: 1px;
+  }
+
+  h6 {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -1px;
+    line-height: 35px;
+    @media only screen and (max-width: 500px) {
+      font-family: "Roboto", sans-serif;
+      font-size: 22px;
+      line-height: 25px;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    font-family: "Pixelify Sans", sans-serif;
 
     @media only screen and (max-width: 510px) {
       font-size: 13px;
     }
   }
-
-  /* @media only screen and (max-width: 800px) {
-    margin: 0 auto;
-  } */
 `;
 
 export default Store;

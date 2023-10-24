@@ -14,7 +14,7 @@ const Pixel = () => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  const medium = 650;
+  const medium = 775;
 
   const carouselRef = useRef(null);
 
@@ -49,7 +49,7 @@ const Pixel = () => {
           <>
             <CarouselContainer>
               <Carousel
-                itemsToShow={1.3}
+                itemsToShow={width > 640 ? 2.3 : 1.3}
                 enableTilt={true}
                 pagination={false}
                 ref={carouselRef}
@@ -94,12 +94,24 @@ const PixelSection = styled.div`
 
 const PixelContainer = styled.div`
   height: auto;
-  width: 90%;
+  width: 98%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
+
+
+  @media only screen and (max-width: 1020px) {
+    width: 70%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (max-width: 775px) {
+    width: 98%;
+
+  }
+
 `;
 
 const Item = styled.div`
@@ -126,7 +138,7 @@ const Item = styled.div`
     padding-top: 5px;
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 775px) {
     flex-direction: column-reverse;
     border: 1px solid #ff009c;
     justify-content: space-between;

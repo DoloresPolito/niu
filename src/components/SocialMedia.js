@@ -27,12 +27,15 @@ const SocialMediaContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 160px;
+
+  width: ${(props) => props.view === "cover" ? "180px" : "160px"};
+  /* background-color: ${(props) => props.view === "cover" ? "yellow" : "blue"}; */
+ 
 
 
   img{
-    width: 18px;
-    height: 18px;
+    width: 21px;
+    height: 21px;
     cursor: pointer;
 
   }

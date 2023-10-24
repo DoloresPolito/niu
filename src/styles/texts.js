@@ -103,7 +103,8 @@ export const CardTitle = styled.h2`
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.75px;
-  @media only screen and (max-width: 850px) {
+
+  @media only screen and (max-width: 400px) {
     font-size: 18px;
   }
 `;
@@ -116,9 +117,11 @@ export const CardText = styled.h2`
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.337px;
-  margin-top: -5px;
+  margin-top: -17px;
 
-  @media only screen and (max-width: 850px) {
+
+
+  @media only screen and (max-width: 400px) {
     font-size: 10px;
   }
 `;
@@ -126,14 +129,19 @@ export const CardLink = styled.p`
   display: flex;
   justify-content: flex-end;
   text-decoration: none;
-  padding-top: 30px;
-
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 15.625px;
   font-style: normal;
   font-weight: 500;
-  margin-top: -10px;
+  position:absolute;
+  right: 10%;
+  bottom:0%;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 10px;
+    bottom:5%;
+  }
 
   /* 
   @media only screen and (max-width: 850px) {

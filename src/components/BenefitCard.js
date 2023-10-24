@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { CardTitle, CardText, CardLink } from "../styles/texts";
 
-function BenefitCard({ card, index}) {
+function BenefitCard({ card, index }) {
   return (
     <>
       <Card key={index}>
         <div className="logo">
-          <img src={card.logo} alt="card logo"/>
+          <img src={card.logo} alt="card logo" />
         </div>
 
         <div className="card-content">
@@ -29,12 +29,15 @@ const Card = styled.div`
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
   padding: 20px;
-  height: 150px;
-  width: 280px;
+  height: 140px;
+  width: 300px;
   margin-bottom: 60px;
+  position: relative;
 
-  div {
-    width: 100%;
+
+  @media only screen and (max-width: 400px) {
+    height: 110px;
+    width: 250px;
   }
 
   .logo {
@@ -55,13 +58,13 @@ const Card = styled.div`
   }
 
   .card-content {
-    margin-top: 10px; /* Ajusta el margen superior entre el logo y el contenido */
+    margin-top: 10px;
     height: 100px;
   }
 
-  ${CardTitle}, ${CardText}, ${CardLink} {
-    margin-bottom: 0px; /* Ajusta el margen inferior entre los elementos de texto */
-  }
+  /* ${CardTitle}, ${CardText}, ${CardLink} {
+    margin-bottom: 0px; 
+  } */
 `;
 
 export default BenefitCard;

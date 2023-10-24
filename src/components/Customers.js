@@ -11,7 +11,7 @@ import crackthecode from "../assets/home/homecustomers/crack-the-code.svg";
 const Customers = () => {
  
   return (
-    <CustomersSection>
+    <CustomersSection >
       <CustomersContainer>
         <Loop
           reverse={true}

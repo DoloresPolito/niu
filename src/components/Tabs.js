@@ -47,7 +47,7 @@ const TabsContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 0 15px;
+    padding: 0 10px;
 
     @media only screen and (max-width: 530px) {
       padding: 0 10px;

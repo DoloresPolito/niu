@@ -108,6 +108,7 @@ const QuestionsContainer = styled.div`
   margin: 0 auto;
   min-height: 100vh;
 
+
   @media only screen and (max-width: 800px) {
     width: 80%;
   }
@@ -118,6 +119,7 @@ const Box = styled.div`
   height: auto;
   margin: 80px 0px;
   width: 100%;
+
 
   h2 {
     padding-bottom: 20px;

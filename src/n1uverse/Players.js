@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 
-import furia from "../assets/n1uverse/players/furia.svg";
-import n1uton from "../assets/n1uverse/players/n1uton.svg";
-import rebel from "../assets/n1uverse/players/rebel.svg";
-import title from "../assets/n1uverse/players/players-title.svg";
-
-import Carousel from "react-elastic-carousel";
-
+import title from "../assets/n1uverse/players/title-players.svg";
+import alienbox from "../assets/n1uverse/players/alien-box.svg";
+import n1utonbox from "../assets/n1uverse/players/n1uton-box.svg";
+import rebelbox from "../assets/n1uverse/players/rebel-box.svg";
 import buttonright from "../assets/n1uverse/players/button-right.svg";
 import buttonleft from "../assets/n1uverse/players/button-left.svg";
+
+import Carousel from "react-elastic-carousel";
+import AnimatedText from "../components/AnimatedText";
+
 
 function Players() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -17,7 +18,7 @@ function Players() {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  const medium = 850;
+  const medium = 950;
 
   const carouselRef = useRef(null);
 
@@ -25,28 +26,30 @@ function Players() {
     <>
       <PlayersSection>
         <PlayerContainer>
-          <img src={title} alt="title" />
+          <img src={title} alt="title" className="title" />
 
           {width > medium ? (
             <>
-              <PlayerContent>
-                <PlayerItem image={rebel} name="rebel" />
-                <PlayerItem image={furia} name="n1uton" />
-                <PlayerItem image={n1uton} name="alien" />
-              </PlayerContent>
+              <AnimatedText>
+                <PlayerContent>
+                  <PlayerItem image={rebelbox} name="rebel" />
+                  <PlayerItem image={n1utonbox} name="n1uton" />
+                  <PlayerItem image={alienbox} name="alien" />
+                </PlayerContent>
+              </AnimatedText>
             </>
           ) : (
             <>
               <CarouselContainer>
                 <Carousel
-                  itemsToShow={width > 600 ? 2 : 1.3}
+                  itemsToShow={width > 760 ? 2 : 1.3}
                   enableTilt={true}
                   pagination={false}
                   ref={carouselRef}
                 >
-                  <PlayerItem image={rebel} name="rebel" />
-                  <PlayerItem image={furia} name="n1uton" />
-                  <PlayerItem image={n1uton} name="alien" />
+                  <PlayerItem image={rebelbox} name="rebel" />
+                  <PlayerItem image={n1utonbox} name="n1uton" />
+                  <PlayerItem image={alienbox} name="alien" />
                 </Carousel>
 
                 <ButtonContainer>
@@ -81,12 +84,16 @@ const PlayerItem = ({ image, name }) => (
           <p>{name}</p>
         </button>
       </PlayerBox>
+      <AnimatedText>
+
+
       <Text>
         <p>
           Lorem Ipsum has been the industry's standard dummy text ever since the
           1500s has been the industry's standard dummy text ever since the 1500s
         </p>
       </Text>
+      </AnimatedText>
     </ItemContainer>
   </>
 );
@@ -98,24 +105,33 @@ const PlayersSection = styled.div`
 const PlayerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
+  padding-bottom: 50px;
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1200px) {
     width: 100%;
   }
 
-  img {
-    height: 100px;
-    width: 500px;
+  .title {
+    height: 100%;
+    width: 50%;
+    padding-bottom: 110px;
     align-self: center;
-    padding: 80px;
 
-    @media only screen and (max-width: 600px) {
-      height: 70px;
-      width: 290px;
-      padding: 40px;
+    @media only screen and (max-width: 950px) {
+      width: 80%;
+      padding-bottom: 40px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      padding-bottom: 0px;
+      padding-top: 40px;
     }
   }
 `;
@@ -129,20 +145,50 @@ const PlayerContent = styled.div`
 const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 303px;
+  width: 370px;
   height: auto;
+
+  @media only screen and (max-width: 1200px) {
+    width: 350px;
+  }
 `;
 
 const PlayerBox = styled.div`
-  border: 1px solid white;
-  height: 290px;
-  width: 300px;
+  height: 350px;
+  width: 370px;
   display: flex;
   justify-content: center;
   position: relative;
+
+  @media only screen and (max-width: 1200px) {
+    height: 320px;
+    width: 350px;
+  }
+
+  @media only screen and (max-width: 1070px) {
+    width: 310px;
+    height: 320px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    height: 420px;
+    width: 370px;
+    align-items: flex-end;
+  }
+
+  @media only screen and (max-width: 500px) {
+    height: 420px;
+    width: 330px;
+    align-items: flex-end;
+  }
+  @media only screen and (max-width: 480px) {
+    height: 420px;
+    width: 260px;
+    align-items: flex-end;
+  }
   button {
     position: absolute;
-    bottom: 0;
+    bottom: 2%;
     border: none;
     margin-bottom: 10px;
     background-color: #ff009c;
@@ -169,25 +215,37 @@ const PlayerBox = styled.div`
   }
 
   img {
-    height: 330px;
-    margin-top: -40px;
-  }
+    height: 420px;
+    width: 100%;
+    margin-top: -70px;
 
-  @media only screen and (max-width: 1000px) {
-    width: 250px;
+    @media only screen and (max-width: 1200px) {
+      margin-top: -70px;
+    }
   }
 `;
 
 const Text = styled.div`
   height: 100px;
-  padding: 0px 10px;
+  padding: 0px 20px;
+  @media only screen and (max-width: 1200px) {
+    padding: 40px 20px 0px 20px;
+  }
+  @media only screen and (max-width: 1070px) {
+    padding: 20px 20px 0px 20px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    padding: 0px 20px;
+  }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.02em;
     font-weight: 300;
-    color: white;
+    color: #fff;
+    line-height: 118%;
   }
 `;
 
@@ -215,5 +273,6 @@ const ButtonContainer = styled.div`
     padding: 0;
   }
 `;
+
 
 export default Players;

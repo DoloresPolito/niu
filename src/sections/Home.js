@@ -9,16 +9,14 @@ import Sponsors from "../home/Sponsors";
 import Pixel from "../home/Pixel";
 import Cube from "../home/Cube";
 import CoverMobile from "../home/CoverMobile";
-
 import coin from "../assets/home/homecover/coin.svg";
 import bigcoin from "../assets/home/homecover/big-coin.svg";
 import phone from "../assets/home/homecover/phone.svg";
-
 import backgroundcoins from "../assets/home/homecover/background-coins.svg";
-
 import SocialMedia from "../components/SocialMedia";
-// import RotatingComponent from "../components/RotatingComponent";
-// import MovingComponent from "../components/MovingComponent";
+import lines from "../assets/home/homecover/lines-button.svg";
+
+import AnimatedText from "../components/AnimatedText";
 
 const Home = () => {
   const [width, setWidth] = useState(null);
@@ -55,12 +53,13 @@ const Home = () => {
         ) : (
           <>
             <Cover />
+  
           </>
         )}
 
         <Pixel />
 
-        <Cube />
+        {/* <Cube /> */}
 
         <Sponsors />
 
@@ -70,7 +69,7 @@ const Home = () => {
 
         <Download />
 
-        <Footer />
+        {/* <Footer /> */}
       </HomeSection>
     </>
   );
@@ -91,22 +90,27 @@ const Cover = () => {
 
             <div className="subtitle">
               <div className="media">
-                <SocialMedia />
+                <SocialMedia view="cover" />
               </div>
               <div>
-                <p>
-                  Pesos & Crypto <br />
-                  <b>
-                    {" "}
-                    Manejá tus finanzas <br /> con n1u
-                  </b>
-                </p>
+                <AnimatedText>
+                  <p>
+                    Pesos & Crypto <br />
+                    <b>
+                      {" "}
+                      Manejá tus finanzas <br /> con n1u
+                    </b>
+                  </p>
+                </AnimatedText>
               </div>
             </div>
 
-            <div className="button">
-              <p>descargá la app</p>
-            </div>
+            <ButtonContainer>
+              <Lines src={lines} alt="lines" />
+              <div className="button">
+                <p>descargá la app</p>
+              </div>
+            </ButtonContainer>
 
             <div className="coin">
               <img src={coin} alt="coin" height={180} />
@@ -124,19 +128,27 @@ const Cover = () => {
               <h2>Unite al n1uverse</h2>
             </div>
             <div>
+              <AnimatedText>
+
+       
               <p>
                 Hecha por y para gamers <br />
-                <b>Cumplí misiones y gana con n1u!</b>
+                <b>
+                  ¡Cumplí misiones y gana
+                  <br /> con n1u!
+                </b>
               </p>
+              </AnimatedText>
             </div>
             <div className="big-coin">
               <img src={bigcoin} alt="bigcoin" height={220} />
-
-              <p>
-                Ahorrá, transferí,
-                <br /> pagá, swapeá <br />y hace recargas
-                <br /> <b>en un solo lugar</b>
-              </p>
+              <AnimatedText>
+                <p className="bottom-text">
+                  Ahorrá, transferí,
+                  <br /> pagá, swapeá <br />y hace recargas
+                  <br /> <b>en un solo lugar</b>
+                </p>
+              </AnimatedText>
             </div>
           </Column3>
         </CoverContainer>
@@ -151,19 +163,26 @@ const HomeSection = styled.div`
   width: 100%;
   margin: auto;
   background-color: white;
+
+
 `;
 
 const CoverSection = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-color: black;
   display: flex;
   /* background: linear-gradient(217deg, black, #ff009c 90.71%); */
   padding-top: 120px;
   position: relative;
-  @media only screen and (max-width: 845px) {
+  background-image: url("/backgrounds/home-hero.png");
+  background-size: cover;
+  background-position: center;
+
+
+  /* @media only screen and (max-width: 845px) {
     padding-top: 200px;
-  }
+  } */
 `;
 
 const CoverContainer = styled.div`
@@ -173,6 +192,8 @@ const CoverContainer = styled.div`
   margin: 0 auto;
   height: auto;
   justify-content: space-around;
+
+
 `;
 
 const Column1 = styled.div`
@@ -180,20 +201,27 @@ const Column1 = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: -50px;
+  width: 480px;
+  margin-left: -20px;
 
-  @media only screen and (max-width: 1300px) {
+  @media only screen and (max-width: 1360px) {
     width: 500px;
+
   }
   .title {
     h1 {
       color: white;
       font-family: "Roboto", sans-serif;
-      font-size: 74px;
+      font-size: 82px;
       font-style: normal;
       font-weight: 800;
       line-height: 70px;
       letter-spacing: 0.5px;
-      max-width: 450px;
+      max-width: 480px;
+
+      @media only screen and (max-width: 1360px) {
+        font-size: 75px;
+      }
 
       b {
         font-family: "Pixelify Sans", sans-serif;
@@ -206,15 +234,15 @@ const Column1 = styled.div`
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: -20px;
+    margin-top: 0px;
 
     p {
       color: #e8e9ee;
       font-family: "Roboto", sans-serif;
-      font-size: 20px;
+      font-size: 15px;
       font-style: normal;
       font-weight: 300;
-      line-height: 20px;
+      line-height: 16px;
       letter-spacing: 0.5px;
       text-align: right;
 
@@ -237,10 +265,14 @@ const Column1 = styled.div`
     justify-content: center;
     align-self: flex-end;
     height: 50px;
-    width: 260px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 280px;
+    margin-top: 40px;
+
     cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    left: 15%;
+
     p {
       color: white;
       font-family: "Roboto", sans-serif;
@@ -253,23 +285,21 @@ const Column1 = styled.div`
   }
 
   .coin {
-    margin-top: -40px;
+    margin-top: -70px;
   }
 `;
 
 const Column2 = styled.div`
   margin-top: -30px;
   width: auto;
-
-  /* img{
-    margin-left: -100px;
-  } */
+  margin-left: -30px;
 `;
 
 const Column3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 400px;
 
   @media only screen and (max-width: 1300px) {
     display: none;
@@ -282,12 +312,14 @@ const Column3 = styled.div`
   .big-coin {
     display: flex;
     flex-direction: row;
-    padding-top: 100px;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: -50px;
+    padding-top: 130px;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
     img {
-      padding-right: 20px;
+      position: absolute;
+      top: 0%;
+      left: -5%;
     }
   }
 
@@ -298,26 +330,45 @@ const Column3 = styled.div`
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.5px;
+    margin-left: -40px;
   }
 
   p {
-    color: white;
+    color: #e8e9ee;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 300;
-    line-height: 20px;
+    line-height: 16px;
     letter-spacing: 0.5px;
     margin-top: -20px;
+    margin-left: -40px;
+  }
+
+  .bottom-text {
+    margin-left: 120px;
+    text-align: end;
   }
 `;
 
 const BackgroundCoins = styled.img`
   position: absolute;
   bottom: 0%;
-  right: 0%;
-  width: 90%;
+  right: 0% !important;
   height: 40%;
+`;
+
+const ButtonContainer = styled.div`
+  height: 100px;
+  width: 200px;
+  position: relative;
+  margin-left: 170px;
+  margin-top: 40px;
+`;
+
+const Lines = styled.img`
+  position: absolute;
+  z-index: 1;
 `;
 
 export default Home;

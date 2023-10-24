@@ -26,13 +26,12 @@ const Card = styled.div`
   background: white;
   border-radius: 25px;
   margin-bottom: 32px;
-  padding: 0 30px;
+  padding: 10px 30px;
   overflow: hidden;
   border: none;
 
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.03), 0 0 8px rgba(0, 0, 0, 0.03),
     0 0 8px rgba(0, 0, 0, 0.03), 0 0 8px rgba(0, 0, 0, 0.03);
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -52,15 +51,15 @@ const Header = styled.div`
   cursor: pointer;
   justify-content: space-between;
   transition: 0.3s;
-  height: 80px;
+  height: 60px;
   font-family: "Roboto", sans-serif;
   color: #000;
   font-style: normal;
-
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 25px;
+  /* padding: 5px; */
 
   @media only screen and (max-width: 800px) {
       font-size: 18px;
@@ -68,11 +67,14 @@ const Header = styled.div`
       line-height: 29px; 
     }
 
-    @media only screen and (max-width: 540px) {
-
+    @media only screen and (max-width: 665px) {
       font-size: 15px;
       font-weight: 500;
       line-height: 23px; 
+    }
+
+    @media only screen and (max-width: 540px) {
+
     }
 `;
 

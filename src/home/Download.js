@@ -11,7 +11,7 @@ const Download = () => {
         <DownloadContainer>
           <Content>
             <h2>
-              <b>Descargá </b>ahora y <b>creá tu cuenta</b>
+              <b>Descargá </b>ahora<br/> y <b> creá tu cuenta</b>
             </h2>
             <div>
               <img src={ios} alt="ios" />
@@ -58,11 +58,11 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-  width: 425px;
+  width: 420px;
 
   h2 {
     font-family: "Roboto", sans-serif;
-    font-size: 52px;
+    font-size: 54px;
     color: #ffffff;
     font-weight: 300;
     margin-top: 5px;
@@ -76,7 +76,7 @@ const Content = styled.div`
 
   img {
     height: 60px;
-    padding-right: 20px;
+    padding-right: 15px;
     padding-bottom: 60px;
   }
 
@@ -84,8 +84,8 @@ const Content = styled.div`
     width: 330px;
     margin-left: 30px;
     img {
-      height: 45px;
-      padding-right: 10px;
+      height: 42px;
+      padding-right: 8px;
       padding-bottom: 60px;
     }
     h2 {
