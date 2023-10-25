@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
+import logowhite from "../assets/logon1u/logo white.svg";
+import logoblack from "../assets/logon1u/logo black.svg";
 import Tabs from "../components/Tabs";
 
-const Navbar = () => {
+const Navbar = ({ view }) => {
   const [width, setWidth] = useState(null);
   const getWidth = () => divRef?.current?.offsetWidth;
-  const medium = 845;
+  const medium = 900;
   const divRef = useRef(null);
 
   const [totalWidth, setTotalWidth] = useState(window.innerWidth);
@@ -31,23 +32,42 @@ const Navbar = () => {
     <>
       {totalWidth < medium ? (
         <>
-          <NavbarSectionMobile>
+          <NavbarSectionMobile view={view}>
             <div className="logomobile">
-              <img alt="logo" src={logo} />
+              {view === "benefit" ? (
+                <>
+                  {" "}
+                  <img alt="logoblack" src={logoblack} />
+                </>
+              ) : (
+                <>
+                  <img alt="logo" src={logowhite} />
+                </>
+              )}
             </div>
             <NavbarContainerMobile>
-              <Tabs />
+              <Tabs view={view}/>
             </NavbarContainerMobile>
           </NavbarSectionMobile>
         </>
       ) : (
         <>
-          <NavbarSection>
+          <NavbarSection >
             <NavbarContainer>
               <div className="logo">
-                <img alt="logo" src={logo} />
+              {view === "benefit" ? (
+                <>
+                  {" "}
+                  <img alt="logoblack" src={logoblack} />
+                </>
+              ) : (
+                <>
+                  <img alt="logo" src={logowhite} />
+                </>
+              )}
+            
               </div>
-              <Tabs />
+              <Tabs view={view}/>
             </NavbarContainer>
           </NavbarSection>
         </>
@@ -64,13 +84,14 @@ const NavbarSection = styled.section`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 80px;
+  padding: 20px 100px;
   margin: auto;
-  color: white;
+
+
 
   img {
-    height: 40px;
-    width: 40px;
+    max-width: 70px;
+    height: auto;
   }
 `;
 
@@ -84,15 +105,9 @@ const NavbarContainer = styled.div`
   align-items: center;
   position: relative;
 
-
   .logo {
     position: absolute;
     left: 0;
-  }
-
-  img {
-    height: 40px;
-    width: 40px;
   }
 `;
 
@@ -104,29 +119,28 @@ const NavbarSectionMobile = styled.section`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  color: white;
   flex-direction: column;
   justify-content: center !important;
   align-items: center;
-  
+
+
+
   .logomobile {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid white;
-    padding: 40px 0px;
+    border-bottom: ${(props) => props.view === "benefit" ? "1px solid black" : "1px solid white"};
+    padding: 30px 0px;
   }
 
   img {
-    height: 40px;
-    width: 40px;
+    max-width: 70px;
+    height: auto;
   }
 `;
 
 const NavbarContainerMobile = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px 0px;
-
 `;
 
 export default Navbar;

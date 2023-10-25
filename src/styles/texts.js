@@ -1,36 +1,53 @@
 import styled from "styled-components";
 
 export const Heading1 = styled.h1`
-  font-family: "VisbyBold";
-  font-size: 124px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 218.75px;
   font-style: normal;
-  font-weight: 800;
-  line-height: 100px;
-  letter-spacing: 1.5px;
-  color: white;
+  font-weight: 900;
+  line-height: normal;
+  margin-top: 40px;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 20px;
-    line-height: 32px;
+  @media only screen and (max-width: 845px) {
+    font-size: 190px;
+    line-height: 220px;
+  }
+
+ @media only screen and (max-width: 570px) {
+    font-size: 120px;
+    line-height: 0px;
+  }
+  
+  @media only screen and (max-width: 440px) {
+    font-size: 75px;
   }
 `;
 
 export const Heading2 = styled.h2`
-  font-family: "Visby";
-  font-size: 30px;
-  line-height: 0px;
-  letter-spacing: 0.02em;
-  max-width: 582px;
-  color: #ffffff;
+  margin-top: -170px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 47.5px;
+  font-style: normal;
   font-weight: 300;
-  b {
+  line-height: normal;
 
+  b {
     font-weight: 900;
   }
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 845px) {
+    font-size: 35px;
+    line-height: 75px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    max-width: 170px;
+    line-height: 20px;
     font-size: 20px;
-    line-height: 32px;
+    margin-top: 0px;
   }
 `;
 
@@ -40,7 +57,7 @@ export const Heading3 = styled(Heading1)`
 `;
 
 export const LargeText = styled.p`
-  font-family: "VisbyBold";
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -58,13 +75,81 @@ export const SmallText = styled(LargeText)`
 `;
 
 export const Button = styled.button`
-  height: 50px;
-  background-color: #e30052;
+  background-color: #ff009c;
   width: auto;
-  padding: 10px 60px;
   border: none;
   border-radius: 30px;
-margin-top: 30px;
+  cursor: pointer;
+  width: 260px;
+  height: 50.625px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 50px;
+  }
+`;
+
+export const CardTitle = styled.h2`
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 18px;
+  }
+`;
+
+export const CardText = styled.h2`
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 11.25px;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: -0.337px;
+  margin-top: -17px;
+
+
+
+  @media only screen and (max-width: 400px) {
+    font-size: 10px;
+  }
+`;
+export const CardLink = styled.p`
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15.625px;
+  font-style: normal;
+  font-weight: 500;
+  position:absolute;
+  right: 10%;
+  bottom:0%;
+
+  @media only screen and (max-width: 400px) {
+    font-size: 10px;
+    bottom:5%;
+  }
+
+  /* 
+  @media only screen and (max-width: 850px) {
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    padding: 6px 23px;
+  } */
 `;
 
 export const Container = styled.div`

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import up from "../assets/arrow-up.svg";
-import down from "../assets/arrow-down.svg";
+import up from "../assets/faqs/up.png";
+import down from "../assets/faqs/down.png";
 
 export const AccordionItem = ({
   handleToggle,
@@ -26,13 +26,12 @@ const Card = styled.div`
   background: white;
   border-radius: 25px;
   margin-bottom: 32px;
-  padding: 0 30px;
+  padding: 10px 30px;
   overflow: hidden;
   border: none;
 
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.03), 0 0 8px rgba(0, 0, 0, 0.03),
     0 0 8px rgba(0, 0, 0, 0.03), 0 0 8px rgba(0, 0, 0, 0.03);
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -44,8 +43,7 @@ const Card = styled.div`
 
 const Header = styled.div`
   img {
-    height: 32px;
-    margin: 17px 0px;
+    height: 6px;
   }
 
   display: flex;
@@ -53,7 +51,31 @@ const Header = styled.div`
   cursor: pointer;
   justify-content: space-between;
   transition: 0.3s;
-  height: 80px;
+  height: 60px;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-style: normal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  /* padding: 5px; */
+
+  @media only screen and (max-width: 800px) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 29px; 
+    }
+
+    @media only screen and (max-width: 665px) {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 23px; 
+    }
+
+    @media only screen and (max-width: 540px) {
+
+    }
 `;
 
 const Content = styled.div`
@@ -61,6 +83,8 @@ const Content = styled.div`
   height: 0;
   overflow: hidden;
   transition: height 0.35s ease;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 
   &.show {
     height: auto;

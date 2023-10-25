@@ -1,0 +1,19 @@
+[
+    {
+      "id": "1",
+      "title": "50%off en tu próximo viaje",
+       "content": "válido para XX/XX/XX al XX/XX/XX",
+       "image":"/benefitimages/image-cabify.svg",
+       "logo": "/benefitlogos/logo-cabify.svg"
+      
+    },
+  
+    {
+      "id": "2",
+      "title": "canjea tu próxima entrada al cine",
+      "content": "válido para XX/XX/XX al XX/XX/XX",
+      "image":"/benefitimages/image-cinemark.svg",
+      "logo": "/benefitlogos/logo-cinemark.svg"}
+            
+  ]
+  

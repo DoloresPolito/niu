@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+    "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-burgerking.svg"
+  },
+  {
+    "id": 2,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+    "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-mostaza.svg"
+  },
+  {
+    "id": 3,
+    "title": "50% off en tu próximo viaje",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "1",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-hoyts.svg"
+  },
+  {
+    "id": 4,
+    "title": "Membresía premium",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-1.svg"
+  },
+  {
+    "id": 5,
+    "title": "Membresía plus",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-2.svg"
+  },
+  {
+    "id": 6,
+    "title": "PUBG mobile - 325 UC",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-pubg.svg"
+  },
+  {
+    "id": 7,
+    "title": "275 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "4",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-minecraft.svg"
+  },
+  {
+    "id": 8,
+    "title": "1000 pavos",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "2",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-fortnite.svg"
+  },
+  {
+    "id": 9,
+    "title": "1 mes de suscripción",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "2",
+    "logo": "/benefitlogos/logo-crunchyroll.svg"
+  },
+  {
+    "id": 10,
+    "title": "210 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-freefire.svg"
+  },
+  {
+    "id": 11,
+    "title": "100 diamantes",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-freefire.svg"
+  },
+  {
+    "id": 12,
+    "title": "Xbox Game Pass Ultimate",
+    "content": "válido para XX/XX/XX al XX/XX/XX",
+    "category": "3",
+       "image":"/benefitimages/image-cabify.svg",
+    "logo": "/benefitlogos/logo-3.svg"
+  }
+]
