@@ -22,9 +22,12 @@ function Players() {
 
   const carouselRef = useRef(null);
 
+  
+
+
   return (
     <>
-      <PlayersSection>
+      <PlayersSection >
         <PlayerContainer>
           <img src={title} alt="title" className="title" />
 

@@ -62,9 +62,6 @@ const Card = styled.div`
     height: 100px;
   }
 
-  /* ${CardTitle}, ${CardText}, ${CardLink} {
-    margin-bottom: 0px; 
-  } */
 `;
 
 export default BenefitCard;

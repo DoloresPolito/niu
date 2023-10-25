@@ -19,12 +19,14 @@ const Cards = () => {
       link: "/benefits",
     },
   ];
+
+
   return (
     <>
       <CardsSection>
         <CardsContainer>
           {cards.map((card, index) => (
-            <Link to={card.link} style={{ textDecoration: "none" }}>
+            <Link to={card.link} style={{ textDecoration: "none" }}   >
               <Item key={index} backgroundimage={card.image}>
                 <Content>
                   <h1>{card.title}</h1>

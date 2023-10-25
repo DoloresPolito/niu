@@ -66,12 +66,30 @@ function Comunity() {
           </>
         ) : (
           <>
+           <div className="top">
+              <Parallax speed={10}>
+                <Rayo2 src={rayo2} alt="rayo2" />
+              </Parallax>
+             
+              <Parallax speed={40}>
+                <Rayo1 src={rayo1} alt="rayo1" />
+              </Parallax>
+            </div>
             <SectionContainerMobile>
+           
               <TextContainer>
                 <img src={textmobile} alt="text" />
               </TextContainer>
               <ImageMobile src={comunitymobile} alt="comunity" />
+      
             </SectionContainerMobile>
+            <div className="bottom">
+              <Parallax speed={10}>
+                <Rayo3 src={rayo3} alt="rayo2" />
+              </Parallax>
+             
+          
+            </div>
           </>
         )}
       </ComunitySection>
@@ -164,19 +182,30 @@ const Rayo1 = styled.img`
   height: 400px;
   transform: translateY(50%);
   transform: translateX(0%);
+  @media only screen and (max-width: 900px) {
+    height: 200px;
+    transform: translateY(150%);
+  }
 `;
 
 const Rayo4 = styled.img`
   height: 400px;
   transform: translateY(-100%) !important;
   transform: translateX(0%);
-
+  @media only screen and (max-width: 900px) {
+    height: 250px;
+    transform: translateY(-150%) !important;
+  }
 `;
 
 const Rayo2 = styled.img`
   height: 200px;
   transform: translateY(0%);
   transform: translateX(30%);
+  @media only screen and (max-width: 900px) {
+    height: 150px;
+    transform: translateY(60%);
+  }
 `;
 
 const Rayo3 = styled.img`
@@ -184,6 +213,9 @@ const Rayo3 = styled.img`
   transform: translateY(-100%) !important;
   transform: translateX(0%);
   margin-left: -60px;
+  @media only screen and (max-width: 900px) {
+    height: 250px;
+  }
 `;
 
 export default Comunity;

@@ -8,11 +8,20 @@ const Into = () => {
       <IntoSection>
         <Top>
           <Content>
+
+            <Title>
             <h1>Into the n1uverse</h1>
-            <p>
-              Descubrí el n1uverse, se parte de nuestra comunidad y <br />
-              accedé a todos los beneficios que tenemos para vos
-            </p>
+            </Title>
+
+
+            <Text>
+              <p className="first">
+                Descubrí el n1uverse, se parte de nuestra comunidad y
+              </p>
+              <p className="second">
+                accedé a todos los beneficios que tenemos para vos.
+              </p>
+            </Text>
           </Content>
         </Top>
         <Customers />
@@ -43,6 +52,14 @@ const Content = styled.div`
   text-align: start;
   color: white;
 
+  .first {
+    width: 440px;
+  }
+
+  .second {
+    width: 418px;
+  }
+
   h1 {
     background-color: #ff009c;
     display: inline;
@@ -50,19 +67,31 @@ const Content = styled.div`
     font-family: "Pixelify Sans", sans-serif;
     letter-spacing: 1px;
     font-size: 30px;
+    margin-top: -50px;
   }
 
   p {
     background-color: #ff009c;
-    display: block;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    padding-left: 10px;
+    color: #e8e9ee;
+    font-size: 18px;
     font-style: normal;
     font-weight: 300;
-    line-height: 20px;
-    letter-spacing: 0.8px;
-    padding: 0 10px;
+    line-height: 102%;
+    margin: 0;
   }
 `;
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+`;
+
+const Title = styled.div`
+margin-bottom: 30px;
+`
 
 export default Into;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import cube from "../assets/home/homecube/cube.svg";
 import ray from "../assets/home/homecube/small-ray.svg";
 import AnimatedText from "../components/AnimatedText";
-
-// import MovingComponent from "../components/MovingComponent";
+import pinklogo from "../assets/logon1u/logo pink.svg";
+import whitelogo from "../assets/logon1u/logo white.svg";
 
 const Cube = () => {
   return (
@@ -14,7 +14,16 @@ const Cube = () => {
           <Top>
             <div className="title-text">
               <div className="first">
-                <h2>tu n1u card </h2>
+                <h2>
+                  tu{" "}
+                  <span>
+                    <img className="pink" src={pinklogo} alt="pink-logo" />
+                  </span>
+                  <span>
+                    <img className="yellow" src={whitelogo} alt="yellow-logo" />
+                  </span>{" "}
+                  card
+                </h2>
               </div>
               <div className="second">
                 <h2> única cómo vos.</h2>
@@ -33,25 +42,25 @@ const Cube = () => {
 
           <Bottom>
             <AnimatedText>
-              <Column className="first">
-                <h3>
+              <Column className="one">
+                <h3 className="text1">
                   pedí tu n1u card - recibila en tu
                   <br /> casa - activala - y listo.
                 </h3>
-                <p>
+                <p className="text2">
                   El pasaporte para vivir <b>n1u experiences.</b>
                   <br />
                   Formá parte de una comunidad que sabe lo que necesitás y{" "}
                   <b>disfrutá todo lo que te gusta en un solo lugar.</b>
                 </p>
-                <h2>
+                <h2 className="text3">
                   ¡Todas tus compras
                   <br /> suman n1u coins!
                 </h2>
               </Column>
             </AnimatedText>
 
-            <Column>
+            <Column className="cube">
               <img src={cube} alt="cube" />
             </Column>
 
@@ -72,12 +81,6 @@ const Cube = () => {
                   . Sin costo de mantenimiento <br />. ¡Podés pedir adicionales
                   gratis!
                 </h5>
-
-                <h4>
-                  El pasaporte para vivir n1u experiences. <br /> Formá parte de
-                  una comunidad que sabe lo <br /> que necesitás y disfrutá todo
-                  lo que te gusta <br /> en un solo lugar.
-                </h4>
               </Column>
             </AnimatedText>
           </Bottom>
@@ -103,6 +106,14 @@ const CubeContainer = styled.div`
   align-items: center;
   padding-top: 30px;
   padding-bottom: 100px;
+
+  @media only screen and (max-width: 900px) {
+    padding-bottom: 0px;
+  }
+
+  .cube{
+    margin-top: 60px;
+  }
 `;
 
 const Top = styled.div`
@@ -122,12 +133,32 @@ const Top = styled.div`
   .first {
     width: 373px;
     background-color: black;
+
+    .pink {
+      height: 50px;
+    }
+    .yellow {
+      display: none;
+    }
     @media only screen and (max-width: 970px) {
       width: 310px;
+      .pink {
+        height: 42px;
+      }
+      .yellow {
+        display: none;
+      }
     }
 
     @media only screen and (max-width: 900px) {
       background-color: transparent;
+      .pink {
+        display: none;
+      }
+      .yellow {
+        display: inline;
+        height: 38px;
+      }
     }
   }
 
@@ -197,7 +228,7 @@ const Top = styled.div`
       height: 65px;
     }
     @media only screen and (max-width: 900px) {
-      left: 0%;
+      left: -5%;
       top: 0%;
       max-width: 300px;
       justify-content: center;
@@ -238,14 +269,34 @@ const Bottom = styled.div`
   padding: 60px;
 
   @media only screen and (max-width: 900px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    padding: 0px;
+
+    .text1 {
+      display: none;
+    }
+    .text3 {
+      display: none;
+    }
   }
 
   .third {
+    justify-content: space-between;
+    height: 400px;
+
     @media only screen and (max-width: 1200px) {
       display: none;
+    }
+
+  }
+
+  .one {
+    justify-content: space-between;
+    height: 400px;
+    @media only screen and (max-width: 900px) {
+      height: auto;
     }
   }
 

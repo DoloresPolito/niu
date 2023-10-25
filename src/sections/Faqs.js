@@ -39,9 +39,9 @@ function Faqs() {
               todos tus movimientos cuando y desde donde quieras.
             </p>
 
-            {questions1.map((question) => (
+            {questions1.map((question, index) => (
               <AccordionItem
-                key={question.id}
+                key={index}
                 active={active}
                 handleToggle={() => handleToggle(question.id)}
                 id={question.id}
@@ -52,9 +52,9 @@ function Faqs() {
 
             <h2>Usuario y Cuenta</h2>
 
-            {questions2.map((question) => (
+            {questions2.map((question, index) => (
               <AccordionItem
-                key={question.id}
+                key={index}
                 active={active}
                 handleToggle={() => handleToggle(question.id)}
                 id={question.id}

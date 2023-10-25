@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
-import { Heading1, Heading2, Button, Container } from "../styles/texts";
+import { Heading1, Heading2, Button } from "../styles/texts";
 import cards from "../jsons/esentialcards.json";
 
 function Features() {
@@ -50,6 +50,7 @@ const EsentialsSection = styled.div`
   min-height: 100vh;
   height: auto;
   width: 100%;
+
   background: linear-gradient(
     217deg,
     #8256bf,
@@ -57,9 +58,8 @@ const EsentialsSection = styled.div`
     #0d0d0d,
     #7763bf
   );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  margin: 0 auto;
 `;
 
 const Cover = styled.div`
@@ -77,6 +77,7 @@ const EsentialsContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: auto;
+  margin: 0 auto;
 `;
 
 const Box = styled.div`

@@ -6,8 +6,26 @@ import Home from "./sections/Home"
 import N1uverse from "./sections/N1uverse";
 import Benefits from "./sections/Benefits";
 import Benefit from "./sections/Benefit";
+import { useLocation } from 'react-router-dom';
+import {useEffect} from "react"
+
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (    location.pathname === '/benefits' ||
+    location.pathname === '/features' 
+    // ||  location.pathname === '/benefit/:id'
+    ) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant' 
+      });
+    }
+  }, [location]);
+
+
   return (
     <>
       <Routes>

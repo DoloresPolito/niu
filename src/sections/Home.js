@@ -41,6 +41,68 @@ const Home = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [hasScrolledToTarget1, setHasScrolledToTarget1] = useState(false);
+  const [hasScrolledToTarget2, setHasScrolledToTarget2] = useState(false);
+  const [hasScrolledToTarget3, setHasScrolledToTarget3] = useState(false);
+
+  const targetScrollPosition1 = 400;
+  const targetScrollPosition2 = 1550;
+  const targetScrollPosition3 = 3500;
+
+  const handleScroll = () => {
+    console.log(window.scrollY, "y");
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrollPosition >= targetScrollPosition1 && !hasScrolledToTarget1) {
+      // section1Ref.current.scrollIntoView({ behavior: "smooth" });
+
+      window.scrollTo({
+        top: 930,
+        behavior: "smooth",
+      });
+      setHasScrolledToTarget1(true);
+    } else if (
+      scrollPosition >= targetScrollPosition2 &&
+      !hasScrolledToTarget2
+    ) {
+      // window.scrollTo({
+      //   top: 1800,
+      //   behavior: "smooth",
+      // });
+      // setHasScrolledToTarget2(true);
+    } else if (
+      scrollPosition >= targetScrollPosition3 &&
+      !hasScrolledToTarget3
+    ) {
+      // window.scrollTo({
+      //   top: 5000, // Cambia este valor para ajustar la posición de la sección
+      //   behavior: "smooth",
+      // });
+      // setHasScrolledToTarget3(true);
+    } else if (scrollPosition === 0) {
+      setHasScrolledToTarget1(false);
+      setHasScrolledToTarget2(false);
+      setHasScrolledToTarget3(false);
+    }
+  }, [
+    scrollPosition,
+    hasScrolledToTarget1,
+    hasScrolledToTarget2,
+    hasScrolledToTarget3,
+  ]);
+
   return (
     <>
       <HomeSection>
@@ -53,23 +115,28 @@ const Home = () => {
         ) : (
           <>
             <Cover />
-  
           </>
         )}
 
         <Pixel />
 
-        {/* <Cube /> */}
+        <Section>
+          <Cube />
+        </Section>
 
         <Sponsors />
 
-        <Into />
+        <Section>
+          <Into />
+        </Section>
 
-        <Cards />
-
-        <Download />
-
-        {/* <Footer /> */}
+        <Section>
+          <Cards />
+        </Section>
+        <Section>
+          <Download />
+        </Section>
+        <Footer />
       </HomeSection>
     </>
   );
@@ -129,15 +196,13 @@ const Cover = () => {
             </div>
             <div>
               <AnimatedText>
-
-       
-              <p>
-                Hecha por y para gamers <br />
-                <b>
-                  ¡Cumplí misiones y gana
-                  <br /> con n1u!
-                </b>
-              </p>
+                <p>
+                  Hecha por y para gamers <br />
+                  <b>
+                    ¡Cumplí misiones y gana
+                    <br /> con n1u!
+                  </b>
+                </p>
               </AnimatedText>
             </div>
             <div className="big-coin">
@@ -157,14 +222,22 @@ const Cover = () => {
   );
 };
 
+const Section = styled.div`
+  background-color: #141414;
+  height: auto;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Otras propiedades de estilo */
+`;
+
 const HomeSection = styled.div`
   min-height: 100vh;
   height: auto;
   width: 100%;
   margin: auto;
   background-color: white;
-
-
 `;
 
 const CoverSection = styled.div`
@@ -172,17 +245,11 @@ const CoverSection = styled.div`
   height: 95vh;
   background-color: black;
   display: flex;
-  /* background: linear-gradient(217deg, black, #ff009c 90.71%); */
   padding-top: 120px;
   position: relative;
   background-image: url("/backgrounds/home-hero.png");
   background-size: cover;
   background-position: center;
-
-
-  /* @media only screen and (max-width: 845px) {
-    padding-top: 200px;
-  } */
 `;
 
 const CoverContainer = styled.div`
@@ -192,8 +259,6 @@ const CoverContainer = styled.div`
   margin: 0 auto;
   height: auto;
   justify-content: space-around;
-
-
 `;
 
 const Column1 = styled.div`
@@ -206,7 +271,6 @@ const Column1 = styled.div`
 
   @media only screen and (max-width: 1360px) {
     width: 500px;
-
   }
   .title {
     h1 {
