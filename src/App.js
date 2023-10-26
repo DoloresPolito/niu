@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     if (    location.pathname === '/benefits' ||
     location.pathname === '/features' 
-    // ||  location.pathname === '/benefit/:id'
+   || location.pathname.startsWith('/benefit/')
     ) {
       window.scrollTo({
         top: 0,

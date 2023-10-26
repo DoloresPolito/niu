@@ -95,6 +95,15 @@ const NiuniverseContent = styled.div`
       font-weight: 300;
       line-height: 135.5%;
       letter-spacing: -1.085px;
+
+      @media only screen and (max-width: 700px) {
+        font-size: 18px;
+        line-height: 120%;
+      }
+      @media only screen and (max-width: 500px) {
+        font-size: 16px;
+        line-height: 120%;
+      }
     }
     @media only screen and (max-width: 1200px) {
       max-width: 100%;

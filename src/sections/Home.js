@@ -15,14 +15,20 @@ import phone from "../assets/home/homecover/phone.svg";
 import backgroundcoins from "../assets/home/homecover/background-coins.svg";
 import SocialMedia from "../components/SocialMedia";
 import lines from "../assets/home/homecover/lines-button.svg";
-
 import AnimatedText from "../components/AnimatedText";
+import { useInView } from "react-intersection-observer";
 
 const Home = () => {
   const [width, setWidth] = useState(null);
   const getWidth = () => divRef?.current?.offsetWidth;
   const medium = 900;
   const divRef = useRef(null);
+
+  const sectionRef = useRef(null);
+
+  const [ref, inView] = useInView({
+    threshold: 0.8,
+  });
 
   const [totalWidth, setTotalWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -43,16 +49,9 @@ const Home = () => {
   }, []);
 
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [hasScrolledToTarget1, setHasScrolledToTarget1] = useState(false);
   const [hasScrolledToTarget2, setHasScrolledToTarget2] = useState(false);
-  const [hasScrolledToTarget3, setHasScrolledToTarget3] = useState(false);
-
-  const targetScrollPosition1 = 400;
-  const targetScrollPosition2 = 1550;
-  const targetScrollPosition3 = 3500;
 
   const handleScroll = () => {
-    console.log(window.scrollY, "y");
     setScrollPosition(window.scrollY);
   };
 
@@ -65,43 +64,24 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition >= targetScrollPosition1 && !hasScrolledToTarget1) {
-      // section1Ref.current.scrollIntoView({ behavior: "smooth" });
+    if (inView && !hasScrolledToTarget2) {
+      const scrollTo = (sectionRef) => {
+        console.log("scrollto");
+        setTimeout(() => {
+          sectionRef.current.scrollIntoView({
+            inline: "center",
+            behavior: "smooth",
+          });
+        }, 777);
 
-      window.scrollTo({
-        top: 930,
-        behavior: "smooth",
-      });
-      setHasScrolledToTarget1(true);
-    } else if (
-      scrollPosition >= targetScrollPosition2 &&
-      !hasScrolledToTarget2
-    ) {
-      // window.scrollTo({
-      //   top: 1800,
-      //   behavior: "smooth",
-      // });
-      // setHasScrolledToTarget2(true);
-    } else if (
-      scrollPosition >= targetScrollPosition3 &&
-      !hasScrolledToTarget3
-    ) {
-      // window.scrollTo({
-      //   top: 5000, // Cambia este valor para ajustar la posición de la sección
-      //   behavior: "smooth",
-      // });
-      // setHasScrolledToTarget3(true);
+        setHasScrolledToTarget2(true);
+      };
+
+      scrollTo(sectionRef);
     } else if (scrollPosition === 0) {
-      setHasScrolledToTarget1(false);
       setHasScrolledToTarget2(false);
-      setHasScrolledToTarget3(false);
     }
-  }, [
-    scrollPosition,
-    hasScrolledToTarget1,
-    hasScrolledToTarget2,
-    hasScrolledToTarget3,
-  ]);
+  }, [inView, scrollPosition]);
 
   return (
     <>
@@ -124,9 +104,11 @@ const Home = () => {
           <Cube />
         </Section>
 
-        <Sponsors />
+        <div ref={ref}>
+          <Sponsors />
+        </div>
 
-        <Section>
+        <Section ref={sectionRef}>
           <Into />
         </Section>
 
@@ -229,7 +211,6 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Otras propiedades de estilo */
 `;
 
 const HomeSection = styled.div`
@@ -288,7 +269,8 @@ const Column1 = styled.div`
       }
 
       b {
-        font-family: "Pixelify Sans", sans-serif;
+        font-family: "LoRes";
+        font-size: 70px;
       }
     }
   }

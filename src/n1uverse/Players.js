@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled from "styled-components";
-
+import styled  from 'styled-components';
 import title from "../assets/n1uverse/players/title-players.svg";
 import alienbox from "../assets/n1uverse/players/alien-box.svg";
 import n1utonbox from "../assets/n1uverse/players/n1uton-box.svg";
@@ -10,7 +9,6 @@ import buttonleft from "../assets/n1uverse/players/button-left.svg";
 
 import Carousel from "react-elastic-carousel";
 import AnimatedText from "../components/AnimatedText";
-
 
 function Players() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -22,12 +20,11 @@ function Players() {
 
   const carouselRef = useRef(null);
 
-  
-
 
   return (
     <>
-      <PlayersSection >
+
+      <PlayersSection>
         <PlayerContainer>
           <img src={title} alt="title" className="title" />
 
@@ -45,7 +42,7 @@ function Players() {
             <>
               <CarouselContainer>
                 <Carousel
-                  itemsToShow={width > 760 ? 2 : 1.3}
+                  itemsToShow={width > 760 ? 2 : width > 370 ? 1.3 : 1 }
                   enableTilt={true}
                   pagination={false}
                   ref={carouselRef}
@@ -74,6 +71,7 @@ function Players() {
           )}
         </PlayerContainer>
       </PlayersSection>
+   
     </>
   );
 }
@@ -88,22 +86,24 @@ const PlayerItem = ({ image, name }) => (
         </button>
       </PlayerBox>
       <AnimatedText>
-
-
-      <Text>
-        <p>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s has been the industry's standard dummy text ever since the 1500s
-        </p>
-      </Text>
+        <Text>
+          <p>
+            Lorem Ipsum has been the industry's standard dummy text ever since
+            the 1500s has been the industry's standard dummy text ever since the
+            1500s
+          </p>
+        </Text>
       </AnimatedText>
     </ItemContainer>
   </>
 );
 
+
+
+
 const PlayersSection = styled.div`
   width: 100%;
-  height: auto;
+  height: 100vh;
 `;
 const PlayerContainer = styled.div`
   display: flex;
@@ -202,18 +202,24 @@ const PlayerBox = styled.div`
     align-self: flex-end;
     height: 37px;
     width: auto;
+    @media only screen and (max-width: 480px) {
+      margin-bottom: 50px;
+    }
 
     cursor: pointer;
     p {
       color: white;
-      font-family: "Pixelify Sans", sans-serif;
-      font-size: 20px;
+      font-family: "LoRes";
+      font-size: 18px;
       font-style: normal;
       font-weight: 300;
       letter-spacing: 0.5px;
       padding: 0 20px;
       justify-content: center;
       align-self: center;
+      @media only screen and (max-width: 480px) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -276,6 +282,5 @@ const ButtonContainer = styled.div`
     padding: 0;
   }
 `;
-
 
 export default Players;

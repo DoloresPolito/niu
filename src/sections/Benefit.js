@@ -268,12 +268,9 @@ const BottomContainer = styled.div`
       line-height: 49.612px;
 
       b {
-        font-family: "Pixelify Sans", sans-serif;
-        letter-spacing: 2px;
-
+        font-family: 'LoRes';
         color: #fff;
-        /* font-family: LoRes 9 OT; */
-        font-size: 54px;
+        font-size: 48px;
         font-style: normal;
         font-weight: 400;
         line-height: 49.612px;

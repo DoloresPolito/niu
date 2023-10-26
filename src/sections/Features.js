@@ -115,7 +115,7 @@ const Item = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-  font-family: "Pixelify Sans", sans-serif;
+   font-family: 'LoRes';
   font-style: normal;
   font-weight: 600;
   font-size: 28px;

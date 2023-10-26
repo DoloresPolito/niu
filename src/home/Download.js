@@ -42,6 +42,9 @@ const DownloadSection = styled.div`
     black 70.71%,
     black
   );
+  @media only screen and (max-width: 650px) {
+    border-top: none;
+  }
 `;
 
 const DownloadContainer = styled.div`
@@ -52,6 +55,7 @@ const DownloadContainer = styled.div`
   margin: 0 auto;
   justify-content: space-around;
   padding-top: 30px;
+
 `;
 
 const Content = styled.div`
@@ -59,6 +63,10 @@ const Content = styled.div`
   flex-direction: column;
   margin-top: 100px;
   width: 420px;
+
+  @media only screen and (max-width: 650px) {
+    margin-top: 0px;
+  }
 
   h2 {
     font-family: "Roboto", sans-serif;

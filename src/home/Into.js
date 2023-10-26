@@ -8,11 +8,10 @@ const Into = () => {
       <IntoSection>
         <Top>
           <Content>
-
             <Title>
-            <h1>Into the n1uverse</h1>
+              <h3>Descubrí</h3>
+              <h1>Into the n1uverse</h1>
             </Title>
-
 
             <Text>
               <p className="first">
@@ -64,10 +63,13 @@ const Content = styled.div`
     background-color: #ff009c;
     display: inline;
     padding: 0 10px;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
     letter-spacing: 1px;
-    font-size: 30px;
+    font-size: 28px;
     margin-top: -50px;
+    @media only screen and (max-width: 400px) {
+      font-size: 25px;
+    }
   }
 
   p {
@@ -81,17 +83,43 @@ const Content = styled.div`
     line-height: 102%;
     margin: 0;
   }
+
+  @media only screen and (max-width: 490px) {
+  }
 `;
 
 const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  @media only screen and (max-width: 490px) {
+    display: none;
+  }
 `;
 
 const Title = styled.div`
-margin-bottom: 30px;
-`
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    display: none;
+  }
+
+  @media only screen and (max-width: 490px) {
+    margin-bottom: 0px;
+
+    h3 {
+      display: inline;
+      margin-bottom: 55px;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 0.5px;
+    }
+  }
+`;
 
 export default Into;

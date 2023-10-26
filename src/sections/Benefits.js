@@ -177,7 +177,7 @@ const BenefitsSection = styled.div`
     padding: 30px 0;
     text-align: center;
     color: #fff;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
     display: flex;
     justify-content: center;
     /* font-family: LoRes 9 OT; */
@@ -337,7 +337,7 @@ const CategoryInput = styled.input`
   border-radius: 10px;
   cursor: pointer;
   background-color: transparent;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: 'LoRes';
   height: 40px;
   border: none;
   color: #fff;
@@ -353,7 +353,7 @@ const CategoryInput = styled.input`
   }
 
   ::placeholder {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
   }
   &:focus {
     outline: none;

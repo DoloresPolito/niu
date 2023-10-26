@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+@font-face {
+  font-family: 'LoRes';
+  src: url('./fonts/LoRes9OTWide-Regular.ttf') format('opentype');
+  font-display: swap;
+ }

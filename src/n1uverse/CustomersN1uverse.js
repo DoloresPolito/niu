@@ -11,11 +11,16 @@ const CustomersN1uverse = () => {
     <>
       <CustomersSection>
         <CustomersContainer>
-          <img src={microsoft} alt="microsoft" width={120} height={30} />
-          <img src={tapi} alt="tapi" width={80} height={40} />
-          <img src={playstation} alt="playstation" width={120} height={40} />
-          <img src={gamersclub} alt="gamersclub" width={150} height={30} />
-          <img src={crackthecode} alt="crackthecode" width={150} height={15} />
+          <img src={microsoft} alt="microsoft" 
+          />
+          <img src={tapi} alt="tapi" 
+          />
+          <img src={playstation} alt="playstation" 
+          />
+          <img src={gamersclub} alt="gamersclub" 
+           />
+          <img src={crackthecode} alt="crackthecode" 
+          />
         </CustomersContainer>
       </CustomersSection>
     </>
@@ -38,12 +43,16 @@ const CustomersContainer = styled.div`
   justify-content: space-between;
   height: auto;
 
-  @media only screen and (max-width: 850px) {
+  
+
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
 
   img{
     padding: 30px 0px;
+    height: 40px;
+    width: 150px;
   }
 `;
 

@@ -111,7 +111,7 @@ const CubeContainer = styled.div`
     padding-bottom: 0px;
   }
 
-  .cube{
+  .cube {
     margin-top: 60px;
   }
 `;
@@ -128,6 +128,8 @@ const Top = styled.div`
   @media only screen and (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 230px;
   }
 
   .first {
@@ -140,6 +142,7 @@ const Top = styled.div`
     .yellow {
       display: none;
     }
+
     @media only screen and (max-width: 970px) {
       width: 310px;
       .pink {
@@ -152,6 +155,7 @@ const Top = styled.div`
 
     @media only screen and (max-width: 900px) {
       background-color: transparent;
+      width: auto;
       .pink {
         display: none;
       }
@@ -175,6 +179,7 @@ const Top = styled.div`
     @media only screen and (max-width: 900px) {
       background-color: transparent;
       margin-top: -30px;
+      width: auto;
     }
   }
 
@@ -202,6 +207,10 @@ const Top = styled.div`
         color: yellow;
         font-size: 50px;
         width: auto;
+      }
+
+      @media only screen and (max-width: 430px) {
+        font-size: 40px;
       }
     }
   }
@@ -233,6 +242,12 @@ const Top = styled.div`
       max-width: 300px;
       justify-content: center;
       position: relative;
+      border-radius: 20px;
+      padding-right: 0px;
+    }
+    @media only screen and (max-width: 430px) {
+      width: 300px;
+      left: 0%;
     }
     p {
       color: #fff;
@@ -289,7 +304,6 @@ const Bottom = styled.div`
     @media only screen and (max-width: 1200px) {
       display: none;
     }
-
   }
 
   .one {
@@ -315,6 +329,11 @@ const Column = styled.div`
   color: white;
   padding-bottom: 50px;
 
+  @media only screen and (max-width: 470px) {
+    width: 100%;
+
+  }
+
   img {
   }
 
@@ -334,6 +353,16 @@ const Column = styled.div`
     font-style: normal;
     font-weight: 300;
     line-height: 100%;
+
+    @media only screen and (max-width: 900px) {
+      font-size: 16px;
+      width: 90%;
+      line-height: 120%;
+      justify-self: center;
+      margin: 0 auto;
+
+    }
+
   }
 
   h2 {

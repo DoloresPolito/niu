@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
@@ -10,6 +11,32 @@ import Cover from "../n1uverse/Cover";
 import CustomersN1uverse from "../n1uverse/CustomersN1uverse.js";
 
 const N1uverse = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.95, 
+  });
+
+  const [sectionInView, setSectionInView] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      setSectionInView(true);
+      disableScroll();
+      setTimeout(() => {
+        setSectionInView(false);
+        enableScroll();
+      }, 300);
+    } else {
+      setSectionInView(false);
+    }
+  }, [inView]);
+
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  function enableScroll() {
+    document.body.style.overflow = "auto";
+  }
   return (
     <>
       <N1uverseSection>
@@ -17,8 +44,17 @@ const N1uverse = () => {
         <Cover />
         <N1uverseCover />
         <Comunity />
+
         <Players />
-        <Store />
+
+        <div
+          ref={ref}
+          style={{
+            height: "100vh",
+          }}
+        >
+          <Store />
+        </div>
         <CustomersN1uverse />
         <Footer />
       </N1uverseSection>
@@ -33,5 +69,7 @@ const N1uverseSection = styled.div`
   margin: auto;
   background-color: black;
 `;
+
+
 
 export default N1uverse;

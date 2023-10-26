@@ -10,6 +10,8 @@ export const Heading1 = styled.h1`
   line-height: normal;
   margin-top: 40px;
 
+
+
   @media only screen and (max-width: 845px) {
     font-size: 190px;
     line-height: 220px;

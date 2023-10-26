@@ -12,24 +12,18 @@ const Sponsors = () => {
       <SponsorsSection>
         <AnimatedText>
           <SponsorsContainer>
-            <div>
-              <img src={clarin} alt="clarin" />
-            </div>
-            <div>
-              <img
-                className="cronista"
-                src={cronista}
-                alt="cronista"
-                style={{ width: "250px" }}
-              />
-            </div>
-
-            <div>
+            <SponsorItem>
               <img src={forbes} alt="forbes" />
-            </div>
-            <div>
+            </SponsorItem>
+            <SponsorItem>
+              <img src={clarin} alt="clarin" />
+            </SponsorItem>
+            <SponsorItem>
               <img src={iproup} alt="iproup" />
-            </div>
+            </SponsorItem>
+            <SponsorItem className="cronista">
+              <img src={cronista} alt="el-cronista" style={{ width: "250px" }} />
+            </SponsorItem>
           </SponsorsContainer>
         </AnimatedText>
       </SponsorsSection>
@@ -53,29 +47,34 @@ const SponsorsContainer = styled.div`
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
+`;
 
-  div {
-    border: 1px solid black;
-    border-radius: 15px;
-    height: 154px;
-    width: 335px;
-    margin: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+const SponsorItem = styled.div`
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 154px;
+  width: 335px;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 
   img {
     height: 60px;
     width: 180px;
   }
 
+  &:hover {
+    background-color: #ff009c; 
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 1);  
+  }
+
   @media only screen and (max-width: 1140px) {
-    div {
-      height: 134px;
-      width: 300px;
-      margin: 1%;
-    }
+    height: 134px;
+    width: 300px;
+    margin: 1%;
 
     img {
       height: 60px;
@@ -86,23 +85,19 @@ const SponsorsContainer = styled.div`
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     justify-content: center;
-    padding: 10px 0;
+    padding: 70px 0;
 
-    div {
-      border: 0px solid #cebdf2;
-      margin: 10px 0px;
-    }
+    border: 0px solid #cebdf2;
+    height: auto;
+    margin: 10px 0px;
 
     img {
       height: 50px;
       width: 150px;
     }
+  
+}
+`
 
-    .cronista {
-      width: 250px;
-      height: 300px;
-    }
-  }
-`;
 
 export default Sponsors;

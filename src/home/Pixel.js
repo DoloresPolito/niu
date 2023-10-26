@@ -4,9 +4,7 @@ import piggybank from "../assets/home/homepixel/piggybank-pixel.svg";
 import card from "../assets/home/homepixel/card-pixel.svg";
 import coin from "../assets/home/homepixel/coin-pixel.svg";
 import coins from "../assets/home/homepixel/coins-pixel.svg";
-
 import Carousel from "react-elastic-carousel";
-
 
 const Pixel = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -75,8 +73,6 @@ const Pixel = () => {
                   <p>Pagá con n1u y obtené recompensas.</p>
                 </Item>
               </Carousel>
-
-             
             </CarouselContainer>
           </>
         )}
@@ -100,7 +96,6 @@ const PixelContainer = styled.div`
   justify-content: space-between;
   margin: 0 auto;
 
-
   @media only screen and (max-width: 1020px) {
     width: 70%;
     height: auto;
@@ -109,9 +104,7 @@ const PixelContainer = styled.div`
 
   @media only screen and (max-width: 775px) {
     width: 98%;
-
   }
-
 `;
 
 const Item = styled.div`
@@ -127,9 +120,9 @@ const Item = styled.div`
   }
 
   p {
-    font-size: 16px;
+    font-size: 13px;
     margin: 10px 0;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
     letter-spacing: 0.02em;
     font-weight: 400;
     max-width: 150px;
@@ -148,15 +141,20 @@ const Item = styled.div`
     width: 230px;
 
     p {
-      font-size: 19px;
+      font-size: 15px;
       padding-top: 0px;
+      padding-left: 0px;
     }
 
     img {
-    height: 190px;
-    width: 140px;
-    padding-top: 10px;
-  }
+      height: 190px;
+      width: 140px;
+      padding-top: 10px;
+    }
+
+    @media only screen and (max-width: 365px) {
+      width: 210px;
+    }
   }
 `;
 
@@ -168,7 +166,5 @@ const CarouselContainer = styled.div`
     display: none;
   }
 `;
-
-
 
 export default Pixel;

@@ -115,7 +115,7 @@ const CoverMobileContainer = styled.div`
       align-self: flex-end;
 
       b {
-        font-family: "Pixelify Sans", sans-serif;
+        font-family: 'LoRes';
       }
 
       @media only screen and (max-width: 460px) {

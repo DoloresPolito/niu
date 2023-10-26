@@ -64,7 +64,7 @@ function Store() {
 
 const StoreSection = styled.div`
   width: 100%;
-  height: 700px;
+  height: 100vh;
   background: linear-gradient(#9198e5, black);
   @media only screen and (max-width: 640px) {
     height: 600px;
@@ -130,8 +130,8 @@ const StoreColumn = styled.div`
   }
 
   h1 {
-    font-family: "Pixelify Sans", sans-serif;
-    font-size: 180px;
+    font-family: 'LoRes';
+    font-size: 170px;
     max-width: 200px;
     line-height: 130px;
     margin: 0;
@@ -139,21 +139,27 @@ const StoreColumn = styled.div`
     margin-bottom: 5px;
     letter-spacing: 8px;
 
+
     @media only screen and (max-width: 640px) {
-      font-size: 130px;
+      font-size: 150px;
       line-height: 100px;
     }
 
-    @media only screen and (max-width: 475px) {
-      font-size: 100px;
+    @media only screen and (max-width: 550px) {
+      font-size: 110px;
       line-height: 70px;
       padding-bottom: 30px;
+      margin-bottom: 0px;
+    }
+
+    @media only screen and (max-width: 415px) {
+      font-size: 90px;
     }
   }
 
   h3 {
-    font-family: "Pixelify Sans", sans-serif;
-    font-size: 35px;
+    font-family: 'LoRes';
+    font-size: 30px;
     color: #fff1a8;
     margin: 0;
     padding: 0;
@@ -163,34 +169,51 @@ const StoreColumn = styled.div`
     width: 450px;
     line-height: 35px;
     padding-bottom: 10px;
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 640px) {
       font-size: 28px;
+      width: 420px;
+      
+    }
+    @media only screen and (max-width: 550px) {
+      font-size: 22px;
       line-height: 28px;
       padding-bottom: 30px;
+      width: 330px;
+      margin-bottom: 0px;
+    }
+
+    @media only screen and (max-width: 415px) {
+      font-size: 20px;
     }
   }
 
   h2 {
-    font-family: "Pixelify Sans", sans-serif;
-    font-size: 30px;
+    font-family: 'LoRes';
+    font-size: 25px;
     color: #fff1a8;
     letter-spacing: 1px;
+
+
   }
 
   h6 {
     color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 25px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 300;
     margin: 0;
     padding: 0;
     letter-spacing: -1px;
     line-height: 35px;
-    @media only screen and (max-width: 500px) {
-      font-family: "Roboto", sans-serif;
+    @media only screen and (max-width: 550px) {
       font-size: 22px;
       line-height: 25px;
+    }
+
+    @media only screen and (max-width: 415px) {
+      font-size: 20px;
+
     }
   }
 
@@ -199,7 +222,8 @@ const StoreColumn = styled.div`
     padding: 0;
     margin-bottom: 5px;
     padding-top: 10px;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
+    font-size:14px;
 
     @media only screen and (max-width: 510px) {
       font-size: 13px;
