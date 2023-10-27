@@ -85,7 +85,7 @@ const PixelSection = styled.div`
   height: auto;
   width: 100%;
   margin: auto;
-  background: black;
+  background: #070707;
 `;
 
 const PixelContainer = styled.div`

@@ -62,6 +62,7 @@ const CoverMobileSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("/backgrounds/home-hero.png");
 `;
 
 const CoverMobileContainer = styled.div`

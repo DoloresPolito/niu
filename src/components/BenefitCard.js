@@ -12,7 +12,7 @@ function BenefitCard({ card, index }) {
 
         <div className="card-content">
           <CardTitle>{card.title} </CardTitle>
-          <CardText>{card.content} </CardText>
+          <CardText>{card.validity} </CardText>
           <CardLink>ver más</CardLink>
         </div>
       </Card>

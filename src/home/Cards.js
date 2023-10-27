@@ -52,7 +52,7 @@ const CardsSection = styled.div`
   margin: auto;
   background-color: black;
   border-top: 1px solid #ff009c;
-  background-color: black;
+  background-color: #070707;
 `;
 
 const CardsContainer = styled.div`

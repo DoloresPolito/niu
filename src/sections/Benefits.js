@@ -27,7 +27,7 @@ function Benefits() {
 
   const navigate = useNavigate();
 
-  const categorias = ["todas las categorias", "1", "2", "3", "4", "5"];
+  const categorias = ["todas las categorias", "Gaming", "Experiencias", "Cines", "Morfi"];
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showFilteredCards, setShowFilteredCards] = useState(false);

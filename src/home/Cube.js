@@ -93,7 +93,7 @@ const Cube = () => {
 const CubeSection = styled.div`
   height: auto;
   width: 100%;
-  background: black;
+  background: #070707;
 `;
 
 const CubeContainer = styled.div`

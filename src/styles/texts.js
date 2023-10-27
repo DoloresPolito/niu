@@ -101,7 +101,7 @@ export const Button = styled.button`
 export const CardTitle = styled.h2`
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.75px;
@@ -115,11 +115,11 @@ export const CardText = styled.h2`
   text-decoration: none;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 11.25px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.337px;
-  margin-top: -17px;
+
 
 
 

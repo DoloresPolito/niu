@@ -7,9 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -22,3 +20,9 @@ code {
   src: url('./fonts/LoRes9OTWide-Regular.ttf') format('opentype');
   font-display: swap;
  }
+
+ /* *{
+
+  margin: 0;
+  max-height: 200vh;
+ } */

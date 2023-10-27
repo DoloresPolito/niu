@@ -66,7 +66,6 @@ const Home = () => {
   useEffect(() => {
     if (inView && !hasScrolledToTarget2) {
       const scrollTo = (sectionRef) => {
-        console.log("scrollto");
         setTimeout(() => {
           sectionRef.current.scrollIntoView({
             inline: "center",
