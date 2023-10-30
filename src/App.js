@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-        <div >
+     
       {/* <SmoothProvider skew={false} > */}
 
         <Routes>
@@ -43,7 +43,7 @@ function App() {
           <Route path="/features" element={<Features />} />
         </Routes>
       {/* </SmoothProvider> */}
-      </div>
+
     </>
   );
 }

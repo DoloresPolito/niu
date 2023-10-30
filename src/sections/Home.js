@@ -11,12 +11,12 @@ import Cube from "../home/Cube";
 import CoverMobile from "../home/CoverMobile";
 import coin from "../assets/home/homecover/coin.svg";
 import bigcoin from "../assets/home/homecover/big-coin.svg";
-import phone from "../assets/home/homecover/phone.svg";
-import backgroundcoins from "../assets/home/homecover/background-coins.svg";
 import SocialMedia from "../components/SocialMedia";
 import lines from "../assets/home/homecover/lines-button.svg";
 import AnimatedText from "../components/AnimatedText";
 import { useInView } from "react-intersection-observer";
+
+// import SmoothScroll from "../components/SmoothScroll";
 
 const Home = () => {
   const [width, setWidth] = useState(null);
@@ -127,7 +127,7 @@ const Cover = () => {
   return (
     <>
       <CoverSection>
-        <BackgroundCoins src={backgroundcoins} alt="backgroundcoins" />
+       
         <CoverContainer>
           <Column1>
             <div className="title">
@@ -166,9 +166,7 @@ const Cover = () => {
           </Column1>
 
           <Column2>
-            <div>
-              <img src={phone} alt="phone" height={550} />
-            </div>
+            <div></div>
           </Column2>
 
           <Column3>
@@ -222,12 +220,13 @@ const HomeSection = styled.div`
 
 const CoverSection = styled.div`
   width: 100%;
-  height: 95vh;
+  /* height: 100vh; */
+
   background-color: black;
   display: flex;
   padding-top: 120px;
   position: relative;
-  background-image: url("/backgrounds/home-hero.png");
+  background-image: url("/coins-gif.gif");
   background-size: cover;
   background-position: center;
 `;
@@ -238,14 +237,13 @@ const CoverContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   height: auto;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 const Column1 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -50px;
   width: 480px;
   margin-left: -20px;
 
@@ -396,12 +394,7 @@ const Column3 = styled.div`
   }
 `;
 
-const BackgroundCoins = styled.img`
-  position: absolute;
-  bottom: 0%;
-  right: 0% !important;
-  height: 40%;
-`;
+
 
 const ButtonContainer = styled.div`
   height: 100px;

@@ -20,6 +20,7 @@ const Footer = () => {
             <SocialMedia view="footer" />
           </div>
           <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
+          <p className="sub-address">Ciudad Autónoma de Buenos Aires, <br/>Argentina</p>
         </Column>
       </FooterContainer>
     </FooterWrapper>
@@ -66,6 +67,9 @@ const FooterWrapper = styled.footer`
 
   @media only screen and (max-width: 900px) {
     height: 500px;
+  }
+  @media only screen and (max-width: 500px) {
+    height: auto;
   }
 `;
 
@@ -146,10 +150,9 @@ const Column = styled.div`
       display: flex;
       font-size: 10px;
     }
-  }
-
-  .address {
-    padding-top: 50px;
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
 
   .social-media {
@@ -157,12 +160,28 @@ const Column = styled.div`
       margin: 0 auto;
     }
     @media only screen and (max-width: 500px) {
-      display: none;
+      display: block;
     }
   }
   .address {
+    padding-top: 50px;
     @media only screen and (max-width: 900px) {
-      display: none;
+      display: block;
+    text-align: center;
+    padding-top: 0px;
+    }
+    @media only screen and (max-width: 500px) {
+      padding-top: 0px;
+    }
+  }
+
+  .sub-address {
+   display: none;
+
+    @media only screen and (max-width: 500px) {
+      display: block;
+      line-height: 16px;
+      text-align: center;
     }
   }
 
@@ -181,6 +200,9 @@ const MiddleColumnContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  > ${Column} {
+    margin-right: 10px;
+  }
 
   @media only screen and (max-width: 900px) {
     width: 100%;
@@ -193,11 +215,15 @@ const MiddleColumnContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &:nth-child(2) {
+      order: initial;
+    }
+    > ${Column} {
+    margin-right: 0px;
+  }
   }
 
-  > ${Column} {
-    margin-right: 10px;
-  }
+
 `;
 
 export default Footer;

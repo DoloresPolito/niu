@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import cube from "../assets/home/homecube/cube.svg";
 import ray from "../assets/home/homecube/small-ray.svg";
 import AnimatedText from "../components/AnimatedText";
 import pinklogo from "../assets/logon1u/logo pink.svg";
 import whitelogo from "../assets/logon1u/logo white.svg";
+import Cubo from "./Cubo";
 
 const Cube = () => {
   return (
@@ -61,7 +61,7 @@ const Cube = () => {
             </AnimatedText>
 
             <Column className="cube">
-              <img src={cube} alt="cube" />
+              <Cubo />
             </Column>
 
             <AnimatedText>
@@ -331,7 +331,6 @@ const Column = styled.div`
 
   @media only screen and (max-width: 470px) {
     width: 100%;
-
   }
 
   img {
@@ -360,9 +359,7 @@ const Column = styled.div`
       line-height: 120%;
       justify-self: center;
       margin: 0 auto;
-
     }
-
   }
 
   h2 {

@@ -67,6 +67,7 @@ const Content = styled.div`
     letter-spacing: 1px;
     font-size: 28px;
     margin-top: -50px;
+    max-width: 320px;
     @media only screen and (max-width: 400px) {
       font-size: 25px;
     }

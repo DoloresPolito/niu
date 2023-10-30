@@ -53,6 +53,7 @@ function Benefits() {
   return (
     <>
       <BenefitsSection>
+
         <Navbar />
         <Cover>
           <ContentWraper>
@@ -92,6 +93,7 @@ function Benefits() {
             ))}
           </Box>
         </BenefitsContainer>
+
       </BenefitsSection>
       <Footer />
     </>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+// import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import Navbar from "../structure/Navbar";
 import Footer from "../structure/Footer";
@@ -10,53 +10,47 @@ import Comunity from "../n1uverse/Comunity";
 import Cover from "../n1uverse/Cover";
 import CustomersN1uverse from "../n1uverse/CustomersN1uverse.js";
 
+
 const N1uverse = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.95, 
-  });
+  // const [ref, inView] = useInView({
+  //   threshold: 0.95,
+  // });
 
-  const [sectionInView, setSectionInView] = useState(false);
+  // const [sectionInView, setSectionInView] = useState(false);
 
-  useEffect(() => {
-    if (inView) {
-      setSectionInView(true);
-      disableScroll();
-      setTimeout(() => {
-        setSectionInView(false);
-        enableScroll();
-      }, 300);
-    } else {
-      setSectionInView(false);
-    }
-  }, [inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     setSectionInView(true);
+  //     disableScroll();
+  //     setTimeout(() => {
+  //       setSectionInView(false);
+  //       enableScroll();
+  //     }, 300);
+  //   } else {
+  //     setSectionInView(false);
+  //   }
+  // }, [inView]);
 
-  function disableScroll() {
-    document.body.style.overflow = "hidden";
-  }
+  // function disableScroll() {
+  //   document.body.style.overflow = "hidden";
+  // }
 
-  function enableScroll() {
-    document.body.style.overflow = "auto";
-  }
+  // function enableScroll() {
+  //   document.body.style.overflow = "auto";
+  // }
   return (
     <>
       <N1uverseSection>
+
         <Navbar />
         <Cover />
         <N1uverseCover />
         <Comunity />
-
         <Players />
-
-        <div
-          ref={ref}
-          style={{
-            height: "100vh",
-          }}
-        >
-          <Store />
-        </div>
+        <Store />
         <CustomersN1uverse />
         <Footer />
+
       </N1uverseSection>
     </>
   );
@@ -69,7 +63,5 @@ const N1uverseSection = styled.div`
   margin: auto;
   background-color: black;
 `;
-
-
 
 export default N1uverse;

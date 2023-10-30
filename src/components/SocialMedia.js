@@ -6,17 +6,30 @@ import tiktok from "../assets/mediaicons/tik-tok.svg";
 import twitter from "../assets/mediaicons/twitter.svg";
 import linkedin from "../assets/mediaicons/linkedin.svg";
 import youtube from "../assets/mediaicons/youtube.svg";
+import { Link } from "react-router-dom";
 
 function SocialMedia({ view }) {
   return (
     <>
       <SocialMediaContainer view={view}>
-        <img alt="instagram" src={instagram} />
-        <img alt="twitter" src={twitter} />
-        <img alt="tiktok" src={tiktok} />
-        <img alt="youtube" src={youtube} />
-        <img alt="discord" src={discord} />
-        <img alt="linkedin" src={linkedin} />
+        <Link to="https://www.instagram.com/"  target="_blank">
+          <img alt="instagram" src={instagram} />
+        </Link>
+        <Link to="https://www.twitter.com/"  target="_blank">
+          <img alt="twitter" src={twitter} />
+        </Link>
+        <Link to="https://www.tiktok.com/"  target="_blank">
+          <img alt="tiktok" src={tiktok} />
+        </Link>
+        <Link to="https://www.youtube.com/"  target="_blank">
+          <img alt="youtube" src={youtube} />
+        </Link>
+        <Link to="https://www.discord.com/"  target="_blank">
+          <img alt="discord" src={discord} />
+        </Link>
+        <Link to="https://www.linkedin.com/"  target="_blank">
+          <img alt="linkedin" src={linkedin} />
+        </Link>
       </SocialMediaContainer>
     </>
   );
