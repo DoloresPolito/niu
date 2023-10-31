@@ -17,9 +17,10 @@ const Footer = () => {
 
         <Column>
           <div className="social-media">
-            <SocialMedia view="footer"/>
+            <SocialMedia view="footer" />
           </div>
           <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
+          <p className="sub-address">Ciudad Autónoma de Buenos Aires, <br/>Argentina</p>
         </Column>
       </FooterContainer>
     </FooterWrapper>
@@ -67,6 +68,9 @@ const FooterWrapper = styled.footer`
   @media only screen and (max-width: 900px) {
     height: 500px;
   }
+  @media only screen and (max-width: 500px) {
+    height: auto;
+  }
 `;
 
 const FooterContainer = styled.footer`
@@ -85,13 +89,23 @@ const FooterContainer = styled.footer`
   .orange-button {
     padding-top: 20px;
     width: 90%;
-
+    @media only screen and (max-width: 500px) {
+      width: 50%;
+    }
   }
 
   .logo {
     max-width: 70px;
     height: auto;
     padding-right: 40px;
+
+    @media only screen and (max-width: 900px) {
+      padding-right: 0px;
+    }
+    @media only screen and (max-width: 500px) {
+      padding-bottom: 20px;
+      padding-top: 50px;
+    }
   }
 
   @media only screen and (max-width: 900px) {
@@ -107,8 +121,10 @@ const FooterContainer = styled.footer`
     font-style: normal;
     font-weight: 400;
     line-height: 15.625px;
-
-
+    @media only screen and (max-width: 500px) {
+      font-size: 12px;
+      line-height: 10px;
+    }
   }
 
   button {
@@ -132,28 +148,51 @@ const Column = styled.div`
     display: none;
     @media only screen and (max-width: 900px) {
       display: flex;
-      font-size:10px;
+      font-size: 10px;
     }
-
-  }
-
-  .address {
-    padding-top: 50px;
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
 
   .social-media {
     @media only screen and (max-width: 900px) {
       margin: 0 auto;
     }
+    @media only screen and (max-width: 500px) {
+      display: block;
+    }
   }
   .address {
+    padding-top: 50px;
     @media only screen and (max-width: 900px) {
-      display: none;
+      display: block;
+    text-align: center;
+    padding-top: 0px;
+    }
+    @media only screen and (max-width: 500px) {
+      padding-top: 0px;
+    }
+  }
+
+  .sub-address {
+   display: none;
+
+    @media only screen and (max-width: 500px) {
+      display: block;
+      line-height: 16px;
+      text-align: center;
     }
   }
 
   p {
     margin-bottom: 5px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    width: 300px;
+    align-items: center;
+    padding: 0px;
   }
 `;
 
@@ -161,6 +200,9 @@ const MiddleColumnContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  > ${Column} {
+    margin-right: 10px;
+  }
 
   @media only screen and (max-width: 900px) {
     width: 100%;
@@ -169,9 +211,19 @@ const MiddleColumnContainer = styled.div`
     }
   }
 
-  > ${Column} {
-    margin-right: 10px;
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(2) {
+      order: initial;
+    }
+    > ${Column} {
+    margin-right: 0px;
   }
+  }
+
+
 `;
 
 export default Footer;

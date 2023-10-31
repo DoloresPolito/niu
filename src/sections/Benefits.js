@@ -27,7 +27,7 @@ function Benefits() {
 
   const navigate = useNavigate();
 
-  const categorias = ["todas las categorias", "1", "2", "3", "4", "5"];
+  const categorias = ["todas las categorias", "Gaming", "Experiencias", "Cines", "Morfi"];
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showFilteredCards, setShowFilteredCards] = useState(false);
@@ -53,6 +53,7 @@ function Benefits() {
   return (
     <>
       <BenefitsSection>
+
         <Navbar />
         <Cover>
           <ContentWraper>
@@ -92,6 +93,7 @@ function Benefits() {
             ))}
           </Box>
         </BenefitsContainer>
+
       </BenefitsSection>
       <Footer />
     </>
@@ -177,7 +179,7 @@ const BenefitsSection = styled.div`
     padding: 30px 0;
     text-align: center;
     color: #fff;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
     display: flex;
     justify-content: center;
     /* font-family: LoRes 9 OT; */
@@ -337,7 +339,7 @@ const CategoryInput = styled.input`
   border-radius: 10px;
   cursor: pointer;
   background-color: transparent;
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: 'LoRes';
   height: 40px;
   border: none;
   color: #fff;
@@ -353,7 +355,7 @@ const CategoryInput = styled.input`
   }
 
   ::placeholder {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
   }
   &:focus {
     outline: none;

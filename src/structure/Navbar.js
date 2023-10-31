@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logowhite from "../assets/logon1u/logo white.svg";
 import logoblack from "../assets/logon1u/logo black.svg";
 import Tabs from "../components/Tabs";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ view }) => {
   const [width, setWidth] = useState(null);
@@ -33,6 +34,7 @@ const Navbar = ({ view }) => {
       {totalWidth < medium ? (
         <>
           <NavbarSectionMobile view={view}>
+          <Link to="/" className="link">
             <div className="logomobile">
               {view === "benefit" ? (
                 <>
@@ -45,6 +47,7 @@ const Navbar = ({ view }) => {
                 </>
               )}
             </div>
+            </Link>
             <NavbarContainerMobile>
               <Tabs view={view}/>
             </NavbarContainerMobile>
@@ -54,6 +57,7 @@ const Navbar = ({ view }) => {
         <>
           <NavbarSection >
             <NavbarContainer>
+            <Link to="/" className="link">
               <div className="logo">
               {view === "benefit" ? (
                 <>
@@ -67,6 +71,7 @@ const Navbar = ({ view }) => {
               )}
             
               </div>
+              </Link>
               <Tabs view={view}/>
             </NavbarContainer>
           </NavbarSection>
@@ -84,8 +89,9 @@ const NavbarSection = styled.section`
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px 100px;
+  padding: 20px 70px;
   margin: auto;
+
 
 
 
@@ -101,13 +107,16 @@ const NavbarContainer = styled.div`
   margin-bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   position: relative;
+
+
 
   .logo {
     position: absolute;
-    left: 0;
+    left: 0%;
+    margin-top: -25px;
+
   }
 `;
 

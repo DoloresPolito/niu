@@ -59,18 +59,19 @@ const Header = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 25px;
-  /* padding: 5px; */
+
 
   @media only screen and (max-width: 800px) {
       font-size: 18px;
       font-weight: 500;
-      line-height: 29px; 
+      line-height: 29px;
+      padding: 2px;
     }
 
     @media only screen and (max-width: 665px) {
       font-size: 15px;
       font-weight: 500;
-      line-height: 23px; 
+      line-height: 23px;
     }
 
     @media only screen and (max-width: 540px) {
@@ -86,10 +87,13 @@ const Content = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 
+
+
   &.show {
     height: auto;
     padding-bottom: 20px;
     line-height: 22px;
+    padding: 15px;
   }
 `;
 

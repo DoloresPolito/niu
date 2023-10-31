@@ -44,8 +44,8 @@ function Comunity() {
               <Parallax speed={10}>
                 <Rayo2 src={rayo2} alt="rayo2" />
               </Parallax>
-             
-              <Parallax speed={40}>
+
+              <Parallax speed={10}>
                 <Rayo1 src={rayo1} alt="rayo1" />
               </Parallax>
             </div>
@@ -56,39 +56,35 @@ function Comunity() {
             </Parallax>
             <div className="bottom">
               <Parallax speed={10}>
-                <Rayo3 src={rayo3} alt="rayo2" />
+                <Rayo3 src={rayo3} alt="rayo3" />
               </Parallax>
-             
+
               <Parallax speed={10}>
-                <Rayo4 src={rayo4} alt="rayo1" />
+                <Rayo4 src={rayo4} alt="rayo4" />
               </Parallax>
             </div>
           </>
         ) : (
           <>
-           <div className="top">
+            <div className="top">
               <Parallax speed={10}>
                 <Rayo2 src={rayo2} alt="rayo2" />
               </Parallax>
-             
+
               <Parallax speed={40}>
                 <Rayo1 src={rayo1} alt="rayo1" />
               </Parallax>
             </div>
             <SectionContainerMobile>
-           
               <TextContainer>
                 <img src={textmobile} alt="text" />
               </TextContainer>
               <ImageMobile src={comunitymobile} alt="comunity" />
-      
             </SectionContainerMobile>
             <div className="bottom">
               <Parallax speed={10}>
                 <Rayo3 src={rayo3} alt="rayo2" />
               </Parallax>
-             
-          
             </div>
           </>
         )}
@@ -107,7 +103,7 @@ const ComunitySection = styled.div`
     height: 50px;
   }
 
-  .bottom{
+  .bottom {
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -144,7 +140,6 @@ const BackgroundImage = styled.img`
   max-height: 120%;
   min-width: 800px;
 
-
   @media only screen and (max-width: 1000px) {
     min-width: 900px;
   }
@@ -179,8 +174,8 @@ const ImageMobile = styled.img`
 `;
 
 const Rayo1 = styled.img`
-  height: 400px;
-  transform: translateY(50%);
+  height: 350px;
+  transform: translateY(-40%) !important;
   transform: translateX(0%);
   @media only screen and (max-width: 900px) {
     height: 200px;
@@ -190,7 +185,7 @@ const Rayo1 = styled.img`
 
 const Rayo4 = styled.img`
   height: 400px;
-  transform: translateY(-100%) !important;
+  transform: translateY(-60%) !important;
   transform: translateX(0%);
   @media only screen and (max-width: 900px) {
     height: 250px;
@@ -210,7 +205,7 @@ const Rayo2 = styled.img`
 
 const Rayo3 = styled.img`
   height: 400px;
-  transform: translateY(-100%) !important;
+  transform: translateY(-110%) !important;
   transform: translateX(0%);
   margin-left: -60px;
   @media only screen and (max-width: 900px) {

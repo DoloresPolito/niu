@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import beneficios from "../assets/home/homecards/benefit-card.svg";
 import n1ustatus from "../assets/home/homecards/n1ustatus-card.svg";
+import Sponsors from "./Sponsors";
 import { Link } from "react-router-dom";
 
 const Cards = () => {
@@ -41,6 +42,7 @@ const Cards = () => {
             </Link>
           ))}
         </CardsContainer>
+        <Sponsors/>
       </CardsSection>
     </>
   );
@@ -52,7 +54,7 @@ const CardsSection = styled.div`
   margin: auto;
   background-color: black;
   border-top: 1px solid #ff009c;
-  background-color: black;
+  background-color: #070707;
 `;
 
 const CardsContainer = styled.div`

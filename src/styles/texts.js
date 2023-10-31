@@ -10,7 +10,9 @@ export const Heading1 = styled.h1`
   line-height: normal;
   margin-top: 40px;
 
-  @media only screen and (max-width: 845px) {
+
+
+  @media only screen and (max-width: 880px) {
     font-size: 190px;
     line-height: 220px;
   }
@@ -99,10 +101,11 @@ export const Button = styled.button`
 export const CardTitle = styled.h2`
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.75px;
+  word-break: break-word;
 
   @media only screen and (max-width: 400px) {
     font-size: 18px;
@@ -113,12 +116,12 @@ export const CardText = styled.h2`
   text-decoration: none;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 11.25px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 300;
   letter-spacing: -0.337px;
-  margin-top: -17px;
 
+margin-top: -10px;
 
 
   @media only screen and (max-width: 400px) {

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import benefits from "../jsons/benefitscards.json";
 import { Button } from "../styles/texts.js";
 import phones from "../assets/benefits/phones.svg";
+import FormatedText from "../components/FormatedText";
 
 function Benefit() {
   const params = useParams();
@@ -16,6 +17,7 @@ function Benefit() {
 
     const filteredData = benefits.filter((item) => item.id === benefitId);
     setData(filteredData[0]);
+
   }, [params]);
 
   return (
@@ -30,47 +32,17 @@ function Benefit() {
                 <Logo src={data.logo} alt="logo" />
               </ImageContainer>
 
-              <h3>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam noDuis autem vel eum iriure dolor in
-              </h3>
+              <h3>{data.title}</h3>
               <h4>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam noDuis autem vel eum iriure dolor in hendrerit in vulputate
-                velit esse molestie consequat, vel illum dolore eu feugiat nulla
-                facilisis at vero eros et ac
+                <FormatedText data={data.description} />
+
                 <br />
                 <br />
-                válido para xx/xx/xx al xx/xx/xx
+                {data.validity}
               </h4>
 
               <h5>Bases y Condiciones</h5>
-              {/* <h6>{data.title}</h6>
-              <h6>{data.content}</h6> */}
-
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+              <p>{data.termsconditions}</p>
             </BenefitContainer>
           </>
         ) : (
@@ -131,7 +103,6 @@ const BenefitContainer = styled.div`
     line-height: 45px;
     letter-spacing: 1px;
 
-
     @media only screen and (max-width: 900px) {
       font-size: 35px;
       line-height: 35px;
@@ -140,10 +111,10 @@ const BenefitContainer = styled.div`
 
   h4 {
     line-height: 20px;
-    max-width: 700px;
+    /* max-width: 700px; */
     color: #000;
     font-family: "Roboto", sans-serif;
-    font-size: 27.907px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 300;
     line-height: 31.008px;
@@ -211,10 +182,7 @@ const Logo = styled.img`
     left: 40%;
     height: 100px;
     width: 100px;
-  
   }
-
-
 `;
 
 // const CardImage = styled.img`
@@ -268,12 +236,9 @@ const BottomContainer = styled.div`
       line-height: 49.612px;
 
       b {
-        font-family: "Pixelify Sans", sans-serif;
-        letter-spacing: 2px;
-
+        font-family: "LoRes";
         color: #fff;
-        /* font-family: LoRes 9 OT; */
-        font-size: 54px;
+        font-size: 48px;
         font-style: normal;
         font-weight: 400;
         line-height: 49.612px;
@@ -313,7 +278,6 @@ const BottomContainer = styled.div`
           line-height: 22px;
         }
       }
-
     }
 
     button {

@@ -123,9 +123,8 @@ const Box = styled.div`
 
   h2 {
     padding-bottom: 20px;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'LoRes';
     color: #ff009c;
-    /* font-family: LoRes 9 OT; */
     font-size: 28.125px;
     font-style: normal;
     font-weight: 400;

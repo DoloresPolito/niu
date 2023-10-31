@@ -17,7 +17,7 @@ const Customers = () => {
           reverse={true}
           content={
             <>
-              <img src={microsoft} alt="microsoft" width={120} height={30} />
+              <img src={microsoft} alt="microsoft" width={120} height={40} />
               <img src={tapi} alt="tapi" width={80} height={40} />
               <img
                 src={playstation}
@@ -25,12 +25,12 @@ const Customers = () => {
                 width={120}
                 height={40}
               />
-              <img src={gamersclub} alt="gamersclub" width={150} height={30} />
+              <img src={gamersclub} alt="gamersclub" width={150} height={40} />
               <img
                 src={crackthecode}
                 alt="crackthecode"
                 width={150}
-                height={15}
+                height={40}
               />
             </>
           }

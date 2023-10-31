@@ -62,6 +62,7 @@ const CoverMobileSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("/backgrounds/home-hero.png");
 `;
 
 const CoverMobileContainer = styled.div`
@@ -115,7 +116,7 @@ const CoverMobileContainer = styled.div`
       align-self: flex-end;
 
       b {
-        font-family: "Pixelify Sans", sans-serif;
+        font-family: 'LoRes';
       }
 
       @media only screen and (max-width: 460px) {

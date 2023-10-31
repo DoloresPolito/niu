@@ -12,7 +12,7 @@ function BenefitCard({ card, index }) {
 
         <div className="card-content">
           <CardTitle>{card.title} </CardTitle>
-          <CardText>{card.content} </CardText>
+          <CardText>{card.validity} </CardText>
           <CardLink>ver más</CardLink>
         </div>
       </Card>
@@ -33,7 +33,6 @@ const Card = styled.div`
   width: 300px;
   margin-bottom: 60px;
   position: relative;
-
 
   @media only screen and (max-width: 400px) {
     height: 110px;
@@ -58,10 +57,9 @@ const Card = styled.div`
   }
 
   .card-content {
-    margin-top: 10px;
+    margin-top: 0px;
     height: 100px;
   }
-
 `;
 
 export default BenefitCard;
