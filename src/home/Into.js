@@ -30,14 +30,15 @@ const Into = () => {
 };
 
 const IntoSection = styled.div`
-  height: 100vh;
+  height: auto;
   width: 100%;
   margin: auto;
+  background: black;
 `;
 
 const Top = styled.div`
   background-image: url("/backgrounds/background-introhome.svg");
-  background-size: cover;
+
   background-position: center;
   width: 100%;
   height: 600px;

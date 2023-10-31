@@ -64,14 +64,14 @@ const Header = styled.div`
   @media only screen and (max-width: 800px) {
       font-size: 18px;
       font-weight: 500;
-      line-height: 29px; 
+      line-height: 29px;
       padding: 2px;
     }
 
     @media only screen and (max-width: 665px) {
       font-size: 15px;
       font-weight: 500;
-      line-height: 23px; 
+      line-height: 23px;
     }
 
     @media only screen and (max-width: 540px) {
@@ -94,7 +94,6 @@ const Content = styled.div`
     padding-bottom: 20px;
     line-height: 22px;
     padding: 15px;
-  background-color: yellow;
   }
 `;
 
