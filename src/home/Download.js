@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ios from "../assets/home/homedownload/ios.svg";
 import googleplay from "../assets/home/homedownload/google-play.svg";
-import phone from "../assets/home/homedownload/phone.svg";
+import phone from "../assets/home/homedownload/newphone.svg";
 
 const Download = () => {
   return (
@@ -28,20 +28,14 @@ const Download = () => {
 };
 
 const DownloadSection = styled.div`
-  height: auto;
+  height: 100%;
   width: 100%;
   margin: auto;
   background-color: black;
   border-top: 1px solid #ff009c;
-  background: linear-gradient(
-    217deg,
-    black,
-    black,
-    #800040 40.71%,
-    #0d0d0d,
-    black 70.71%,
-    black
-  );
+  background-image: url("/backgrounds/download-light.png");
+  background-size: cover;
+  background-position: center;
   @media only screen and (max-width: 650px) {
     border-top: none;
   }

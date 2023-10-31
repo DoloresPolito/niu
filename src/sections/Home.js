@@ -177,7 +177,7 @@ const CoverSection = styled.div`
   background-color: black;
   display: flex;
   position: relative;
-  background-image: url("/coins-gif.gif");
+  background-image: url("/gifhero.gif");
   background-size: cover;
   background-position: left;
 `;

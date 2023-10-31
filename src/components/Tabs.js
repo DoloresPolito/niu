@@ -47,6 +47,11 @@ const TabsContainer = styled.div`
     line-height: normal;
     padding: 0 30px;
 
+    &:hover{
+      color:#FF009C;
+      font-weight: 500;
+    }
+
     @media only screen and (max-width: 530px) {
       padding: 0 10px;
     }

@@ -84,8 +84,8 @@ const SponsorItem = styled.div`
   }
 
   &:hover {
-    background-color: #ff009c;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 1);
+    background-color: #FF009C;
+  
   }
 
   @media only screen and (max-width: 1300px) {

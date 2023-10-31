@@ -1,27 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import Customers from "../components/Customers";
+import lines from "../assets/home/homecover/lines-button.svg";
 
 const Into = () => {
   return (
     <>
       <IntoSection>
         <Top>
-          {/* <Content>
+     
             <Title>
-              <h3>Descubrí</h3>
-              <h1>Into the n1uverse</h1>
+              welcome to <br />
+              the n1uverse
             </Title>
 
-            <Text>
-              <p className="first">
-                Descubrí el n1uverse, se parte de nuestra comunidad y
-              </p>
-              <p className="second">
-                accedé a todos los beneficios que tenemos para vos.
-              </p>
-            </Text>
-          </Content> */}
+            <ButtonContainer>
+              <Lines src={lines} alt="lines" />
+              <div className="button">
+                <p>press start to continue</p>
+              </div>
+            </ButtonContainer>
+      
         </Top>
         <Customers />
       </IntoSection>
@@ -38,90 +37,65 @@ const IntoSection = styled.div`
 
 const Top = styled.div`
   background-image: url("/backgrounds/background-introhome.svg");
-
   background-position: center;
   width: 100%;
   height: 600px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .button {
+    background-color: #ff009c;
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    height: 50px;
+    width: 300px;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+
+    p {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+    }
+  }
 `;
 
-// const Content = styled.div`
-//   position: absolute;
-//   bottom: 10%;
-//   left: 5%;
-//   text-align: start;
-//   color: white;
 
-//   .first {
-//     width: 440px;
-//   }
 
-//   .second {
-//     width: 418px;
-//   }
+const Title = styled.h1`
+  color: #e8e9ee;
+  font-family: "LoRes";
+  text-align: center;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+`;
 
-//   h1 {
-//     background-color: #ff009c;
-//     display: inline;
-//     padding: 0 10px;
-//     font-family: 'LoRes';
-//     letter-spacing: 1px;
-//     font-size: 28px;
-//     margin-top: -50px;
-//     max-width: 320px;
-//     @media only screen and (max-width: 400px) {
-//       font-size: 25px;
-//     }
-//   }
+const ButtonContainer = styled.div`
+  height: 100px;
+  width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-//   p {
-//     background-color: #ff009c;
-//     font-family: "Roboto", sans-serif;
-//     padding-left: 10px;
-//     color: #e8e9ee;
-//     font-size: 18px;
-//     font-style: normal;
-//     font-weight: 300;
-//     line-height: 102%;
-//     margin: 0;
-//   }
+`;
 
-//   @media only screen and (max-width: 490px) {
-//   }
-// `;
-
-// const Text = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   @media only screen and (max-width: 490px) {
-//     display: none;
-//   }
-// `;
-
-// const Title = styled.div`
-//   margin-bottom: 30px;
-//   display: flex;
-//   flex-direction: column;
-
-//   h3 {
-//     display: none;
-//   }
-
-//   @media only screen and (max-width: 490px) {
-//     margin-bottom: 0px;
-
-//     h3 {
-//       display: inline;
-//       margin-bottom: 55px;
-//       font-family: "Roboto", sans-serif;
-//       font-size: 16px;
-//       font-style: normal;
-//       font-weight: 500;
-//       line-height: 100%;
-//       letter-spacing: 0.5px;
-//     }
-//   }
-// `;
+const Lines = styled.img`
+  position: absolute;
+  z-index: 1;
+`;
 
 export default Into;
