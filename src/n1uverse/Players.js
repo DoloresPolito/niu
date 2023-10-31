@@ -103,7 +103,7 @@ const PlayerItem = ({ image, name }) => (
 
 const PlayersSection = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
 `;
 const PlayerContainer = styled.div`
   display: flex;

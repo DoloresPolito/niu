@@ -1,3 +1,7 @@
+/* html {
+  scroll-behavior: smooth;
+} */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,7 +11,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   overflow-x: hidden;
+
 }
+
+/* * {
+  margin: 0px;
+  padding: 0px;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -20,10 +30,7 @@ code {
   font-display: swap;
 }
 
-/* {
-  margin: 0;
-  max-height: 200vh;
- } */
+
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -36,5 +43,5 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #ff009c;
   border-radius: 20px;
-  border:2px solid black
+  border: 2px solid black;
 }

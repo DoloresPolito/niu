@@ -11,7 +11,7 @@ const SmoothScroll = ({ children }) => {
 
   // 3.
   const data = {
-    ease: 0.1,
+    ease: 0.9,
     current: 0,
     previous: 0,
     rounded: 0,
@@ -23,6 +23,8 @@ const SmoothScroll = ({ children }) => {
   }, [windowSize.height]);
 
   const setBodyHeight = () => {
+
+    console.log("BODY HEIGHT")
     document.body.style.height = `${
       scrollingContainerRef.current.getBoundingClientRect().height
     }px`;
@@ -34,6 +36,7 @@ const SmoothScroll = ({ children }) => {
   }, []);
 
   const smoothScrollingHandler = () => {
+  
     data.current = window.scrollY;
     data.previous += (data.current - data.previous) * data.ease;
     data.rounded = Math.round(data.previous * 100) / 100;

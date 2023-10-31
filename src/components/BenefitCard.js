@@ -34,7 +34,6 @@ const Card = styled.div`
   margin-bottom: 60px;
   position: relative;
 
-
   @media only screen and (max-width: 400px) {
     height: 110px;
     width: 250px;
@@ -58,10 +57,9 @@ const Card = styled.div`
   }
 
   .card-content {
-    margin-top: 10px;
+    margin-top: 0px;
     height: 100px;
   }
-
 `;
 
 export default BenefitCard;

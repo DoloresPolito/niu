@@ -12,7 +12,7 @@ export const Heading1 = styled.h1`
 
 
 
-  @media only screen and (max-width: 845px) {
+  @media only screen and (max-width: 880px) {
     font-size: 190px;
     line-height: 220px;
   }
@@ -105,6 +105,7 @@ export const CardTitle = styled.h2`
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.75px;
+  word-break: break-word;
 
   @media only screen and (max-width: 400px) {
     font-size: 18px;
@@ -120,7 +121,7 @@ export const CardText = styled.h2`
   font-weight: 300;
   letter-spacing: -0.337px;
 
-
+margin-top: -10px;
 
 
   @media only screen and (max-width: 400px) {

@@ -64,8 +64,8 @@ function Store() {
 
 const StoreSection = styled.div`
   width: 100%;
-  height: 100vh;
-  background: linear-gradient(#9198e5, black);
+  height: 650px;
+  background: linear-gradient(#634f7f, #0a0a0e);
   @media only screen and (max-width: 640px) {
     height: 600px;
   }
@@ -142,7 +142,7 @@ const StoreColumn = styled.div`
 
     @media only screen and (max-width: 640px) {
       font-size: 150px;
-      line-height: 100px;
+      line-height: 120px;
     }
 
     @media only screen and (max-width: 550px) {

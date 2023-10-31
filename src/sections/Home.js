@@ -5,17 +5,15 @@ import Footer from "../structure/Footer";
 import Download from "../home/Download";
 import Cards from "../home/Cards";
 import Into from "../home/Into";
-import Sponsors from "../home/Sponsors";
 import Pixel from "../home/Pixel";
 import Cube from "../home/Cube";
 import CoverMobile from "../home/CoverMobile";
-import coin from "../assets/home/homecover/coin.svg";
 import bigcoin from "../assets/home/homecover/big-coin.svg";
 import SocialMedia from "../components/SocialMedia";
 import lines from "../assets/home/homecover/lines-button.svg";
 import AnimatedText from "../components/AnimatedText";
-import { useInView } from "react-intersection-observer";
 
+// import { SmoothProvider } from "react-smooth-scrolling";
 // import SmoothScroll from "../components/SmoothScroll";
 
 const Home = () => {
@@ -23,12 +21,6 @@ const Home = () => {
   const getWidth = () => divRef?.current?.offsetWidth;
   const medium = 900;
   const divRef = useRef(null);
-
-  const sectionRef = useRef(null);
-
-  const [ref, inView] = useInView({
-    threshold: 0.8,
-  });
 
   const [totalWidth, setTotalWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -48,40 +40,6 @@ const Home = () => {
     };
   }, []);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [hasScrolledToTarget2, setHasScrolledToTarget2] = useState(false);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (inView && !hasScrolledToTarget2) {
-      const scrollTo = (sectionRef) => {
-        setTimeout(() => {
-          sectionRef.current.scrollIntoView({
-            inline: "center",
-            behavior: "smooth",
-          });
-        }, 777);
-
-        setHasScrolledToTarget2(true);
-      };
-
-      scrollTo(sectionRef);
-    } else if (scrollPosition === 0) {
-      setHasScrolledToTarget2(false);
-    }
-  }, [inView, scrollPosition]);
-
   return (
     <>
       <HomeSection>
@@ -99,17 +57,9 @@ const Home = () => {
 
         <Pixel />
 
-        <Section>
-          <Cube />
-        </Section>
+        <Cube />
 
-        <div ref={ref}>
-          <Sponsors />
-        </div>
-
-        <Section ref={sectionRef}>
-          <Into />
-        </Section>
+        <Into />
 
         <Section>
           <Cards />
@@ -127,13 +77,16 @@ const Cover = () => {
   return (
     <>
       <CoverSection>
-       
         <CoverContainer>
           <Column1>
             <div className="title">
+      
+
+        
               <h1>
                 tu billetera a <br /> <b>otro level.</b>
               </h1>
+  
             </div>
 
             <div className="subtitle">
@@ -160,9 +113,9 @@ const Cover = () => {
               </div>
             </ButtonContainer>
 
-            <div className="coin">
+            {/* <div className="coin">
               <img src={coin} alt="coin" height={180} />
-            </div>
+            </div> */}
           </Column1>
 
           <Column2>
@@ -220,15 +173,13 @@ const HomeSection = styled.div`
 
 const CoverSection = styled.div`
   width: 100%;
-  /* height: 100vh; */
-
+  height: 100vh;
   background-color: black;
   display: flex;
-  padding-top: 120px;
   position: relative;
   background-image: url("/coins-gif.gif");
   background-size: cover;
-  background-position: center;
+  background-position: left;
 `;
 
 const CoverContainer = styled.div`
@@ -245,25 +196,18 @@ const Column1 = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 480px;
-  margin-left: -20px;
 
-  @media only screen and (max-width: 1360px) {
-    width: 500px;
-  }
   .title {
     h1 {
       color: white;
       font-family: "Roboto", sans-serif;
       font-size: 82px;
       font-style: normal;
-      font-weight: 800;
+      font-weight: 500;
       line-height: 70px;
       letter-spacing: 0.5px;
       max-width: 480px;
 
-      @media only screen and (max-width: 1360px) {
-        font-size: 75px;
-      }
 
       b {
         font-family: "LoRes";
@@ -342,14 +286,17 @@ const Column3 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
   width: 400px;
+
+  margin-top: 160px;
 
   @media only screen and (max-width: 1300px) {
     display: none;
   }
 
   .title {
-    padding-top: 60px;
+    padding-top: 0px;
   }
 
   .big-coin {
@@ -394,14 +341,12 @@ const Column3 = styled.div`
   }
 `;
 
-
-
 const ButtonContainer = styled.div`
   height: 100px;
   width: 200px;
   position: relative;
   margin-left: 170px;
-  margin-top: 40px;
+  margin-bottom: 50px;
 `;
 
 const Lines = styled.img`

@@ -6,24 +6,22 @@ const Tabs = ({ view }) => {
   return (
     <>
       <TabsContainer view={view}>
-        <Link to="/" className="link">
-          <h6>productos</h6>
+        <Link to="/features" className="link">
+          <h6>features</h6>
         </Link>
 
         <Link to="/n1uverse" className="link">
           {" "}
           <h6>n1uverse</h6>
         </Link>
-
-        <Link to="/features" className="link">
-          <h6>tutoriales</h6>
-        </Link>
-        <Link to="/faqs" className="link">
+     
           <h6>wiki</h6>
-        </Link>
+
 
         <h6>contacto</h6>
-        <h6>seguridad</h6>
+        <Link to="/faqs" className="link">
+        <h6>faq</h6>
+        </Link>
       </TabsContainer>
     </>
   );
@@ -47,7 +45,11 @@ const TabsContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 0 10px;
+    padding: 0 30px;
+
+    @media only screen and (max-width: 530px) {
+      padding: 0 10px;
+    }
 
     @media only screen and (max-width: 530px) {
       padding: 0 10px;
