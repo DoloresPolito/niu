@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logowhite from "../assets/logon1u/logo white.svg";
 import SocialMedia from "../components/SocialMedia";
-import orange from "../assets/footer/orange-button.svg";
+import orange from "../assets/footer/orange-box-min.png";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
       <FooterContainer>
         <Column>
           {" "}
-          <img className="logo" alt="logo" src={logowhite} />
+          <img className="logo" alt="logo-n1u" src={logowhite} />
         </Column>
 
         <MiddleColumn />
@@ -19,8 +19,8 @@ const Footer = () => {
           <div className="social-media">
             <SocialMedia view="footer" />
           </div>
-          <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
-          <p className="sub-address">Ciudad Autónoma de Buenos Aires, <br/>Argentina</p>
+          {/* <p className="address">Cabildo Av. 3062 Piso:3 Dpto:A</p>
+          <p className="sub-address">Ciudad Autónoma de Buenos Aires, <br/>Argentina</p> */}
         </Column>
       </FooterContainer>
     </FooterWrapper>
@@ -32,25 +32,25 @@ const MiddleColumn = () => {
     <>
       <MiddleColumnContainer>
         <Column>
-          <p>TyC generales del servicio</p>
-          <p>TyC activos digitales</p>
-          <p>TyC n1u pass</p>
-          <p>Politicas de privacidad</p>
-          <p>Politicas de privacidad activos digitales</p>
-          <p>Terminos y CondicionesPromocion Visa & Pedidos Ya</p>
+          <p>T&C GENERALES DEL SERVICIO</p>
+          <p>T&C ACTIVOS DIGITALES</p>
+          <p>T&C n1u STORE</p>
+          <p>POLÍTICAS DE PRIVACIDAD</p>
+          <p>POLÍTICAS DE PRIVACIDAD ACTIVOS DIGITALES</p>
         </Column>
         <Column>
-          <p>Tarjeta Prepaga</p>
-          <p>Actividades Prohibidas</p>
+          <p>TARJETA PREPAGA</p>
+          <p>ACTIVIDADES PROHIBIDAS</p>
           <p>FAQs</p>
-          <p>FAQ n1u pass</p>
-          <p>Defensa al consumidor</p>
+          <p>FAQ n1u STORE</p>
+          <p>DEFENSA AL CONSUMIDOR</p>
         </Column>
         <Column>
-          <p>Costos y Comisiones</p>
-          <p>Información al usuario financiero</p>
+          <p>T&C BENEFICIOS Y PROMOCIONES</p>
+          <p>COSTOS & COMISIONES</p>
+          <p>INFORMACIÓN AL USUARIO FINANCIERO</p>
           <img className="orange-button" src={orange} alt="button" />
-          <p className="address-mobile">Cabildo Av. 3062 Piso:3 Dpto:A</p>
+          {/* <p className="address-mobile">Cabildo Av. 3062 Piso:3 Dpto:A</p> */}
         </Column>
       </MiddleColumnContainer>
     </>
@@ -65,7 +65,6 @@ const FooterWrapper = styled.footer`
   align-items: center;
   height: 445px;
   /* height: 100vh; */
-
 
   @media only screen and (max-width: 900px) {
     height: 500px;
@@ -97,8 +96,7 @@ const FooterContainer = styled.footer`
   }
 
   .logo {
-    max-width: 70px;
-    height: auto;
+    height: 40px;
     padding-right: 40px;
 
     @media only screen and (max-width: 900px) {
@@ -106,7 +104,9 @@ const FooterContainer = styled.footer`
     }
     @media only screen and (max-width: 500px) {
       padding-bottom: 20px;
-      padding-top: 50px;
+      padding-right: 0px;
+      justify-self: flex-start;
+      width: 100px;
     }
   }
 
@@ -146,7 +146,7 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
 
-  .address-mobile {
+  /* .address-mobile {
     display: none;
     @media only screen and (max-width: 900px) {
       display: flex;
@@ -155,7 +155,7 @@ const Column = styled.div`
     @media only screen and (max-width: 500px) {
       display: none;
     }
-  }
+  } */
 
   .social-media {
     @media only screen and (max-width: 900px) {
@@ -165,27 +165,27 @@ const Column = styled.div`
       display: block;
     }
   }
-  .address {
+  /* .address {
     padding-top: 50px;
     @media only screen and (max-width: 900px) {
       display: block;
-    text-align: center;
-    padding-top: 0px;
+      text-align: center;
+      padding-top: 0px;
     }
     @media only screen and (max-width: 500px) {
       padding-top: 0px;
     }
-  }
+  } */
 
-  .sub-address {
-   display: none;
+  /* .sub-address {
+    display: none;
 
     @media only screen and (max-width: 500px) {
       display: block;
       line-height: 16px;
       text-align: center;
     }
-  }
+  } */
 
   p {
     margin-bottom: 5px;
@@ -193,8 +193,8 @@ const Column = styled.div`
 
   @media only screen and (max-width: 500px) {
     width: 300px;
-    align-items: center;
     padding: 0px;
+    text-align: left;
   }
 `;
 
@@ -221,11 +221,9 @@ const MiddleColumnContainer = styled.div`
       order: initial;
     }
     > ${Column} {
-    margin-right: 0px;
+      margin-right: 0px;
+    }
   }
-  }
-
-
 `;
 
 export default Footer;
