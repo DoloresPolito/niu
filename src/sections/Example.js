@@ -11,11 +11,10 @@ import Navbar from "../structure/Navbar";
 import "../App.css";
 
 const Example = () => {
-  const [totalWidth, setTotalWidth] = useState(window.innerWidth);
+  const [zoomLevel, setZoomLevel] = useState(1); // Inicializa el nivel de zoom a 1 (100%)
   const controller = useRef(null);
 
   useEffect(() => {
-    // Crear una única instancia del controlador
     if (!controller.current) {
       controller.current = new ScrollMagic.Controller({
         globalSceneOptions: {
@@ -23,12 +22,11 @@ const Example = () => {
         },
       });
     }
-    console.log("USEEFFECT DE ACHICAR PANTALLA");
-    // Actualizar el controlador cuando cambie el tamaño de la pantalla
-    const handleResize = () => {
-      setTotalWidth(window.innerWidth);
 
-      // Actualizar el controlador
+    const handleResize = () => {
+      // Actualiza el nivel de zoom y el controlador
+      const newZoomLevel = window.innerWidth / window.screen.width;
+      setZoomLevel(newZoomLevel);
       controller.current.update();
     };
 
@@ -39,40 +37,16 @@ const Example = () => {
     };
   }, []);
 
-  //zoom pantalla
   useEffect(() => {
-    console.log("USEEFFECT DE ZOOM");
-  
-    const handleZoomChange = () => {
-      // Actualiza el controlador si cambia el nivel de zoom
-      controller.current.update();
-    };
-  
-    // Agrega el event listener para el evento 'resize'
-    window.addEventListener("resize", handleZoomChange);
-  
-    // Devuelve una función de limpieza para eliminar el event listener cuando el componente se desmonta
-    return () => {
-      window.removeEventListener("resize", handleZoomChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log("USEEFFECT DE SLIDES");
-    // Resto del código de tus escenas ScrollMagic
+    // Configura escenas ScrollMagic
     const slides = document.querySelectorAll(".panel");
 
-    console.log("slides", slides);
-
     slides.forEach((slide, index) => {
-      console.log("slice", slide);
-      console.log("slice", index);
       new ScrollMagic.Scene({
         triggerElement: slide,
-        // duration: 100,
       })
         .setPin(slide, { pushFollowers: true })
-        .addTo(controller.current); // Usa la instancia del controlador
+        .addTo(controller.current);
     });
   }, []);
 
@@ -80,7 +54,7 @@ const Example = () => {
     <>
       <Navbar />
       <div id="content">
-        <SectionVideo width={totalWidth}>
+        <SectionVideo zoom={zoomLevel}>
           <div className="panel-inner">
             <Cover />
           </div>
@@ -125,7 +99,7 @@ const SectionVideo = styled.section`
   height: 100%;
   min-height: 100%;
   min-width: 100%;
-  height: ${(props) => (props.width > 1020 ? "100vh" : "180vh")};
+  height: ${(props) => (props.zoom > 1 ? "100vh" : "180vh")};
 `;
 
 export default Example;
