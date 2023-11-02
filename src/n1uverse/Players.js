@@ -43,9 +43,10 @@ function Players() {
               <CarouselContainer>
                 <Carousel
                   itemsToShow={width > 760 ? 2 : width > 370 ? 1.3 : 1 }
-                  enableTilt={true}
+          
                   pagination={false}
                   ref={carouselRef}
+        
                 >
                   <PlayerItem image={rebelbox} name="rebel" />
                   <PlayerItem image={n1utonbox} name="n1uton" />

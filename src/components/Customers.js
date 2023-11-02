@@ -18,7 +18,7 @@ const Customers = () => {
     <CustomersSection>
       <CustomersContainer>
         <Loop
-          reverse={true}
+          reverse="true"
           content={
             <>
               <img src={fortnite} alt="fortnite" width={120} height={40} />
@@ -65,7 +65,7 @@ const Customers = () => {
 };
 
 const CustomersSection = styled.div`
-  height: auto;
+  height: 20vh;
   width: 100%;
   margin: auto;
   background: black;

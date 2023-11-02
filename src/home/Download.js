@@ -11,7 +11,8 @@ const Download = () => {
         <DownloadContainer>
           <Content>
             <h2>
-              <b>Descargá </b>ahora<br/> y <b> creá tu cuenta</b>
+              <b>Descargá </b>ahora
+              <br /> y <b> creá tu cuenta</b>
             </h2>
             <div>
               <img src={ios} alt="ios" />
@@ -28,14 +29,15 @@ const Download = () => {
 };
 
 const DownloadSection = styled.div`
-  height: 100%;
+  height: 60vh;
   width: 100%;
   margin: auto;
   background-color: black;
-  border-top: 1px solid #ff009c;
   background-image: url("/backgrounds/download-light.png");
   background-size: cover;
   background-position: center;
+  max-width: 1600px;
+  margin: 0 auto;
   @media only screen and (max-width: 650px) {
     border-top: none;
   }
@@ -49,7 +51,8 @@ const DownloadContainer = styled.div`
   margin: 0 auto;
   justify-content: space-around;
   padding-top: 30px;
-
+  height: 60vh;
+  max-width: 1600px;
 `;
 
 const Content = styled.div`

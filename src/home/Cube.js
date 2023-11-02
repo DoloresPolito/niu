@@ -50,11 +50,14 @@ const Cube = () => {
 const CubeSection = styled.div`
   height: 100vh;
   width: 100%;
-  position: relative;
-  background-color: #1f1f1f;
-  /* background: linear-gradient(45deg, #ff009c 1%, #bd3aff 5%, #1f1f1f 20%); */
+  background-color: #070707;
   display: flex;
-
+  overflow: hidden;
+  background-image: url("/backgrounds/background-cube.png");
+  background-position: center;
+  background-size: cover; 
+  max-width: 1600px;
+margin: 0 auto;
   @media only screen and (max-width: 900px) {
     height: 700px;
   }
@@ -69,7 +72,13 @@ const CubeContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media only screen and (max-width: 900px) {
+  position: relative;
+
+  @media only screen and (max-width: 800px) {
+    width: 90% !important;
+  }
+
+  @media only screen and (max-width: 700px) {
     flex-direction: column;
     position: relative;
     width: 500px;
@@ -102,6 +111,7 @@ const Text = styled.div`
     font-style: normal;
     font-weight: 300;
     line-height: 100%;
+   
   }
 
   b {
@@ -111,8 +121,11 @@ const Text = styled.div`
   @media only screen and (max-width: 1120px) {
     right: 0%;
   }
+  @media only screen and (max-width: 800px) {
+    bottom: 0%;
+  }
 
-  @media only screen and (max-width: 900px) {
+  /* @media only screen and (max-width: 900px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -121,9 +134,12 @@ const Text = styled.div`
     top: 60%;
     width: 100%;
     height: auto;
-  }
+  } */
 
   @media only screen and (max-width: 550px) {
+    background-color: red;
+    width: 150px;
+    right: 0%;
     p{
       font-size: 15px;
       width: 150px;
@@ -134,12 +150,12 @@ const Text = styled.div`
 const Title = styled.div`
   height: auto;
   position: absolute;
-  top: -10%;
-  left: 5%;
+  top: -12%;
+  left: 0%;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: start;
 
   h2 {
     color: #e8e9ee;
@@ -148,6 +164,7 @@ const Title = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 85.5%;
+    text-align: start !important; 
   }
 
   p {
@@ -158,21 +175,21 @@ const Title = styled.div`
     font-weight: 300;
     line-height: 100%;
     width: 200px;
-    margin-top: -100px;
+    margin-top: -70px;
     margin-left: 20px;
   }
 
-  @media only screen and (max-width: 900px) {
-    flex-direction: row;
+  @media only screen and (max-width: 800px) {
+    /* flex-direction: row;
     justify-content: space-between;
     align-items: center;
     left: 0;
     top: 0%;
     height: 250px;
-    width: 100%;
+    width: 100%; */
 
     h2 {
-      font-size: 80px;
+      font-size: 120px;
     }
 
     p {
@@ -196,7 +213,6 @@ const Column = styled.div`
   justify-content: space-between;
   color: white;
   z-index: 1;
-  background-color: blue;
 
   p {
     color: #fff;

@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import cubogif from "../assets/home/homecube/Tarjeta gif.gif";
+import cubogif from "../assets/home/homecube/cube-black.gif";
+import anillo from "../assets/home/homecube/anillo.png"
 
 const GifContainer = styled.div`
   height: auto;
   width: auto;
   display: flex;
   justify-content: center;
+  position: relative;
+
+  .anillo{
+    position: absolute;
+    height: 200px;
+    width: 700px;
+    top:30%
+  }
   img {
-    height: 690px;
-    width: 800px;
+    height: 620px;
+    width: 750px;
   }
   @media only screen and (max-width: 1200px) {
     img {
@@ -57,7 +66,8 @@ const GifContainer = styled.div`
 const CuboGif = () => {
   return (
     <GifContainer>
-      <img src={cubogif} alt="Mi GIF" />
+      <img src={cubogif} alt="Mi GIF" className="cube"/>
+      <img src={anillo} alt="anillo"className="anillo"/>
     </GifContainer>
   );
 };

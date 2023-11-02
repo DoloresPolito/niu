@@ -64,6 +64,8 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   height: 445px;
+  /* height: 100vh; */
+
 
   @media only screen and (max-width: 900px) {
     height: 500px;
@@ -77,7 +79,7 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   width: 80%;
-  padding: 20px;
+  margin-top: 60px;
   height: auto;
   justify-content: space-between;
 

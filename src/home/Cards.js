@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import beneficios from "../assets/home/homecards/benefit-card.svg";
 import n1ustatus from "../assets/home/homecards/n1ustatus-card.svg";
@@ -6,6 +6,29 @@ import Sponsors from "./Sponsors";
 import { Link } from "react-router-dom";
 
 const Cards = () => {
+  const [width, setWidth] = useState(null);
+  const getWidth = () => divRef?.current?.offsetWidth;
+
+  const divRef = useRef(null);
+
+  const [totalWidth, setTotalWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => setTotalWidth(window.innerWidth));
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWidth());
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const cards = [
     {
       title: "n1u status",
@@ -21,44 +44,73 @@ const Cards = () => {
     },
   ];
 
-
   return (
     <>
       <CardsSection>
-        <CardsContainer>
-          {cards.map((card, index) => (
-            <Link to={card.link} style={{ textDecoration: "none" }}   >
-              <Item key={index} backgroundimage={card.image}>
-                <Content>
-                  <h1>{card.title}</h1>
-                  <div>
-                    <h6>{card.text}</h6>
-                    <button>
-                      <p>conocé más</p>
-                    </button>
-                  </div>
-                </Content>
-              </Item>
-            </Link>
-          ))}
-        </CardsContainer>
-        <Sponsors/>
+        <Top>
+          <CardsContainer>
+            {cards.map((card, index) => (
+              <Link
+                to={card.link}
+                style={{ textDecoration: "none" }}
+                key={index}
+              >
+                <Item key={index} backgroundimage={card.image}>
+                  <Content>
+                    <h1>{card.title}</h1>
+                    <div>
+                      <h6>{card.text}</h6>
+                      <button>
+                        <p>conocé más</p>
+                      </button>
+                    </div>
+                  </Content>
+                </Item>
+              </Link>
+            ))}
+          </CardsContainer>
+        </Top>
+        {totalWidth < 1020 ? (
+          <></>
+        ) : (
+          <>
+            {" "}
+            <Sponsors />
+          </>
+        )}
       </CardsSection>
     </>
   );
 };
 
 const CardsSection = styled.div`
-  height: auto;
+  height: 100vh;
   width: 100%;
   margin: auto;
   background-color: black;
-  border-top: 1px solid #ff009c;
   background-color: #070707;
+  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
+`;
+
+const Top = styled.div`
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @media only screen and (max-width: 920px) {
+    height: 100vh;
+  }
 `;
 
 const CardsContainer = styled.div`
   width: 90%;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -66,8 +118,7 @@ const CardsContainer = styled.div`
   justify-content: center;
   height: auto;
   justify-content: space-around;
-  padding: 50px 0;
-
+  max-width: 1600px;
 `;
 
 const Item = styled.div`
@@ -113,20 +164,16 @@ const Item = styled.div`
     max-width: 280px;
   }
 
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 1140px) {
     height: 250px;
     width: 400px;
-
     h1 {
       font-size: 20px;
       margin-top: 0px;
-
     }
     h6 {
       font-size: 14px;
       margin-bottom: -5px;
-  
-
     }
     p {
       font-size: 10px;
@@ -138,7 +185,6 @@ const Item = styled.div`
     width: 300px;
     h1 {
       font-size: 18px;
-
     }
     h6 {
       font-size: 13px;
@@ -153,7 +199,7 @@ const Item = styled.div`
 const Content = styled.div`
   padding-bottom: 20px;
   padding-left: 20px;
-  width: 100%;
+  width: 95%;
 
   div {
     display: flex;
@@ -169,6 +215,18 @@ const Content = styled.div`
     border: 1px solid black;
     margin-left: 85px;
     margin-top: 17px;
+  }
+
+  @media only screen and (max-width: 1140px) {
+    padding-left: 20px;
+    button {
+      margin-right: 50px;
+      width: 110px;
+      margin-left: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 920px) {
   }
 
   @media only screen and (max-width: 650px) {
