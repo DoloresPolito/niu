@@ -1,88 +1,78 @@
-import React, { useState, useEffect, useRef } from "react";
-import ScrollMagic from "scrollmagic";
-import styled from "styled-components";
-import Cards from "../home/Cards";
-import Into from "../home/Into";
-import Download from "../home/Download";
-import Cube from "../home/Cube";
-import Cover from "../home/Cover";
-import Footer from "../structure/Footer";
-import Navbar from "../structure/Navbar";
-import "../App.css";
+import React, { useState, useEffect, useRef } from 'react'
+import ScrollMagic from 'scrollmagic'
+import styled from 'styled-components'
+
+import Download from '../home/Download'
+import Cover from '../home/Cover'
+import Footer from '../structure/Footer'
+import Navbar from '../structure/Navbar'
 
 const Example = () => {
-  const [zoomLevel, setZoomLevel] = useState(1); // Inicializa el nivel de zoom a 1 (100%)
-  const controller = useRef(null);
+  const [zoomLevel, setZoomLevel] = useState(1) // Inicializa el nivel de zoom a 1 (100%)
+  const controller = useRef(null)
 
   useEffect(() => {
     if (!controller.current) {
       controller.current = new ScrollMagic.Controller({
         globalSceneOptions: {
-          triggerHook: "onLeave",
+          triggerHook: 'onLeave',
         },
-      });
+      })
     }
 
     const handleResize = () => {
       // Actualiza el nivel de zoom y el controlador
-      const newZoomLevel = window.innerWidth / window.screen.width;
-      setZoomLevel(newZoomLevel);
-      controller.current.update();
-    };
+      const newZoomLevel = window.innerWidth / window.screen.width
+      setZoomLevel(newZoomLevel)
+      controller.current.update()
+    }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     // Configura escenas ScrollMagic
-    const slides = document.querySelectorAll(".panel");
+    const slides = document.querySelectorAll('.panel')
 
     slides.forEach((slide, index) => {
       new ScrollMagic.Scene({
         triggerElement: slide,
       })
         .setPin(slide, { pushFollowers: true })
-        .addTo(controller.current);
-    });
-  }, []);
+        .addTo(controller.current)
+    })
+  }, [])
 
   return (
     <>
       <Navbar />
       <div id="content">
-        <SectionVideo zoom={zoomLevel}>
-          <div className="panel-inner">
+        <Section zoom={zoomLevel}>
+          <CoverContent>
             <Cover />
-          </div>
-        </SectionVideo>
+          </CoverContent>
+        </Section>
 
         <div id="section-wipes">
-          <section className="panel">
-            <div className="panel-inner">
-              <Cube />
-            </div>
-          </section>
+          <Section>
+            <CubeContent />
+          </Section>
 
-          <section className="panel">
-            <div className="panel-inner">
-              <Into />
-            </div>
-          </section>
+          <Section>
+            <IntoContent />
+          </Section>
 
-          <section className="panel">
-            <div className="panel-inner">
-              <Cards />
-            </div>
-          </section>
-          <section className="panel">
-            <div className="panel-inner">
-              <Into />
-            </div>
-          </section>
+          <Section>
+            <CardsContent />
+          </Section>
+
+          <Section>
+            <IntoContent />
+          </Section>
 
           <footer className="panel">
             <Download />
@@ -91,15 +81,32 @@ const Example = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-const SectionVideo = styled.section`
+const Section = styled.section`
+  height: ${props => (props.zoom > 1 ? '100vh' : '180vh')};
+  overflow: hidden;
   position: relative;
-  height: 100%;
-  min-height: 100%;
-  min-width: 100%;
-  height: ${(props) => (props.zoom > 1 ? "100vh" : "180vh")};
-`;
+`
 
-export default Example;
+const CoverContent = styled.div`
+  height: 100%;
+`
+
+const CubeContent = styled.div`
+  height: 100%;
+  background-color: red;
+`
+
+const IntoContent = styled.div`
+  height: 100%;
+  background-color: yellow;
+`
+
+const CardsContent = styled.div`
+  height: 100%;
+  background-color: blue;
+`
+
+export default Example
