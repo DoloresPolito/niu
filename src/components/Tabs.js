@@ -14,13 +14,16 @@ const Tabs = ({ view }) => {
           {" "}
           <h6>n1uverse</h6>
         </Link>
-     
-          <h6>wiki</h6>
 
+        <h6>wiki</h6>
 
         <h6>contacto</h6>
         <Link to="/faqs" className="link">
-        <h6>faq</h6>
+          <h6>faq</h6>
+        </Link>
+
+        <Link to="https://n1u.app/referidos-n1u/" className="link" target="_blank">
+          <DifLink>referí y ganá</DifLink>
         </Link>
       </TabsContainer>
     </>
@@ -32,6 +35,11 @@ const TabsContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   color: ${(props) => (props.view === "benefit" ? "black" : "white")};
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 
   .link {
     text-decoration: none;
@@ -47,22 +55,45 @@ const TabsContainer = styled.div`
     line-height: normal;
     padding: 0 30px;
 
-    @media only screen and (max-width: 530px) {
-      padding: 0 10px;
+    &:hover {
+      color: #ff009c;
+      font-weight: 500;
+
+      @media only screen and (max-width: 900px) {
+        color: black;
+      }
     }
 
-    @media only screen and (max-width: 530px) {
-      padding: 0 10px;
+    @media only screen and (max-width: 900px) {
+      color: #fff;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      padding: 0;
+      margin: 20px 0px;
     }
+  }
+`;
 
-    @media only screen and (max-width: 460px) {
-      font-size: 13px;
-      padding: 0 5px;
-    }
+const DifLink = styled.h6`
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 30px;
+  color: #ff009c !important;
 
-    @media only screen and (max-width: 390px) {
-      font-size: 12px;
-      padding: 0 5px;
+  @media only screen and (max-width: 900px) {
+    color: black !important;
+  }
+
+  &:hover {
+    font-weight: 500;
+
+    @media only screen and (max-width: 900px) {
+      color: black !important;
     }
   }
 `;

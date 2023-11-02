@@ -9,7 +9,7 @@ import N1uverseCover from "../n1uverse/N1uverseCover";
 import Comunity from "../n1uverse/Comunity";
 import CustomersN1uverse from "../n1uverse/CustomersN1uverse.js";
 // import SmoothScroll from "../components/SmoothScroll";
-import { SmoothProvider } from "react-smooth-scrolling";
+// import { SmoothProvider } from "react-smooth-scrolling";
 
 const N1uverse = () => {
   // const [ref, inView] = useInView({

@@ -1,36 +1,102 @@
+/* 
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slice {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: transform 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+
+} */
+
+/* * {
+  box-sizing: border-box;
+} */
+
+#content {
+  overflow: hidden;
+}
+
+#content #section-video {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#content #section-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  height: 100vh;
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  #content #section-video video {
+    width: 100%;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  #content #section-video video {
+    width: 100%;
+    height: 100%;
   }
+}
+
+#content #section-wipes {
+  width: 100%;
+  height: 100%;
+}
+#content #section-wipes .panel .panel-inner,
+#content #section-wipes footer .panel-inner {
+  position: absolute;
+  min-width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#content #section-wipes .panel,
+#content #section-wipes footer {
+  height: 100vh;
+  position: relative;
+}
+#content footer {
+  background-color: black;
+  height: auto;
 }

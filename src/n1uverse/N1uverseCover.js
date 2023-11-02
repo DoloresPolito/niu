@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import image from "../assets/n1uverse/cover/aliens.svg";
-import title from "../assets/n1uverse/cover/n1uverse-title.png";
+import image from "../assets/n1uverse/cover/aliens-min.png";
+import title from "../assets/n1uverse/cover/n1uverse-title-min.png";
 
 import AnimatedText from "../components/AnimatedText";
 
@@ -55,7 +55,7 @@ const N1uverseSection = styled.div`
   width: 100%;
   height: auto;
   padding-top: 50px;
-  background-image: url("/backgrounds/n1uverse-background.png");
+  background-image: url("/backgrounds/n1uverse-background-min.png");
   background-size: cover;
   background-position: center;
   @media only screen and (max-width: 1200px) {

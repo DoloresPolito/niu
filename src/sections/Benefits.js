@@ -15,6 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import cards from "../jsons/benefitscards.json";
 import largecards from "../jsons/largebenefitscards.json";
 import drop from "../assets/benefits/drop white.svg";
+import "../App.css"
 
 function Benefits() {
   useEffect(() => {
@@ -81,7 +82,7 @@ function Benefits() {
             ))}
           </PrincipalBox>
 
-          <Box>
+          <Box >
             {filteredCards.map((card, index) => (
               <Link
                 to={"/benefit/" + card.id}
@@ -200,7 +201,7 @@ const BenefitsContainer = styled.div`
 const Cover = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url("/backgrounds/background-coverbenefits.svg");
+  background-image: url("/backgrounds/cover-benefits-min.png");
   background-size: cover;
   background-position: center;
   display: flex;

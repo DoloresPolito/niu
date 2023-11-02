@@ -1,6 +1,4 @@
-/* html {
-  scroll-behavior: smooth;
-} */
+
 
 body {
   margin: 0;
@@ -11,13 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   overflow-x: hidden;
-
 }
 
-/* * {
-  margin: 0px;
-  padding: 0px;
-} */
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -29,8 +23,6 @@ code {
   src: url("./fonts/LoRes9OTWide-Regular.ttf") format("opentype");
   font-display: swap;
 }
-
-
 
 body::-webkit-scrollbar {
   width: 10px;
@@ -45,3 +37,5 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;
   border: 2px solid black;
 }
+
+

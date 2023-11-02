@@ -43,7 +43,7 @@ const Sponsors = () => {
 };
 
 const SponsorsSection = styled.div`
-  height: auto;
+  height: 25vh;
   width: 100%;
   margin: auto;
   background: #cebdf2;
@@ -56,10 +56,10 @@ const SponsorsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: auto;
-  min-width: 95%;
-  margin: 0 auto;
+  width: 90%;
   padding-top: 20px;
   padding-bottom: 20px;
+  max-width: 1600px;
 
   @media only screen and (max-width: 800px) {
     flex-direction: column !important;
@@ -75,7 +75,7 @@ const SponsorItem = styled.div`
   align-items: center;
   transition: background-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  height: 160px;
+  height: 130px;
   width: 280px;
 
   img {
@@ -84,12 +84,12 @@ const SponsorItem = styled.div`
   }
 
   &:hover {
-    background-color: #ff009c;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 1);
+    background-color: #FF009C;
+  
   }
 
   @media only screen and (max-width: 1300px) {
-    height: 160px;
+    height: 120px;
     width: 240px;
     img {
       height: 50px;
@@ -99,12 +99,12 @@ const SponsorItem = styled.div`
   }
 
   @media only screen and (max-width: 1100px) {
-    height: 140px;
+    height: 120px;
     width: 210px;
   }
 
   @media only screen and (max-width: 930px) {
-    height: 130px;
+    height: 120px;
     width: 200px;
     img {
       height: 40px;

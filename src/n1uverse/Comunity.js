@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-import rayo1 from "../assets/n1uverse/n1uverseicons/ray1.svg";
-import rayo2 from "../assets/n1uverse/n1uverseicons/ray2.svg";
-import rayo3 from "../assets/n1uverse/n1uverseicons/ray3.svg";
-import rayo4 from "../assets/n1uverse/n1uverseicons/ray4.svg";
-import comunitydesktop from "../assets/n1uverse/n1uverseicons/comunity-desktop.svg";
-import comunitymobile from "../assets/n1uverse/n1uverseicons/comunity-mobile.svg";
+import rayo1 from "../assets/n1uverse/n1uverseicons/ray1-min.png";
+import rayo2 from "../assets/n1uverse/n1uverseicons/ray2-min.png";
+import rayo3 from "../assets/n1uverse/n1uverseicons/ray3-min.png";
+import rayo4 from "../assets/n1uverse/n1uverseicons/ray4-min.png";
+import comunitydesktop from "../assets/n1uverse/n1uverseicons/comunity-desktop-min.png";
+import comunitymobile from "../assets/n1uverse/n1uverseicons/comunity-mobile-min.png";
 
-import textmobile from "../assets/n1uverse/n1uverseicons/texto-mobile.svg";
+import textmobile from "../assets/n1uverse/n1uverseicons/texto-mobile-min.png";
 import { Parallax } from "react-scroll-parallax";
 
 function Comunity() {
