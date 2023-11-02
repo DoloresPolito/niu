@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Example from "./sections/Example";
 import { StyleSheetManager } from "styled-components";
 
+
 function App() {
   const location = useLocation();
 

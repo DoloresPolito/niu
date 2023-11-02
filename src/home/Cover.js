@@ -100,8 +100,6 @@ const Video = styled.video`
   background-size: cover;
   background-position: 100% 100%; */
 
-
-
   width: 100%;
   height: 80vh;
   object-fit: cover;
@@ -109,6 +107,10 @@ const Video = styled.video`
   top: 0;
   left: 0;
   z-index: -1;
+
+  @media only screen and (max-width: 1020px) {
+    height: 100vh;
+  }
 `;
 
 // const Hero = styled.div`

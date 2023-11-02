@@ -35,7 +35,10 @@ const Pixel = ({ height }) => {
                 </p>
               </Item>
               <Item>
-                <img src={width > 1020 ? piggybank : piggybankmobile} alt="piggybank" />
+                <img
+                  src={width > 1020 ? piggybank : piggybankmobile}
+                  alt="piggybank"
+                />
                 <p>Abrí tu cuenta gratis y sin intermediarios.</p>
               </Item>
 
@@ -54,10 +57,8 @@ const Pixel = ({ height }) => {
             <CarouselContainer>
               <Carousel
                 itemsToShow={width > 640 ? 2.3 : 1.3}
-     
                 pagination={false}
                 ref={carouselRef}
-              
               >
                 <Item>
                   <img src={cardmobile} alt="card" />
@@ -96,15 +97,23 @@ const PixelSection = styled.div`
   margin-top: ${(props) => (props.height === "80vh" ? "1500px" : "0px")};
   bottom: ${(props) => (props.height === "80vh" ? "" : "0%")};
   z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 1020px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const PixelContainer = styled.div`
-  height: auto;
+  height: ${(props) => (props.height === "80vh" ? "80vh" : "20vh")};
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   max-width: 1600px;
 
   @media only screen and (max-width: 1020px) {

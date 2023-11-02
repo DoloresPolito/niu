@@ -23,7 +23,7 @@ const Example = () => {
         },
       });
     }
-
+    console.log("USEEFFECT DE ACHICAR PANTALLA");
     // Actualizar el controlador cuando cambie el tamaño de la pantalla
     const handleResize = () => {
       setTotalWidth(window.innerWidth);
@@ -39,15 +39,39 @@ const Example = () => {
     };
   }, []);
 
+  //zoom pantalla
   useEffect(() => {
+    console.log("USEEFFECT DE ZOOM");
+  
+    const handleZoomChange = () => {
+      // Actualiza el controlador si cambia el nivel de zoom
+      controller.current.update();
+    };
+  
+    // Agrega el event listener para el evento 'resize'
+    window.addEventListener("resize", handleZoomChange);
+  
+    // Devuelve una función de limpieza para eliminar el event listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener("resize", handleZoomChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("USEEFFECT DE SLIDES");
     // Resto del código de tus escenas ScrollMagic
     const slides = document.querySelectorAll(".panel");
 
-    slides.forEach((slide) => {
+    console.log("slides", slides);
+
+    slides.forEach((slide, index) => {
+      console.log("slice", slide);
+      console.log("slice", index);
       new ScrollMagic.Scene({
         triggerElement: slide,
+        // duration: 100,
       })
-        .setPin(slide, { pushFollowers: false })
+        .setPin(slide, { pushFollowers: true })
         .addTo(controller.current); // Usa la instancia del controlador
     });
   }, []);
@@ -78,6 +102,11 @@ const Example = () => {
           <section className="panel">
             <div className="panel-inner">
               <Cards />
+            </div>
+          </section>
+          <section className="panel">
+            <div className="panel-inner">
+              <Into />
             </div>
           </section>
 
