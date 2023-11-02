@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import piggybank from "../assets/home/homepixel/piggybank-pixel.svg";
-import card from "../assets/home/homepixel/card-pixel.svg";
-import coin from "../assets/home/homepixel/coin-pixel.svg";
-import coins from "../assets/home/homepixel/coins-pixel.svg";
+import piggybank from "../assets/home/homepixel/piggybank-pixel-min.png";
+import card from "../assets/home/homepixel/card-pixel-min.png";
+import coin from "../assets/home/homepixel/coin-pixel-min.png";
+import coins from "../assets/home/homepixel/coins-pixel-min.png";
 
-import piggybankmobile from "../assets/home/homepixel/nopixel/piggy-bank.png";
-import cardmobile from "../assets/home/homepixel/nopixel/card-pixel.png";
-import coinmobile from "../assets/home/homepixel/nopixel/coin-pixel.png";
-import coinsmobile from "../assets/home/homepixel/nopixel/coins-pixel.png";
+import piggybankmobile from "../assets/home/homepixel/nopixel/piggy-bank-min.png";
+import cardmobile from "../assets/home/homepixel/nopixel/card-pixel-min.png";
+import coinmobile from "../assets/home/homepixel/nopixel/coin-pixel-min.png";
+import coinsmobile from "../assets/home/homepixel/nopixel/coins-pixel-min.png";
 
 import Carousel from "react-elastic-carousel";
 
@@ -95,6 +95,7 @@ const PixelSection = styled.div`
   position: absolute;
   margin-top: ${(props) => (props.height === "80vh" ? "1500px" : "0px")};
   bottom: ${(props) => (props.height === "80vh" ? "" : "0%")};
+  z-index: 500;
 `;
 
 const PixelContainer = styled.div`

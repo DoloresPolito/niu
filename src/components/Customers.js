@@ -8,7 +8,7 @@ import Loop from "./Loop";
 import playstation from "../assets/home/homecustomers/playstation.svg";
 import fortnite from "../assets/home/homecustomers/fortnite.tif.svg";
 import crunchyroll from "../assets/home/homecustomers/crunchyroll.tif.svg";
-import freefire from "../assets/home/homecustomers/freefire.svg";
+import freefire from "../assets/home/homecustomers/freefire-min.png";
 import minecraft from "../assets/home/homecustomers/minecraft.svg";
 import mobilelegends from "../assets/home/homecustomers/mobile-legends.svg";
 import pubg from "../assets/home/homecustomers/pubg.tif.svg";

@@ -94,7 +94,7 @@ const Cover = styled.div`
     #ac99f2
   ); */
 
-  background-image: url("/backgrounds/background-coverfaqs.svg");
+  background-image: url("/backgrounds/cover-faq-min.png");
   background-size: cover;
   background-position: center;
 `;

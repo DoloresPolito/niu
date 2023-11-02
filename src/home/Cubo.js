@@ -1,75 +1,79 @@
 import React from "react";
 import styled from "styled-components";
-import cubogif from "../assets/home/homecube/cube-black.gif";
-import anillo from "../assets/home/homecube/anillo.png"
+// import cubogif from "../assets/home/homecube/cube-black-min.gif";
+// import anillo from "../assets/home/homecube/anillo.png"
 
-const GifContainer = styled.div`
-  height: auto;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  position: relative;
 
-  .anillo{
-    position: absolute;
-    height: 200px;
-    width: 700px;
-    top:30%
-  }
-  img {
-    height: 620px;
-    width: 750px;
-  }
-  @media only screen and (max-width: 1200px) {
-    img {
-    height: 590px;
-    width: 700px;
-  }
-  }
+// const GifContainer = styled.div`
+//   height: auto;
+//   width: auto;
+//   display: flex;
+//   justify-content: center;
+//   position: relative;
+//   z-index: 1000;
 
-  @media only screen and (max-width: 1000px) {
-   
-    img {
-    height: 500px;
-    width: 600px;
-  }
-  }
+//   .anillo {
+//     position: absolute;
+//     height: 200px;
+//     width: 700px;
+//     top: 30%;
+//   }
+//   video {
+//     height: 620px;
+//     width: 750px;
+//   }
+//   @media only screen and (max-width: 1200px) {
+//     video {
+//       height: 590px;
+//       width: 700px;
+//     }
+//   }
 
-  @media only screen and (max-width: 900px) {
-    img {
-      height: 400px;
-      width: 500px;
-    }
-  }
- @media only screen and (max-width: 500px) {
-    img {
-      height: 330px;
-      width: 400px;
-    }
-  }
+//   @media only screen and (max-width: 1000px) {
+//     video {
+//       height: 500px;
+//       width: 600px;
+//     }
+//   }
 
-@media only screen and (max-width: 420px) {
-    img {
-      height: 300px;
-      width: 350px;
-    }
-  }
+//   @media only screen and (max-width: 900px) {
+//     video {
+//       height: 400px;
+//       width: 500px;
+//     }
+//   }
+//   @media only screen and (max-width: 500px) {
+//     video {
+//       height: 330px;
+//       width: 400px;
+//     }
+//   }
 
-   /*   @media only screen and (max-width: 370px) {
-    img {
-      height: 250px;
-      width: 300px;
-    }
-  } */
-`;
+//   @media only screen and (max-width: 420px) {
+//     video {
+//       height: 300px;
+//       width: 350px;
+//     }
+//   }
+
+
+// `;
 
 const CuboGif = () => {
   return (
-    <GifContainer>
-      <img src={cubogif} alt="Mi GIF" className="cube"/>
-      <img src={anillo} alt="anillo"className="anillo"/>
-    </GifContainer>
+    <Video loop autoPlay muted>
+      <source src="cube-black-min.mp4" type="video/mp4" />
+    </Video>
   );
 };
+
+const Video = styled.video`
+  height: 620px;
+  width: 750px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+`;
 
 export default CuboGif;

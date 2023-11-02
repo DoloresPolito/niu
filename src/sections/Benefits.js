@@ -201,7 +201,7 @@ const BenefitsContainer = styled.div`
 const Cover = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url("/backgrounds/background-coverbenefits.svg");
+  background-image: url("/backgrounds/cover-benefits-min.png");
   background-size: cover;
   background-position: center;
   display: flex;

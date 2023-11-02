@@ -37,7 +37,7 @@ const IntoSection = styled.div`
 `;
 
 const Top = styled.div`
-  background-image: url("/backgrounds/background-introhome.svg");
+  background-image: url("/backgrounds/intro-home-min.png");
   background-position: center;
   background-size: cover;
   width: 100vw;

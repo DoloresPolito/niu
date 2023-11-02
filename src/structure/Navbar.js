@@ -88,6 +88,7 @@ const Navbar = ({ view }) => {
 };
 
 const NavbarSection = styled.section`
+
   z-index: 200;
   position: ${(props) => (props.fixed ? "fixed" : "absolute")};
   top: 0;
@@ -102,6 +103,8 @@ const NavbarSection = styled.section`
 
   background-color: ${(props) => (props.fixed ? "black" : "transparent")};
   transition: position 0.5s ease-in-out;
+
+  z-index: 1000;
 
   .hamburger-react {
     position: relative;

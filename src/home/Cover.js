@@ -31,34 +31,38 @@ const Cover = () => {
   return (
     <>
       <CoverSection>
-        <Hero>
-          <CoverContainer>
-            <Column1>
-              <div className="title">
-                <h1>tu billetera a otro level.</h1>
-              </div>
-            </Column1>
+        <Video loop autoPlay muted>
+          <source src="2gifhero-min.mp4" type="video/mp4" />
+        </Video>
+        {/* <Hero> */}
+        <CoverContainer>
+          <Column1>
+            <div className="title">
+              <h1>tu billetera a otro level.</h1>
+            </div>
+          </Column1>
 
-            <Column3>
-              <Content>
-                <div>
-                  <Link
-                    to="https://apps.apple.com/ar/app/n1u/id6446706311?l=en"
-                    target="_blank"
-                  >
-                    <img src={ios} alt="ios" />
-                  </Link>
-                  <Link
-                    to="https://play.google.com/store/apps/details?id=n1u.app&pli=1"
-                    target="_blank"
-                  >
-                    <img src={googleplay} alt="googleplay" />
-                  </Link>
-                </div>
-              </Content>
-            </Column3>
-          </CoverContainer>
-        </Hero>
+          <Column3>
+            <Content>
+              <div>
+                <Link
+                  to="https://apps.apple.com/ar/app/n1u/id6446706311?l=en"
+                  target="_blank"
+                >
+                  <img src={ios} alt="ios" />
+                </Link>
+                <Link
+                  to="https://play.google.com/store/apps/details?id=n1u.app&pli=1"
+                  target="_blank"
+                >
+                  <img src={googleplay} alt="googleplay" />
+                </Link>
+              </div>
+            </Content>
+          </Column3>
+        </CoverContainer>
+        {/* </Hero> */}
+
         {totalWidth < 1020 ? (
           <>
             <Pixel height="80vh" />
@@ -86,29 +90,51 @@ const CoverSection = styled.div`
   /* max-height: 1500px; */
 `;
 
-const Hero = styled.div`
+const Video = styled.video`
+  /* width: 100%;
+  height: 80vh ;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 500;
+  background-size: cover;
+  background-position: 100% 100%; */
+
+
+
   width: 100%;
   height: 80vh;
-  background-color: black;
-  display: flex;
-  position: relative;
-  background-image: url("/gifhero.gif");
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
+  object-fit: cover;
+  position: fixed;
   top: 0;
-  left: 0%;
-
-  @media only screen and (max-width: 1300px) {
-    background-position: left center;
-  }
-  @media only screen and (max-width: 1100px) {
-    background-position: center center;
-  }
-  @media only screen and (max-width: 1020px) {
-    height: 100vh;
-  }
+  left: 0;
+  z-index: -1;
 `;
+
+// const Hero = styled.div`
+//   width: 100%;
+//   height: 80vh;
+//   background-color: black;
+//   display: flex;
+//   position: relative;
+//   background-color: red;
+
+//   background-size: cover;
+//   background-position: center center;
+//   position: absolute;
+//   top: 0;
+//   left: 0%;
+
+//   @media only screen and (max-width: 1300px) {
+//     background-position: left center;
+//   }
+//   @media only screen and (max-width: 1100px) {
+//     background-position: center center;
+//   }
+//   @media only screen and (max-width: 1020px) {
+//     height: 100vh;
+//   }
+// `;
 
 const CoverContainer = styled.div`
   display: flex;
@@ -118,6 +144,7 @@ const CoverContainer = styled.div`
   height: auto;
   justify-content: space-between;
   max-width: 1600px;
+  z-index: 500;
 `;
 
 const Column1 = styled.div`

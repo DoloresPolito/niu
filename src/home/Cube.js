@@ -53,7 +53,7 @@ const CubeSection = styled.div`
   background-color: #070707;
   display: flex;
   overflow: hidden;
-  background-image: url("/backgrounds/background-cube.png");
+  background-image: url("/backgrounds/background-cube-min.png");
   background-position: center;
   background-size: cover; 
   max-width: 1600px;

@@ -5,7 +5,7 @@ import Footer from "../structure/Footer";
 import { useParams } from "react-router-dom";
 import benefits from "../jsons/benefitscards.json";
 import { Button } from "../styles/texts.js";
-import phones from "../assets/benefits/phones.svg";
+// import phones from "../assets/benefits/phones.svg";
 import FormatedText from "../components/FormatedText";
 
 function Benefit() {
@@ -60,7 +60,7 @@ function Benefit() {
               </Button>
             </div>
             <div className="image">
-              <img src={phones} alt="phones" />
+              {/* <img src={phones} alt="phones" /> */}
             </div>
           </div>
         </BottomContainer>

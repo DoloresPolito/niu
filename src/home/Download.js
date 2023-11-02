@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ios from "../assets/home/homedownload/ios.svg";
 import googleplay from "../assets/home/homedownload/google-play.svg";
-import phone from "../assets/home/homedownload/newphone.svg";
+import phone from "../assets/home/homedownload/phone-min.png";
 
 const Download = () => {
   return (
@@ -33,7 +33,7 @@ const DownloadSection = styled.div`
   width: 100%;
   margin: auto;
   background-color: black;
-  background-image: url("/backgrounds/download-light.png");
+  background-image: url("/backgrounds/download-light-min.png");
   background-size: cover;
   background-position: center;
   max-width: 1600px;

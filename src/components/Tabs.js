@@ -22,7 +22,7 @@ const Tabs = ({ view }) => {
           <h6>faq</h6>
         </Link>
 
-        <Link to="/" className="link">
+        <Link to="https://n1u.app/referidos-n1u/" className="link" target="_blank">
           <DifLink>referí y ganá</DifLink>
         </Link>
       </TabsContainer>
