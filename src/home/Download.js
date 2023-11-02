@@ -7,7 +7,7 @@ import phone from "../assets/home/homedownload/newphone.svg";
 const Download = () => {
   return (
     <>
-      <DownloadSection>
+      <DownloadSection >
         <DownloadContainer>
           <Content>
             <h2>
@@ -51,8 +51,10 @@ const DownloadContainer = styled.div`
   margin: 0 auto;
   justify-content: space-around;
   padding-top: 30px;
-  height: 60vh;
+  /* height: 60vh; */
   max-width: 1600px;
+
+
 `;
 
 const Content = styled.div`
