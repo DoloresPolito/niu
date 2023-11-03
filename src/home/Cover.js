@@ -4,6 +4,9 @@ import Pixel from "../home/Pixel";
 import ios from "../assets/home/homedownload/ios.svg";
 import googleplay from "../assets/home/homedownload/google-play.svg";
 import { Link } from "react-router-dom";
+import stain from "../assets/home/homecover/background-stain-ipad-min.png";
+import phone from "../assets/home/homecover/phone-cover-min.png";
+import stainmobile from "../assets/home/homecover/stain-mobile-min.png";
 
 const Cover = () => {
   const [width, setWidth] = useState(null);
@@ -31,20 +34,29 @@ const Cover = () => {
   return (
     <>
       <CoverSection>
-        <Video loop autoPlay muted>
-          <source src="2gifhero-min.mp4" type="video/mp4" />
-        </Video>
-        {/* <Hero> */}
-        <CoverContainer>
-          <Column1>
-            <div className="title">
-              <h1>tu billetera a otro level.</h1>
-            </div>
-          </Column1>
-
-          <Column3>
-            <Content>
-              <div>
+        {totalWidth > 800 ? (
+          <>
+            <Video loop autoPlay muted>
+              <source src="2gifhero-min.mp4" type="video/mp4" />
+            </Video>
+          </>
+        ) : (
+          <>
+            <Hero>
+              <Title>
+                <h1>
+                  tu billetera <br />a otro level.
+                </h1>
+              </Title>
+              <StainContainer>
+                <img
+                  className="stain"
+                  src={totalWidth > 455 ? stain : stainmobile}
+                  alt="stain"
+                />
+                <img className="phone" src={phone}     alt="phone"/>
+              </StainContainer>
+              <Buttons>
                 <Link
                   to="https://apps.apple.com/ar/app/n1u/id6446706311?l=en"
                   target="_blank"
@@ -57,19 +69,47 @@ const Cover = () => {
                 >
                   <img src={googleplay} alt="googleplay" />
                 </Link>
+              </Buttons>
+              <BottomCoins />
+            </Hero>
+          </>
+        )}
+
+        <CoverContainer>
+          <Column1>
+            <div className="title">
+              <h1>
+                tu billetera
+                <br /> a otro level.
+              </h1>
+            </div>
+          </Column1>
+
+          <Column3>
+            <Content>
+              <div>
+                <Link
+                  to="https://apps.apple.com/ar/app/n1u/id6446706311?l=en"
+                  target="_blank"
+                >
+                  <img src={ios} alt="ios" className="first" />
+                </Link>
+                <Link
+                  to="https://play.google.com/store/apps/details?id=n1u.app&pli=1"
+                  target="_blank"
+                >
+                  <img src={googleplay} alt="googleplay" />
+                </Link>
               </div>
             </Content>
           </Column3>
         </CoverContainer>
-        {/* </Hero> */}
 
-        {totalWidth < 1020 ? (
-          <>
-            <Pixel height="80vh" />
-          </>
+        {totalWidth < 800 ? (
+          <></>
         ) : (
           <>
-            <Pixel height="20vh" />
+            <Pixel />
           </>
         )}
       </CoverSection>
@@ -84,59 +124,144 @@ const CoverSection = styled.div`
   justify-content: center;
   position: relative;
   flex-direction: column;
-  max-width: 1600px;
   margin: 0 auto;
 
   /* max-height: 1500px; */
 `;
 
 const Video = styled.video`
-  /* width: 100%;
-  height: 80vh ;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  z-index: 500;
-  background-size: cover;
-  background-position: 100% 100%; */
-
   width: 100%;
   height: 80vh;
-  object-fit: cover;
-  position: fixed;
+  object-fit: contain;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-
-  @media only screen and (max-width: 1020px) {
-    height: 100vh;
+  @media only screen and (max-width: 990px) {
+    object-fit: cover;
   }
 `;
 
-// const Hero = styled.div`
-//   width: 100%;
-//   height: 80vh;
-//   background-color: black;
-//   display: flex;
-//   position: relative;
-//   background-color: red;
+const Hero = styled.div`
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
 
-//   background-size: cover;
-//   background-position: center center;
-//   position: absolute;
-//   top: 0;
-//   left: 0%;
+  top: 0;
+  left: 0;
+`;
 
-//   @media only screen and (max-width: 1300px) {
-//     background-position: left center;
-//   }
-//   @media only screen and (max-width: 1100px) {
-//     background-position: center center;
-//   }
-//   @media only screen and (max-width: 1020px) {
-//     height: 100vh;
-//   }
-// `;
+const StainContainer = styled.div`
+  position: absolute;
+  z-index: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+
+  .stain {
+    height: 80%;
+    width: auto;
+  }
+
+  .phone {
+    position: absolute;
+    z-index: 2000;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+  }
+  @media only screen and (max-width: 800px) {
+    .stain {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  @media only screen and (max-width: 635px) {
+    top: 60%;
+    .stain {
+      display: none;
+    }
+
+    .phone {
+      top: 46%;
+    }
+  }
+
+  @media only screen and (max-width: 455px) {
+    .stain {
+      display: flex;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    height: 95%;
+  }
+  @media only screen and (max-width: 370px) {
+    height: 90%;
+  }
+
+  @media only screen and (max-width: 345px) {
+    height: 85%;
+  }
+`;
+
+const Title = styled.div`
+  position: absolute;
+  z-index: 500;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  h1 {
+    color: white;
+    font-family: "LoRes";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    max-width: 500px;
+  }
+`;
+
+const Buttons = styled.div`
+  position: absolute;
+  z-index: 800;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  img {
+    height: 50px !important;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 800px) {
+    img {
+      height: 40px;
+    }
+  }
+`;
+
+const BottomCoins = styled.div`
+  background-image: url("/backgrounds/coins-ipad-min.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  bottom: 20%;
+  z-index: 500;
+  @media only screen and (max-width: 800px) {
+    bottom: 0%;
+  }
+`;
 
 const CoverContainer = styled.div`
   display: flex;
@@ -147,6 +272,11 @@ const CoverContainer = styled.div`
   justify-content: space-between;
   max-width: 1600px;
   z-index: 500;
+  margin-top: -80px;
+
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const Column1 = styled.div`
@@ -162,13 +292,26 @@ const Column1 = styled.div`
       font-size: 60px;
       font-style: normal;
       font-weight: 400;
-      line-height: 70px;
+      line-height: 60px;
       max-width: 450px;
 
-      @media only screen and (max-width: 1100px) {
+      @media only screen and (max-width: 1145px) {
         font-size: 50px;
         max-width: 400px;
+        line-height: 50px;
       }
+
+      @media only screen and (max-width: 1145px) {
+        font-size: 45px;
+        max-width: 400px;
+        line-height: 45px;
+      }
+    }
+
+    @media only screen and (max-width: 905px) {
+      font-size: 40px;
+      max-width: 400px;
+      line-height: 40px;
     }
   }
 `;
@@ -179,10 +322,13 @@ const Column3 = styled.div`
   justify-content: center;
   width: 500px;
 
-  @media only screen and (max-width: 1300px) {
+  .first {
+    padding-right: 40px;
   }
-  @media only screen and (max-width: 1100px) {
-    align-items: flex-end;
+
+  @media only screen and (max-width: 1100px) {}
+  .first {
+    padding-right: 20px;
   }
 `;
 
@@ -191,10 +337,9 @@ const Content = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top: 120px;
-  width: 500px;
+  max-width: 500px;
   img {
     height: 65px;
-    padding-right: 40px;
     padding-bottom: 60px;
   }
 
@@ -203,31 +348,23 @@ const Content = styled.div`
     width: 500px;
     img {
       height: 55px;
-      padding-right: 30px;
       padding-bottom: 60px;
     }
   }
 
   @media only screen and (max-width: 1100px) {
-    flex-direction: column;
-    width: 200px;
     img {
-      height: 55px;
-      padding-right: 30px;
-      padding-bottom: 30px;
+      height: 50px;
+      padding-bottom: 90px;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    img {
+      height: 45px;
+      padding-bottom: 60px;
     }
   }
 
-  @media only screen and (max-width: 650px) {
-    /* width: 330px;
-    margin-left: 30px;
-    img {
-      height: 42px;
-      padding-right: 8px;
-      padding-bottom: 60px;
-    }
-*/
-  }
 `;
 
 export default Cover;

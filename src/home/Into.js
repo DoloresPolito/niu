@@ -2,17 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import Customers from "../components/Customers";
 import lines from "../assets/home/homecover/lines-button.svg";
+import AnimatedText from "../components/AnimatedText";
 
 const Into = () => {
   return (
     <>
       <IntoSection>
         <Top>
-          <Title>
-            welcome to <br />
-            the n1uverse
-          </Title>
-
+          <AnimatedText>
+            <Title>
+              welcome to <br />
+              the n1uverse
+            </Title>
+          </AnimatedText>
           <ButtonContainer>
             <Lines src={lines} alt="lines" />
             <div className="button">
@@ -32,8 +34,10 @@ const IntoSection = styled.div`
   margin: auto;
   background: black;
   overflow: hidden;
-  max-width: 1600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Top = styled.div`
@@ -47,6 +51,7 @@ const Top = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* max-width: 1600px; */
 
   .button {
     background-color: #ff009c;

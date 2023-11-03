@@ -1,49 +1,82 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import clarin from "../assets/home/homesponsors/clarin.svg";
-import cronista from "../assets/home/homesponsors/el-cronista.svg";
+import lanacion from "../assets/home/homesponsors/la nacion-min.png";
+import filonews from "../assets/home/homesponsors/filonews-min.png";
 import forbes from "../assets/home/homesponsors/forbes.svg";
 import iproup from "../assets/home/homesponsors/ipro-up.svg";
 import { Link } from "react-router-dom";
 
-const Sponsors = () => {
+const Sponsors = ({ size }) => {
+  const [width, setWidth] = useState(null);
+  const getWidth = () => divRef?.current?.offsetWidth;
+
+  const divRef = useRef(null);
+
+  const [totalWidth, setTotalWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => setTotalWidth(window.innerWidth));
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(getWidth());
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
-      <SponsorsSection>
-          <SponsorsContainer>
-        
-            <Link to="https://www.forbesargentina.com/" target="_blank">
-               <SponsorItem>
-                <img src={forbes} alt="forbes" />
-              </SponsorItem>
-            </Link>
-            <Link to="https://www.clarin.com/" target="_blank">
-              <SponsorItem>
-                <img src={clarin} alt="clarin" />
-              </SponsorItem>
-            </Link>
-            <Link to="https://www.iproup.com/" target="_blank">
-              <SponsorItem>
-                <img src={iproup} alt="iproup" />
-              </SponsorItem>
-            </Link>
-            <Link to="https://www.cronista.com/" target="_blank">
-              <SponsorItem className="cronista">
-                <img
-                  src={cronista}
-                  alt="el-cronista"
-                  style={{ width: "250px" }}
-                />
-              </SponsorItem>
-            </Link>
-          </SponsorsContainer>
+      <SponsorsSection size={size}>
+        <SponsorsContainer>
+          <Link
+            to="https://www.forbesargentina.com/innovacion/identificaron-segmento-bancarizar-crearon-una-plataforma-servicios-financieros-enfocada-mundo-gamer-n31459"
+            target="_blank"
+          >
+            <SponsorItem>
+              <img src={forbes} alt="forbes" />
+            </SponsorItem>
+          </Link>
+          <Link
+            to="https://www.lanacion.com.ar/economia/negocios/historias-que-inspiran-es-emprendedor-y-descubrio-un-negocio-que-cruza-el-gaming-con-las-finanzas-nid11092023/"
+            target="_blank"
+          >
+            <SponsorItem>
+              <img
+                src={lanacion}
+                alt="la nacion"
+                style={{ height: "45px", width: "170px" }}
+              />
+            </SponsorItem>
+          </Link>
+          <Link
+            to="https://www.iproup.com/finanzas/39465-n1u-asi-es-la-nueva-billetera-digital-pensada-para-los-gamers"
+            target="_blank"
+          >
+            <SponsorItem>
+              <img src={iproup} alt="iproup" />
+            </SponsorItem>
+          </Link>
+          <Link
+            to="https://www.filo.news/noticia/2023/04/24/llego-la-primera-superapp-de-la-region-de-que-se-trata"
+            target="_blank"
+          >
+            <SponsorItem className="filo.news">
+              <img src={filonews} alt="filo.news" style={{ height: "40px" }} />
+            </SponsorItem>
+          </Link>
+        </SponsorsContainer>
       </SponsorsSection>
     </>
   );
 };
 
 const SponsorsSection = styled.div`
-  height: 25vh;
+  height: ${(props) => (props.size === "desktop" ? "25vh" : "100vh")};
   width: 100%;
   margin: auto;
   background: #cebdf2;
@@ -61,7 +94,7 @@ const SponsorsContainer = styled.div`
   padding-bottom: 20px;
   max-width: 1600px;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1020px) {
     flex-direction: column !important;
     justify-content: center;
   }
@@ -84,8 +117,7 @@ const SponsorItem = styled.div`
   }
 
   &:hover {
-    background-color: #FF009C;
-  
+    background-color: #ff009c;
   }
 
   @media only screen and (max-width: 1300px) {
@@ -95,7 +127,10 @@ const SponsorItem = styled.div`
       height: 50px;
       width: 150px;
     }
+  }
 
+  @media only screen and (max-width: 1020px) {
+    border: 0px solid #cebdf2;
   }
 
   @media only screen and (max-width: 1100px) {

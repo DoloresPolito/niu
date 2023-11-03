@@ -38,4 +38,18 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid black;
 }
 
+.scroll-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: black;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ff009c;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
 

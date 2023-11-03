@@ -35,9 +35,11 @@ const Navbar = ({ view }) => {
   const [fixed, setFixed] = useState(false);
 
   useEffect(() => {
+    console.log("entra");
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setFixed(true);
+        console.log("fixed", fixed);
       } else {
         setFixed(false);
       }
@@ -88,22 +90,18 @@ const Navbar = ({ view }) => {
 };
 
 const NavbarSection = styled.section`
-
   z-index: 200;
   position: ${(props) => (props.fixed ? "fixed" : "absolute")};
   top: 0;
   left: 0;
   box-sizing: border-box;
-  padding: 20px 70px;
   margin: auto;
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: center;
-
   background-color: ${(props) => (props.fixed ? "black" : "transparent")};
   transition: position 0.5s ease-in-out;
-
   z-index: 1000;
 
   .hamburger-react {

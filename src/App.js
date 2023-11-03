@@ -7,9 +7,9 @@ import Benefits from "./sections/Benefits";
 import Benefit from "./sections/Benefit";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import Example from "./sections/Example";
+// import Example from "./sections/Example";
 import { StyleSheetManager } from "styled-components";
-
+import NewScrollHome from "./sections/NewScrollHome";
 
 function App() {
   const location = useLocation();
@@ -28,14 +28,11 @@ function App() {
     }
   }, [location]);
 
-
-
   return (
     <>
-    
       <StyleSheetManager shouldForwardProp={(prop) => !prop.startsWith("$")}>
         <Routes>
-          <Route path="/" element={<Example />} />
+          <Route path="/" element={<NewScrollHome />} />
           <Route path="/n1uverse" element={<N1uverse />} />
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/benefits" element={<Benefits />} />

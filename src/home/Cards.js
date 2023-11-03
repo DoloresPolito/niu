@@ -3,7 +3,7 @@ import styled from "styled-components";
 import beneficios from "../assets/home/homecards/benefit-card-min.png";
 import n1ustatus from "../assets/home/homecards/n1ustatus-card-min.png";
 import Sponsors from "./Sponsors";
-import { Link } from "react-router-dom";
+import AnimatedText from "../components/AnimatedText";
 
 const Cards = () => {
   const [width, setWidth] = useState(null);
@@ -50,23 +50,27 @@ const Cards = () => {
         <Top>
           <CardsContainer>
             {cards.map((card, index) => (
-              <Link
-                to={card.link}
-                style={{ textDecoration: "none" }}
-                key={index}
-              >
+              // <Link
+              //   to={card.link}
+              //   style={{ textDecoration: "none" }}
+              //   key={index}
+              // >
                 <Item key={index} backgroundimage={card.image}>
                   <Content>
-                    <h1>{card.title}</h1>
+                    <AnimatedText>
+                      <h1>{card.title}</h1>
+                    </AnimatedText>
                     <div>
-                      <h6>{card.text}</h6>
+                      <AnimatedText>
+                        <h6>{card.text}</h6>
+                      </AnimatedText>
                       <button>
                         <p>conocé más</p>
                       </button>
                     </div>
                   </Content>
                 </Item>
-              </Link>
+              // </Link>
             ))}
           </CardsContainer>
         </Top>
@@ -75,7 +79,7 @@ const Cards = () => {
         ) : (
           <>
             {" "}
-            <Sponsors />
+            <Sponsors size="desktop" />
           </>
         )}
       </CardsSection>
@@ -90,7 +94,7 @@ const CardsSection = styled.div`
   background-color: black;
   background-color: #070707;
   overflow: hidden;
-  max-width: 1600px;
+
   margin: 0 auto;
 `;
 
@@ -102,6 +106,8 @@ const Top = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 1600px;
+  margin: 0 auto;
 
   @media only screen and (max-width: 920px) {
     height: 100vh;

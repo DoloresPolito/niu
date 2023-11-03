@@ -4,9 +4,9 @@ import logowhite from "../assets/logon1u/logo white.svg";
 import SocialMedia from "../components/SocialMedia";
 import orange from "../assets/footer/orange-box-min.png";
 
-const Footer = () => {
+const Footer = ({ view }) => {
   return (
-    <FooterWrapper>
+    <FooterWrapper view={view}>
       <FooterContainer>
         <Column>
           {" "}
@@ -58,13 +58,13 @@ const MiddleColumn = () => {
 };
 
 const FooterWrapper = styled.footer`
+  width: 100%;
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 445px;
-  /* height: 100vh; */
+  height: ${(props) => (props.view === "home" ? "100vh" : "445px")};
 
   @media only screen and (max-width: 900px) {
     height: 500px;

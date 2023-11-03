@@ -20,7 +20,6 @@ function Faqs() {
         <Cover>
           <Heading1>faqs</Heading1>
         </Cover>
-
         <QuestionsContainer>
           <Box>
             <h2>Sobre niu</h2>
@@ -86,14 +85,6 @@ const Cover = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(
-    217deg,
-    #f24be7,
-    #f213a4 -40.71%,
-    #483c73 90%,
-    #ac99f2
-  ); */
-
   background-image: url("/backgrounds/cover-faq-min.png");
   background-size: cover;
   background-position: center;
@@ -108,7 +99,6 @@ const QuestionsContainer = styled.div`
   margin: 0 auto;
   min-height: 100vh;
 
-
   @media only screen and (max-width: 800px) {
     width: 80%;
   }
@@ -120,10 +110,9 @@ const Box = styled.div`
   margin: 80px 0px;
   width: 100%;
 
-
   h2 {
     padding-bottom: 20px;
-    font-family: 'LoRes';
+    font-family: "LoRes";
     color: #ff009c;
     font-size: 28.125px;
     font-style: normal;
@@ -134,9 +123,7 @@ const Box = styled.div`
       font-size: 28.125px;
       font-style: normal;
       font-weight: 400;
-      line-height: 37.5px; 
-
-
+      line-height: 37.5px;
     }
   }
 
@@ -147,10 +134,10 @@ const Box = styled.div`
     font-size: 25px;
     font-style: normal;
     font-weight: 300;
-    line-height: 31.25px; 
+    line-height: 31.25px;
     @media only screen and (max-width: 800px) {
       font-size: 19px;
-      line-height: 40px; 
+      line-height: 40px;
     }
   }
 `;

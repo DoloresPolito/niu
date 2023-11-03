@@ -69,10 +69,11 @@ const CustomersSection = styled.div`
   width: 100%;
   margin: auto;
   background: black;
-  padding: 40px 80px;
   overflow: hidden;
   z-index: 30;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 `;
 
 const CustomersContainer = styled.div`
@@ -85,7 +86,7 @@ const CustomersContainer = styled.div`
     flex-direction: column;
   }
   img {
-    padding: 0 70px;
+    padding: 0 50px;
   }
 `;
 
