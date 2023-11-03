@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled  from 'styled-components';
-import title from "../assets/n1uverse/players/title-players.svg";
-import alienbox from "../assets/n1uverse/players/alien-box.svg";
-import n1utonbox from "../assets/n1uverse/players/n1uton-box.svg";
-import rebelbox from "../assets/n1uverse/players/rebel-box.svg";
+import title from "../assets/n1uverse/players/title-players-min.png";
+import alienbox from "../assets/n1uverse/players/alien-box-min.png";
+import n1utonbox from "../assets/n1uverse/players/n1uton-box-min.png";
+import rebelbox from "../assets/n1uverse/players/rebel-box-min.png";
 import buttonright from "../assets/n1uverse/players/button-right.svg";
 import buttonleft from "../assets/n1uverse/players/button-left.svg";
 
@@ -43,9 +43,10 @@ function Players() {
               <CarouselContainer>
                 <Carousel
                   itemsToShow={width > 760 ? 2 : width > 370 ? 1.3 : 1 }
-                  enableTilt={true}
+          
                   pagination={false}
                   ref={carouselRef}
+        
                 >
                   <PlayerItem image={rebelbox} name="rebel" />
                   <PlayerItem image={n1utonbox} name="n1uton" />
@@ -225,7 +226,7 @@ const PlayerBox = styled.div`
 
   img {
     height: 420px;
-    width: 100%;
+    width: 95%;
     margin-top: -70px;
 
     @media only screen and (max-width: 1200px) {

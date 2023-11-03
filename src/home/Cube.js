@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Cubo from "./Cubo";
 import AnimatedText from "../components/AnimatedText";
+// import anillo from "../assets/home/homecube/anillo.png"
 
 const Cube = () => {
   return (
@@ -23,6 +24,7 @@ const Cube = () => {
 
           <Column>
             <Cubo />
+               {/* <img src={anillo} alt="anillo-cubo"/> */}
           </Column>
 
           <Text>
@@ -50,11 +52,14 @@ const Cube = () => {
 const CubeSection = styled.div`
   height: 100vh;
   width: 100%;
-  position: relative;
-  background-color: #1f1f1f;
-  /* background: linear-gradient(45deg, #ff009c 1%, #bd3aff 5%, #1f1f1f 20%); */
+  background-color: #070707;
   display: flex;
+  overflow: hidden;
+  background-image: url("/backgrounds/background-cube-min.png");
+  background-position: center;
+  background-size: cover;
 
+  margin: 0 auto;
   @media only screen and (max-width: 900px) {
     height: 700px;
   }
@@ -68,37 +73,29 @@ const CubeContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 1600px;
+  position: relative;
 
-  @media only screen and (max-width: 900px) {
-    flex-direction: column;
-    position: relative;
-    width: 500px;
-  }
 
-  @media only screen and (max-width: 550px) {
-    width: 400px;
-  }
-
-  @media only screen and (max-width: 420px) {
-    width: 350px;
-  }
 `;
 
 const Text = styled.div`
   height: auto;
   position: absolute;
-  top: 40%;
-  right: 5%;
+
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 200px;
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
 
   p {
     color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 300;
     line-height: 100%;
@@ -108,38 +105,39 @@ const Text = styled.div`
     color: #ff009c;
   }
 
-  @media only screen and (max-width: 1120px) {
-    right: 0%;
+  @media only screen and (max-width: 1145px) {
+    top: 80%;
   }
 
-  @media only screen and (max-width: 900px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    left: 0%;
-    bottom: 0%;
-    top: 60%;
+  @media only screen and (max-width: 850px) {
+    top: 80%;
+    left: 50%;
     width: 100%;
-    height: auto;
-  }
 
-  @media only screen and (max-width: 550px) {
-    p{
+    p {
       font-size: 15px;
       width: 150px;
     }
   }
+  @media only screen and (max-width: 500px) {
+    p {
+      font-size: 13px;
+      width: 150px;
+    }
+  }
+
 `;
 
 const Title = styled.div`
   height: auto;
   position: absolute;
-  top: -10%;
-  left: 5%;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: start;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
 
   h2 {
     color: #e8e9ee;
@@ -148,6 +146,7 @@ const Title = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 85.5%;
+    text-align: start !important;
   }
 
   p {
@@ -162,17 +161,9 @@ const Title = styled.div`
     margin-left: 20px;
   }
 
-  @media only screen and (max-width: 900px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    left: 0;
-    top: 0%;
-    height: 250px;
-    width: 100%;
-
+  @media only screen and (max-width: 1145px) {
     h2 {
-      font-size: 80px;
+      font-size: 130px;
     }
 
     p {
@@ -181,10 +172,35 @@ const Title = styled.div`
     }
   }
 
-  @media only screen and (max-width: 550px) {
-    p{
+  @media only screen and (max-width: 850px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
       font-size: 15px;
-      width: 100px;
+      width: 150px;
+    }
+
+    h2 {
+      padding-top: 70px;
+      font-size: 110px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    h2 {
+      margin-top: -20px;
+      font-size: 70px;
+    }
+
+    p {
+      font-size: 13px;
+      width: 80px;
     }
   }
 `;
@@ -196,27 +212,21 @@ const Column = styled.div`
   justify-content: space-between;
   color: white;
   z-index: 1;
-  background-color: blue;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  p {
-    color: #fff;
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 100%;
-
-    b {
-    }
-
-    @media only screen and (max-width: 900px) {
-      font-size: 16px;
-      width: 90%;
-      line-height: 120%;
-      justify-self: center;
-      margin: 0 auto;
-    }
+  img{
+    position: absolute;
+    z-index: 1000;
+    width: 550px;
+    top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   }
+
+
 `;
 
 export default Cube;

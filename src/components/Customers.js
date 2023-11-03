@@ -1,37 +1,61 @@
 import React from "react";
 import styled from "styled-components";
 import Loop from "./Loop";
-import microsoft from "../assets/home/homecustomers/microsoft.svg";
-import tapi from "../assets/home/homecustomers/tapi.svg";
+// import microsoft from "../assets/home/homecustomers/microsoft.svg";
+// import tapi from "../assets/home/homecustomers/tapi.svg";
+// import gamersclub from "../assets/home/homecustomers/gamersclub.svg";
+// import crackthecode from "../assets/home/homecustomers/crack-the-code.svg";
 import playstation from "../assets/home/homecustomers/playstation.svg";
-import gamersclub from "../assets/home/homecustomers/gamersclub.svg";
-import crackthecode from "../assets/home/homecustomers/crack-the-code.svg";
-
-
+import fortnite from "../assets/home/homecustomers/fortnite.tif.svg";
+import crunchyroll from "../assets/home/homecustomers/crunchyroll.tif.svg";
+import freefire from "../assets/home/homecustomers/freefire-min.png";
+import minecraft from "../assets/home/homecustomers/minecraft.svg";
+import mobilelegends from "../assets/home/homecustomers/mobile-legends.svg";
+import pubg from "../assets/home/homecustomers/pubg.tif.svg";
+import xbox from "../assets/home/homecustomers/xbox.tif.svg";
 const Customers = () => {
- 
   return (
-    <CustomersSection >
+    <CustomersSection>
       <CustomersContainer>
         <Loop
-          reverse={true}
+          reverse="true"
           content={
             <>
-              <img src={microsoft} alt="microsoft" width={120} height={40} />
-              <img src={tapi} alt="tapi" width={80} height={40} />
+              <img src={fortnite} alt="fortnite" width={120} height={40} />
+              <img
+                src={crunchyroll}
+                alt="crunchyroll"
+                width={120}
+                height={40}
+              />
+
+              <img src={freefire} alt="freefire" width={120} height={40} />
+              <img src={minecraft} alt="minecraft" width={120} height={40} />
+
+              <img
+                src={mobilelegends}
+                alt="mobilelegends"
+                width={120}
+                height={40}
+              />
+
+              <img src={pubg} alt="pubg" width={120} height={40} />
+              <img src={xbox} alt="xbox" width={120} height={40} />
               <img
                 src={playstation}
                 alt="playstation"
                 width={120}
                 height={40}
               />
+              {/* <img src={microsoft} alt="microsoft" width={120} height={40} />
+              <img src={tapi} alt="tapi" width={80} height={40} />
               <img src={gamersclub} alt="gamersclub" width={150} height={40} />
               <img
                 src={crackthecode}
                 alt="crackthecode"
                 width={150}
                 height={40}
-              />
+              /> */}
             </>
           }
         />
@@ -41,14 +65,15 @@ const Customers = () => {
 };
 
 const CustomersSection = styled.div`
-  height: auto;
+  height: 20vh;
   width: 100%;
   margin: auto;
   background: black;
-  padding: 40px 80px;
   overflow: hidden;
   z-index: 30;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 `;
 
 const CustomersContainer = styled.div`
@@ -61,7 +86,7 @@ const CustomersContainer = styled.div`
     flex-direction: column;
   }
   img {
-    padding: 0 70px;
+    padding: 0 50px;
   }
 `;
 

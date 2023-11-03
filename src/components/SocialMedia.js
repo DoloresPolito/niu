@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import instagram from "../assets/mediaicons/instagram.svg";
-import discord from "../assets/mediaicons/discord.svg";
+// import discord from "../assets/mediaicons/discord.svg";
 import tiktok from "../assets/mediaicons/tik-tok.svg";
 import twitter from "../assets/mediaicons/twitter.svg";
 import linkedin from "../assets/mediaicons/linkedin.svg";
@@ -24,9 +24,9 @@ function SocialMedia({ view }) {
         <Link to="https://www.youtube.com/"  target="_blank">
           <img alt="youtube" src={youtube} />
         </Link>
-        <Link to="https://www.discord.com/"  target="_blank">
+        {/* <Link to="https://www.discord.com/"  target="_blank">
           <img alt="discord" src={discord} />
-        </Link>
+        </Link> */}
         <Link to="https://www.linkedin.com/"  target="_blank">
           <img alt="linkedin" src={linkedin} />
         </Link>
